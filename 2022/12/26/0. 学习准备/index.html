@@ -1,0 +1,795 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前端发展和思考1. 前端行业发展怎么样？ 为什么聊这个？ “时代的一粒灰，落在个人头上就是一座山”，比如：疫情 如果一个行业停滞不前，像一潭死水，那无论你再拼命学习也无济于事   前端 技术方面：技术更新迭代快，新技术层出不穷，新框架迭代快 Vue3 React18 Vite… 市场需求：人才需求大 薪资高     总有人要赢的，为什么不是我呢？    -科比  2. 前端知识体系前端知识体系的核">
+<meta property="og:type" content="article">
+<meta property="og:title" content="邂逅前端开发">
+<meta property="og:url" content="https://kygo.top/2022/12/26/0.%20%E5%AD%A6%E4%B9%A0%E5%87%86%E5%A4%87/index.html">
+<meta property="og:site_name" content="欢迎来到Kygo的博客">
+<meta property="og:description" content="前端发展和思考1. 前端行业发展怎么样？ 为什么聊这个？ “时代的一粒灰，落在个人头上就是一座山”，比如：疫情 如果一个行业停滞不前，像一潭死水，那无论你再拼命学习也无济于事   前端 技术方面：技术更新迭代快，新技术层出不穷，新框架迭代快 Vue3 React18 Vite… 市场需求：人才需求大 薪资高     总有人要赢的，为什么不是我呢？    -科比  2. 前端知识体系前端知识体系的核">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kygo.top/img/前端知识体系.jpg">
+<meta property="og:image" content="https://kygo.top/img/课程大纲.jpg">
+<meta property="article:published_time" content="2022-12-26T03:25:00.000Z">
+<meta property="article:modified_time" content="2022-12-26T03:25:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="前端开发">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kygo.top/img/前端知识体系.jpg">
+  
+  
+  <title>邂逅前端开发 - 欢迎来到Kygo的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"kygo.top","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>东白</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/article.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="邂逅前端开发">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-12-26 11:25" pubdate>
+        2022-12-26 11:25:00
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.8k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">邂逅前端开发</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022-12-26 11:25:00
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="前端发展和思考"><a href="#前端发展和思考" class="headerlink" title="前端发展和思考"></a>前端发展和思考</h1><h2 id="1-前端行业发展怎么样？"><a href="#1-前端行业发展怎么样？" class="headerlink" title="1. 前端行业发展怎么样？"></a>1. 前端行业发展怎么样？</h2><ul>
+<li>为什么聊这个？<ul>
+<li>“时代的一粒灰，落在个人头上就是一座山”，比如：疫情</li>
+<li>如果一个行业停滞不前，像一潭死水，那无论你再拼命学习也无济于事</li>
+</ul>
+</li>
+<li>前端<ul>
+<li>技术方面：技术更新迭代快，新技术层出不穷，新框架迭代快 Vue3 React18 Vite…</li>
+<li>市场需求：人才需求大 薪资高</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>总有人要赢的，为什么不是我呢？    -科比</li>
+</ul>
+<h2 id="2-前端知识体系"><a href="#2-前端知识体系" class="headerlink" title="2. 前端知识体系"></a>2. 前端知识体系</h2><p>前端知识体系的核心：html+css+js</p>
+<img src="/img/前端知识体系.jpg" srcset="/img/loading.gif" lazyload alt="知识体系图" style="zoom:50%;" />
+
+<h2 id="3-课程大纲"><a href="#3-课程大纲" class="headerlink" title="3. 课程大纲"></a>3. 课程大纲</h2><img src="/img/课程大纲.jpg" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+
+
+<h2 id="4-学习方法-建议"><a href="#4-学习方法-建议" class="headerlink" title="4. 学习方法/建议"></a>4. 学习方法/建议</h2><ul>
+<li>如何学习新的知识/技术<ul>
+<li>Javascript高级程序设计的作者Nicholas，也是ESLint的作者说过：想要全面的掌握javascript，关键在于弄清楚它的历史、局限性和本质；</li>
+<li>不仅仅局限于js，所有技术都是适用的</li>
+</ul>
+</li>
+<li>技术的出现是为了解决问题的，不是为了让大家学习技术的</li>
+<li>将知识进行分类：常用的知识（经常使用/熟能生巧/烂俗于心）不常用的（知道有它/知道哪里查）</li>
+</ul>
+<h2 id="5-前端学习网站"><a href="#5-前端学习网站" class="headerlink" title="5. 前端学习网站"></a>5. 前端学习网站</h2><p>MDN：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+<p>W3C:   <a target="_blank" rel="noopener" href="https://www.w3.org/">https://www.w3.org/</a></p>
+<h2 id="6-优秀是一种习惯"><a href="#6-优秀是一种习惯" class="headerlink" title="6. 优秀是一种习惯"></a>6. 优秀是一种习惯</h2><p>We are what we repeatedly do.Excellence,then,is not an act, but a habit.  -Aristotle</p>
+<p>我们每个人都是由自己一再重复的行为所锻造而成，因而优秀不是一种行为，而是一种习惯。</p>
+<h1 id="一-邂逅前端开发"><a href="#一-邂逅前端开发" class="headerlink" title="一. 邂逅前端开发"></a>一. 邂逅前端开发</h1><ul>
+<li>了解真相才能获得真正的自由</li>
+<li>保持 “空杯心态”，才能持续不断的进步</li>
+</ul>
+<h2 id="1-1-软件开发"><a href="#1-1-软件开发" class="headerlink" title="1.1 软件开发"></a>1.1 软件开发</h2><ul>
+<li>软件定义<ul>
+<li>特定顺序组织的 计算机数据和指令</li>
+</ul>
+</li>
+<li>软件software和应用程序Application区别<ul>
+<li>应用程序是面向用户的，软件包括了：操作系统/虚拟机、算法、编程语言、应用程序</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-完善的应用系统包含哪些"><a href="#1-2-完善的应用系统包含哪些" class="headerlink" title="1.2 完善的应用系统包含哪些"></a>1.2 完善的应用系统包含哪些</h2><ul>
+<li>完善的应用系统<ul>
+<li>服务器 （Java/NodeJS/C++/Python/Go）</li>
+<li>手机端：Android端（Java/Kotlin）、iPhone端（OC/Swift）</li>
+<li>Web开发：网页版（html/css/js）</li>
+<li>PC端：Win版（C#）、Mac版（OC/Swift）</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-前端开发的内容"><a href="#1-3-前端开发的内容" class="headerlink" title="1.3 前端开发的内容"></a>1.3 前端开发的内容</h2><ul>
+<li><p>应用程序开发-软件开发-coder/programer/developer</p>
+</li>
+<li><p>Back-end/Front-end     后端/前端</p>
+</li>
+<li><p>前端开发工程师：</p>
+<ul>
+<li><p>主要负责：Web（网站/后台管理系统/手机H5）、小程序端</p>
+</li>
+<li><p>也可以做：移动端（Uniapp、React Native）、桌面端（Electron）-VS Code、服务器开发（Node.js）</p>
+</li>
+</ul>
+</li>
+<li><p>尤雨溪/TJ</p>
+</li>
+</ul>
+<h2 id="1-4-学习方法-建议"><a href="#1-4-学习方法-建议" class="headerlink" title="1.4 学习方法/建议"></a>1.4 学习方法/建议</h2><ul>
+<li>学习任何新东西，了解它的历史、局限性、本质；</li>
+<li>将知识进行分类：<ul>
+<li>常用的 - 经常使用，必须非常熟练（刻意练习、熟能生巧）</li>
+<li>不常用的 - 知道有它，知道哪里查</li>
+</ul>
+</li>
+</ul>
+<h1 id="二-邂逅Web开发"><a href="#二-邂逅Web开发" class="headerlink" title="二. 邂逅Web开发"></a>二. 邂逅Web开发</h1><h2 id="2-1-电脑配置-推荐软件"><a href="#2-1-电脑配置-推荐软件" class="headerlink" title="2.1 电脑配置/推荐软件"></a>2.1 电脑配置/推荐软件</h2><ul>
+<li>显示隐藏文件和文件拓展名</li>
+<li>显示文件的时候，以列表形式显示，更清晰的看到文件类型</li>
+</ul>
+<ul>
+<li>推荐软件<ul>
+<li>Chrome</li>
+<li>VS Code</li>
+<li>XMind</li>
+<li>Typora</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-网站和网页关系"><a href="#2-2-网站和网页关系" class="headerlink" title="2.2 网站和网页关系"></a>2.2 网站和网页关系</h2><ul>
+<li>一个网站由N个网页构成：N&gt;=1</li>
+</ul>
+<h2 id="2-3-网页的显示过程（重要）"><a href="#2-3-网页的显示过程（重要）" class="headerlink" title="2.3 网页的显示过程（重要）"></a>2.3 网页的显示过程（重要）</h2><ul>
+<li><p>用户角度</p>
+<ul>
+<li>用户在浏览器输入URL，回车</li>
+<li>DNS解析，DNS服务器找到服务器IP，找到服务器</li>
+<li>服务器返回静态资源到浏览器</li>
+<li>浏览器解析并渲染html/css/js，显示页面</li>
+</ul>
+</li>
+<li><p>前端工程师的角度</p>
+<ul>
+<li>开发项目（html/css/js/vue/react）</li>
+<li>打包、部署项目到服务器</li>
+</ul>
+</li>
+<li><p>服务器是什么？</p>
+<p>我们平时访问的静态资源，比如音乐资源就是存放在服务器中</p>
+<ul>
+<li>一台24小时运行的电脑（主机）</li>
+<li>没有显示器</li>
+<li>一般是Linux操作系统</li>
+<li>目前大多数公司或者我们自己用的是云服务器</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-4-第一个网页和网页组成部分"><a href="#2-4-第一个网页和网页组成部分" class="headerlink" title="2.4 第一个网页和网页组成部分"></a>2.4 第一个网页和网页组成部分</h2><ul>
+<li><p>世界上第一个网页：上世纪90年代</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://info.cern.ch/hypertext/WWW/TheProject.html">http://info.cern.ch/hypertext/WWW/TheProject.html</a></li>
+</ul>
+</li>
+<li><p>html/css/js</p>
+<ul>
+<li>html 网页的结构（骨架）</li>
+<li>css 网页的样式（美化）</li>
+<li>javascript 控制网页的交互（灵魂）</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5-浏览器和浏览器内核"><a href="#2-5-浏览器和浏览器内核" class="headerlink" title="2.5 浏览器和浏览器内核"></a>2.5 浏览器和浏览器内核</h2><ul>
+<li><p>浏览器的作用</p>
+<ul>
+<li>将html/css/js渲染成我们看到的页面</li>
+</ul>
+</li>
+<li><p>浏览器内核</p>
+<ul>
+<li>浏览器最核心的部分就是浏览器内核</li>
+</ul>
+</li>
+<li><p>浏览器内核又叫渲染引擎</p>
+<ul>
+<li>不同的浏览器有不同的浏览器内核，因而同样的代码渲染效果也会略微不同</li>
+</ul>
+</li>
+<li><p>常见的浏览器内核：</p>
+<ul>
+<li><p>Trident（三叉戟-IE/UC）、Gecko（壁虎-Firefox）、Presto（Opera）-&gt;Blink</p>
+</li>
+<li><p>Webkit：Safari、搜狗高速浏览器、移动端浏览器（Android、IOS）</p>
+</li>
+<li><p>Webkit -&gt; Blink：Google Chrome、Edge</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-6-第一个网页"><a href="#2-6-第一个网页" class="headerlink" title="2.6 第一个网页"></a>2.6 第一个网页</h2><ul>
+<li><p>记事本开发</p>
+</li>
+<li><p>网页基本结构</p>
+<ul>
+<li>html-&gt;head-&gt;body</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-7-HTML语言"><a href="#2-7-HTML语言" class="headerlink" title="2.7 HTML语言"></a>2.7 HTML语言</h2><ul>
+<li>超文本标记语言（HyperText Markup Language，简称HTML）</li>
+<li>为什么叫超文本？<ul>
+<li>因为有图片、视频、音频、超链接等，不仅仅是文本</li>
+</ul>
+</li>
+<li>为什么是标记语言？<ul>
+<li>有很多个标记-标签tag组成</li>
+<li>对某些内容进行特殊的标记，以供浏览器进行识别处理</li>
+<li>由标签和内容组成的叫元素</li>
+</ul>
+</li>
+<li>扩展名：.html/.htm<ul>
+<li>因历史原因，Win95、Win98系统最多显示的拓展名不超过三字符，所以当时用.htm</li>
+<li>现在统一使用.html</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-8-开发工具VS-Code配置"><a href="#2-8-开发工具VS-Code配置" class="headerlink" title="2.8 开发工具VS Code配置"></a>2.8 开发工具VS Code配置</h2><p>安装插件、配置</p>
+<ul>
+<li>插件安装（增加功能）<ul>
+<li>中文插件：Chinese</li>
+<li>颜色主题：atom one dark</li>
+<li>文件夹图标：VSCode Great Icons</li>
+<li>在浏览器中打开网页：open in browser、Live Sever</li>
+<li>自动重命名标签：auto rename tag</li>
+</ul>
+</li>
+<li>VSCode的配置<ul>
+<li>Auto Save 自动保存</li>
+<li>Font Size 修改代码字体大小</li>
+<li>Word Wrap 代码自动换行</li>
+<li>Render Whitespace 空格的渲染方式</li>
+<li>Tab Size 代码缩进<ul>
+<li>推荐2个空格</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-9-剖析元素结构"><a href="#2-9-剖析元素结构" class="headerlink" title="2.9 剖析元素结构"></a>2.9 剖析元素结构</h2><ul>
+<li><p>HTML本质上是由一系列的元素（Element）构成的</p>
+</li>
+<li><p>HTML元素：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element</a></p>
+</li>
+<li><p>元素的组成</p>
+<ul>
+<li><p>开始标签</p>
+</li>
+<li><p>结束标签（多一个/）</p>
+</li>
+<li><p>内容</p>
+</li>
+<li><p>属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;p1&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;p2&quot;</span>&gt;</span>我是p<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>属性分类</p>
+<ul>
+<li>公共属性：class、id、title属性</li>
+<li>特有属性：比如mate元素的charset属性、img元素的alt属性等</li>
+</ul>
+</li>
+<li><p>单标签元素和双标签元素</p>
+<ul>
+<li>双标签：大多素元素都是双标签</li>
+<li>单标签：br、img、hr、input、meta</li>
+<li>单标签元素推荐不加斜杠/</li>
+<li>注意：HTML元素不区分大小写，推荐小写</li>
+</ul>
+</li>
+<li><p>元素的嵌套</p>
+<ul>
+<li>兄弟关系</li>
+<li>父子关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-10-HTML注释"><a href="#2-10-HTML注释" class="headerlink" title="2.10 HTML注释"></a>2.10 HTML注释</h2><ul>
+<li><p>什么是注释？</p>
+<ul>
+<li>对代码的解释说明</li>
+<li>注释写法： <!-- 我是注释 -->    VSCode快捷键：ctrl+/</li>
+<li>注释是给开发者看的，浏览器不会把注释显示给用户</li>
+</ul>
+</li>
+<li><p>为什么需要注释？</p>
+<ul>
+<li>方便以后进行查阅</li>
+<li>协同开发，别人能看懂你的代码</li>
+<li>临时注释掉代码，方便调试</li>
+</ul>
+</li>
+</ul>
+<h1 id="VS-code快捷键"><a href="#VS-code快捷键" class="headerlink" title="VS code快捷键"></a>VS code快捷键</h1><ul>
+<li>多行缩进：Tab<ul>
+<li>往后缩进 Tab</li>
+<li>往前缩进 Shift+Tab</li>
+</ul>
+</li>
+<li>光标切换到下一行：Command+回车Enter</li>
+<li>向下/上复制：option(Alt)+shift+向上/向下</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%89%8D%E7%AB%AF/0-%E9%82%82%E9%80%85%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">0. 邂逅前端开发</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/24/2.%20html/">
+                        <span class="hidden-mobile">HTML详解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+  <!--《添加网站运行时间 -->
+<!--<br/>-->
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+
+    function createtime() {
+        var grt = new Date("01/14/2022 12:00:00"); //此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = " 本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+</script>
+<!-- 添加网站运行时间》 -->
+</footer>
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<script type="text/javascript" src="https://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+<script type="text/javascript" src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+<!-- 雪花特效 -->
+<script type="text/javascript" src="/js/snow.js"></script>
+
+
+
+
+
+
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

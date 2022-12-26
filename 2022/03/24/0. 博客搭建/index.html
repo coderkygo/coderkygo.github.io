@@ -26,7 +26,7 @@
 <meta property="og:description" content="博客搭建和部署-Hexo1. 环境准备前提条件：Nodejs  Git 安装 2. 开始搭建2.1 安装Hexo建立MyBlog文件夹，管理员身份运行cmd 123456789101112131415&#x2F;&#x2F;Win系统：安装cnpm，利用cnpm安装hexo-cli  (npm install hexo-cli -g)npm install cnpmcnpm install hexo-cli -g&#x2F;&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-24T05:06:36.000Z">
-<meta property="article:modified_time" content="2022-12-23T06:09:57.973Z">
+<meta property="article:modified_time" content="2022-12-26T05:49:47.111Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary_large_image">
@@ -211,7 +211,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k 字
+      2.7k 字
     </span>
   
 
@@ -220,7 +220,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21 分钟
+      23 分钟
     </span>
   
 
@@ -261,20 +261,20 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022-12-23 14:09:57
+                  本文最后更新于：2022-12-26 13:49:47
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="博客搭建和部署-Hexo"><a href="#博客搭建和部署-Hexo" class="headerlink" title="博客搭建和部署-Hexo"></a>博客搭建和部署-Hexo</h2><h3 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h3><p>前提条件：Nodejs  Git 安装</p>
-<h3 id="2-开始搭建"><a href="#2-开始搭建" class="headerlink" title="2. 开始搭建"></a>2. 开始搭建</h3><h4 id="2-1-安装Hexo"><a href="#2-1-安装Hexo" class="headerlink" title="2.1 安装Hexo"></a>2.1 安装Hexo</h4><p>建立MyBlog文件夹，管理员身份运行cmd</p>
+              <h1 id="博客搭建和部署-Hexo"><a href="#博客搭建和部署-Hexo" class="headerlink" title="博客搭建和部署-Hexo"></a>博客搭建和部署-Hexo</h1><h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h2><p>前提条件：Nodejs  Git 安装</p>
+<h2 id="2-开始搭建"><a href="#2-开始搭建" class="headerlink" title="2. 开始搭建"></a>2. 开始搭建</h2><h3 id="2-1-安装Hexo"><a href="#2-1-安装Hexo" class="headerlink" title="2.1 安装Hexo"></a>2.1 安装Hexo</h3><p>建立MyBlog文件夹，管理员身份运行cmd</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>Win系统：安装cnpm，利用cnpm安装hexo-cli  (npm install hexo-cli -g)<br>npm install cnpm<br>cnpm install hexo-cli -g<br><br><span class="hljs-regexp">//</span>Mac系统：可以直接安装Hexo<br>npm install hexo-cli -g<br>(安装时报错解决：sudo npm install -g hexo --unsafe-perm=true --allow-root)<br><br><span class="hljs-regexp">//</span>进入MyBlog，并初始化文件夹<br>-&gt; hexo init<br>(以上步骤有问题可以使用 git config --global --unset http.proxy)<br>出现 INFO Start blogging with Hexo! 说明成功<br><span class="hljs-regexp">//</span>安装 hexo 依赖包<br>-&gt; npm install<br><br></code></pre></td></tr></table></figure>
 
-<h4 id="2-2-启动本地博客"><a href="#2-2-启动本地博客" class="headerlink" title="2.2 启动本地博客"></a>2.2 启动本地博客</h4><p>本地博客效果(以下三个命令每次都会用到)</p>
+<h3 id="2-2-启动本地博客"><a href="#2-2-启动本地博客" class="headerlink" title="2.2 启动本地博客"></a>2.2 启动本地博客</h3><p>本地博客效果(以下三个命令每次都会用到)</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>清除页面相关东西<br>hexo clear <br><span class="hljs-regexp">//</span>生成静态网站<br>-&gt; hexo g<br><span class="hljs-regexp">//</span>启动服务器<br>-&gt; hexo s<br></code></pre></td></tr></table></figure>
 
 <p>Ctrl+C 停止运行</p>
-<h3 id="3-使用主题-fluid"><a href="#3-使用主题-fluid" class="headerlink" title="3. 使用主题-fluid"></a>3. 使用主题-fluid</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>进入themes文件夹下载主题<br>cd themes<br>git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/fluid-dev/</span>hexo-theme-fluid.git<br></code></pre></td></tr></table></figure>
+<h2 id="3-使用主题-fluid"><a href="#3-使用主题-fluid" class="headerlink" title="3. 使用主题-fluid"></a>3. 使用主题-fluid</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>进入themes文件夹下载主题<br>cd themes<br>git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/fluid-dev/</span>hexo-theme-fluid.git<br></code></pre></td></tr></table></figure>
 
 <p>修改默认主题(进入MyBlog/_config.yml)</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">theme: hexo-theme-fluid   <span class="hljs-regexp">//</span>这里的名字是themes文件夹中下载主题的文件夹名<br>language: zh-CN           <span class="hljs-regexp">//</span>指定语言，会影响主题显示的语言，按需修改<br><br><span class="hljs-regexp">//</span>刷新重启服务<br>hexo clear<br>hexo g<br>hexo s<br></code></pre></td></tr></table></figure>
@@ -284,12 +284,12 @@
 
 
 
-<h3 id="4-配置修改"><a href="#4-配置修改" class="headerlink" title="4. 配置修改"></a>4. 配置修改</h3><p><strong>参见fluid文档：</strong></p>
+<h2 id="4-配置修改"><a href="#4-配置修改" class="headerlink" title="4. 配置修改"></a>4. 配置修改</h2><p><strong>参见fluid文档：</strong></p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>hexo.fluid-dev.com/docs<br></code></pre></td></tr></table></figure>
 
-<h4 id="4-1-修改页面标题和小Icon"><a href="#4-1-修改页面标题和小Icon" class="headerlink" title="4.1 修改页面标题和小Icon"></a>4.1 修改页面标题和小Icon</h4><p>除了页面的Title和language在Blog下的_config.yml设置</p>
+<h3 id="4-1-修改页面标题和小Icon"><a href="#4-1-修改页面标题和小Icon" class="headerlink" title="4.1 修改页面标题和小Icon"></a>4.1 修改页面标题和小Icon</h3><p>除了页面的Title和language在Blog下的_config.yml设置</p>
 <p>其他的大多配置在主题下的_config.yml设置(包括所有图片)</p>
-<h4 id="4-2-友链添加"><a href="#4-2-友链添加" class="headerlink" title="4.2 友链添加"></a>4.2 友链添加</h4><h4 id="4-3-添加2d宠物和点击效果"><a href="#4-3-添加2d宠物和点击效果" class="headerlink" title="4.3 添加2d宠物和点击效果"></a>4.3 添加2d宠物和点击效果</h4><p>(这两个百度即可有很多方案)</p>
+<h3 id="4-2-友链添加"><a href="#4-2-友链添加" class="headerlink" title="4.2 友链添加"></a>4.2 友链添加</h3><h3 id="4-3-添加2d宠物和点击效果"><a href="#4-3-添加2d宠物和点击效果" class="headerlink" title="4.3 添加2d宠物和点击效果"></a>4.3 添加2d宠物和点击效果</h3><p>(这两个百度即可有很多方案)</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>首先进入Hexo博客根目录安装live2d插件<br>npm install --save hexo-helper-live2d<br></code></pre></td></tr></table></figure>
 
 <p>接着，修改根目录下的 <em>_config.yml</em> 文件</p>
@@ -301,11 +301,11 @@
 
 <p>模型的GitHub地址：<a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">https://github.com/xiazeyu/live2d-widget-models</a></p>
 <p>效果参考博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wang_123_zy/article/details/87181892">https://blog.csdn.net/wang_123_zy/article/details/87181892</a></p>
-<h3 id="5-博客上传到本地"><a href="#5-博客上传到本地" class="headerlink" title="5. 博客上传到本地"></a>5. 博客上传到本地</h3><p>直接移动md文件到Myblog\source_posts，重新启动即可</p>
-<h4 id="5-1-博客标题-标签-分类的添加"><a href="#5-1-博客标题-标签-分类的添加" class="headerlink" title="5.1 博客标题/标签/分类的添加"></a>5.1 博客标题/标签/分类的添加</h4><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs subunit">title: 前端学习路线<br><span class="hljs-keyword">tags:</span> [学习路线]<br>categories:<br>- [前端, 路线]<br></code></pre></td></tr></table></figure>
+<h2 id="5-博客上传到本地"><a href="#5-博客上传到本地" class="headerlink" title="5. 博客上传到本地"></a>5. 博客上传到本地</h2><p>直接移动md文件到Myblog\source_posts，重新启动即可</p>
+<h3 id="5-1-博客标题-标签-分类的添加"><a href="#5-1-博客标题-标签-分类的添加" class="headerlink" title="5.1 博客标题/标签/分类的添加"></a>5.1 博客标题/标签/分类的添加</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs subunit">title: 前端学习路线<br><span class="hljs-keyword">tags:</span> [学习路线]<br>categories:<br>- [前端, 路线]<br></code></pre></td></tr></table></figure>
 
 <p>注意：标签和分类不一样，标签没有层级和顺序性，而分类有</p>
-<h3 id="6-Gitee-GitHub上部署博客"><a href="#6-Gitee-GitHub上部署博客" class="headerlink" title="6. Gitee/GitHub上部署博客"></a>6. Gitee/GitHub上部署博客</h3><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yushuaigee/article/details/111825925">https://blog.csdn.net/yushuaigee/article/details/111825925</a></p>
+<h2 id="6-Gitee-GitHub上部署博客"><a href="#6-Gitee-GitHub上部署博客" class="headerlink" title="6. Gitee/GitHub上部署博客"></a>6. Gitee/GitHub上部署博客</h2><p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yushuaigee/article/details/111825925">https://blog.csdn.net/yushuaigee/article/details/111825925</a></p>
 <p>在Gitee、Github上建立仓库(仓库名必须和用户名一致) 用户名.gitee/github.io</p>
 <p>配置git参数-用户名和邮箱</p>
 <p>生成并配置SSH公钥</p>
@@ -315,7 +315,7 @@
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure>
 
 <p>注意：Gitee需要手动点击更新部署</p>
-<h3 id="7-自定义域名和CDN加速"><a href="#7-自定义域名和CDN加速" class="headerlink" title="7. 自定义域名和CDN加速"></a>7. 自定义域名和CDN加速</h3><p>域名：在namesilo上面购买（国外无需备案）</p>
+<h2 id="7-自定义域名和CDN加速"><a href="#7-自定义域名和CDN加速" class="headerlink" title="7. 自定义域名和CDN加速"></a>7. 自定义域名和CDN加速</h2><p>域名：在namesilo上面购买（国外无需备案）</p>
 <ul>
 <li>在腾讯云进行域名解析（因为在namesilo解析生效非常慢…）<ul>
 <li>需要在namesilo设置NameServer Manager为腾讯云的两个值，这样才能在腾讯云解析DNS</li>
@@ -330,7 +330,17 @@
 </ul>
 </li>
 </ul>
-<p>-2022/12/23 14:05 改</p>
+<h2 id="8-常用配置"><a href="#8-常用配置" class="headerlink" title="8. 常用配置"></a>8. 常用配置</h2><h3 id="8-1-博客上传-更新时间配置"><a href="#8-1-博客上传-更新时间配置" class="headerlink" title="8.1 博客上传/更新时间配置"></a>8.1 博客上传/更新时间配置</h3><ul>
+<li>更改 themes/hexo-theme-fluid/_config.yml</li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-comment">#博客上传时间date配置</span><br><span class="hljs-attribute">date</span>:<br>      <span class="hljs-attribute">enable</span>: true<br>      <span class="hljs-attribute">format</span>: <span class="hljs-string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span><br><span class="hljs-comment">#博客更新updated配置</span><br><span class="hljs-attribute">updated</span>:<br>    	<span class="hljs-attribute">enable</span>: true<br>    	<span class="hljs-attribute">format</span>: <span class="hljs-string">&quot;YYYY-MM-DD HH:mm:ss&quot;</span><br>    	<br><span class="hljs-comment">#在博客开头即可</span><br><span class="hljs-attribute">Date</span>: <span class="hljs-number">2022</span>-<span class="hljs-number">12</span>-<span class="hljs-number">23</span>T<span class="hljs-number">14</span>:<span class="hljs-number">05</span>:<span class="hljs-number">00</span><br><span class="hljs-attribute">Updated</span>: <span class="hljs-number">2022</span>-<span class="hljs-number">12</span>-<span class="hljs-number">26</span>T<span class="hljs-number">13</span>:<span class="hljs-number">45</span>:<span class="hljs-number">00</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="8-2-博客图片设置"><a href="#8-2-博客图片设置" class="headerlink" title="8.2 博客图片设置"></a>8.2 博客图片设置</h3><ul>
+<li>博客中使用到的图片都放在public/img即可 </li>
+<li>使用的时候路径：/img/图片名称</li>
+</ul>
 
             </div>
             <hr>
@@ -365,21 +375,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/24/3.%20css/">
+                      <a href="/2022/03/24/1.%20html/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">CSS详解</span>
+                        <span class="hidden-mobile">HTML详解</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2022/03/06/4.%20js/">
-                        <span class="hidden-mobile">Javascript详解</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
@@ -581,5 +585,5 @@
 <script  src="/js/boot.js" ></script>
 
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"superSample":2,"width":150,"height":430,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
 </html>

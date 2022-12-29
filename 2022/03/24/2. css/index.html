@@ -18,12 +18,12 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="CSS1.CSS简介美化网页，布局页面（美化html） css&#x2F;层叠样式表&#x2F;css样式表&#x2F;级联样式表 CSS最大价值： 由HTML专注去做结构呈现，样式交给CSS，结构（HTML）与样式（CSS）分离  CSS语法规范： ​        CSS由选择器（HTML的标签）以及一条或多条声明组成 ​        选择器{样式} &#x3D;&gt; 给谁改样式{改什么样式}        CSS代码风格：">
+    <meta name="description" content="CSS1.CSS简介 定义  css：层叠样式表(Cascading Style Sheet)，又称为级联样式表等 css不是一门编程语言，也不是标记语言，是一门样式表语言   css历史  css1和css2都是整个版本一起发布，到css3因为涉及到的css太多，一起发布会导致时间线太长  从css3开始，所有的css划分成了不同的modules，每一个模块都有于css2中额外增加的功能  比如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS详解">
 <meta property="og:url" content="https://kygo.top/2022/03/24/2.%20css/index.html">
 <meta property="og:site_name" content="欢迎来到Kygo的博客">
-<meta property="og:description" content="CSS1.CSS简介美化网页，布局页面（美化html） css&#x2F;层叠样式表&#x2F;css样式表&#x2F;级联样式表 CSS最大价值： 由HTML专注去做结构呈现，样式交给CSS，结构（HTML）与样式（CSS）分离  CSS语法规范： ​        CSS由选择器（HTML的标签）以及一条或多条声明组成 ​        选择器{样式} &#x3D;&gt; 给谁改样式{改什么样式}        CSS代码风格：">
+<meta property="og:description" content="CSS1.CSS简介 定义  css：层叠样式表(Cascading Style Sheet)，又称为级联样式表等 css不是一门编程语言，也不是标记语言，是一门样式表语言   css历史  css1和css2都是整个版本一起发布，到css3因为涉及到的css太多，一起发布会导致时间线太长  从css3开始，所有的css划分成了不同的modules，每一个模块都有于css2中额外增加的功能  比如">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kygo.top/img/css_line-height.png">
 <meta property="og:image" content="https://kygo.top/img/css_%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://kygo.top/img/css_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png">
 <meta property="og:image" content="https://kygo.top/img/css_vertical-align.png">
 <meta property="article:published_time" content="2022-03-24T05:40:04.000Z">
-<meta property="article:modified_time" content="2022-12-23T06:14:41.175Z">
+<meta property="article:modified_time" content="2022-12-29T10:13:21.407Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      24k 字
+      25k 字
     </span>
   
 
@@ -227,7 +227,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      198 分钟
+      213 分钟
     </span>
   
 
@@ -268,19 +268,52 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022-12-23 14:14:41
+                  本文最后更新于：2022-12-29 18:13:21
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="1-CSS简介"><a href="#1-CSS简介" class="headerlink" title="1.CSS简介"></a>1.CSS简介</h2><p>美化网页，布局页面（美化html）</p>
-<p>css/层叠样式表/css样式表/级联样式表</p>
-<p><strong>CSS最大价值：</strong></p>
-<p>由HTML专注去做结构呈现，样式交给CSS，结构（HTML）与样式（CSS）分离 </p>
-<p><strong>CSS语法规范：</strong></p>
-<p>​        CSS由选择器（HTML的标签）以及一条或多条声明组成</p>
-<p>​        选择器{样式} =&gt; 给谁改样式{改什么样式}       </p>
-<p><strong>CSS代码风格：</strong></p>
+              <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="1-CSS简介"><a href="#1-CSS简介" class="headerlink" title="1.CSS简介"></a>1.CSS简介</h2><ul>
+<li><p>定义</p>
+<ul>
+<li>css：层叠样式表(Cascading Style Sheet)，又称为级联样式表等</li>
+<li>css不是一门编程语言，也不是标记语言，是一门样式表语言</li>
+</ul>
+</li>
+<li><p><strong>css历史</strong></p>
+<ul>
+<li><p>css1和css2都是整个版本一起发布，到css3因为涉及到的css太多，一起发布会导致时间线太长</p>
+</li>
+<li><p>从css3开始，所有的css划分成了不同的modules，每一个模块都有于css2中额外增加的功能</p>
+</li>
+<li><p>比如：直到2011.6.7，CSS 3 Color Module 成为W3C Recommendation（推荐版本）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>CSS最大价值：</strong></p>
+<ul>
+<li>美化网页，布局页面（美化HTML）</li>
+<li>由HTML专注去做结构呈现，样式交给CSS，结构（HTML）与样式（CSS）分离 </li>
+<li>美化方式<ul>
+<li>方式一：为HTML添加各种样式：颜色、字体、大小等</li>
+<li>方式二：对HTML进行布局：浮动、定位、flex</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>CSS语法规范：</strong></p>
+<ul>
+<li><p>CSS = 选择器（HTML的标签）+  声明（一条或多条）</p>
+</li>
+<li><p>选择器{样式} =&gt; 给谁改样式{改什么样式}       </p>
+</li>
+<li><p>声明的写法如下</p>
+<figure class="highlight css"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*属性: 属性值;*/</span><br><span class="hljs-attribute">color</span>: red;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>CSS代码风格</strong></p>
+</li>
+</ul>
 <ol>
 <li><p>样式格式书写-展开格式</p>
 </li>
@@ -291,26 +324,70 @@
 </ol>
 <p>  冒号后面，属性值前面保留空格</p>
 <p>  选择器（标签）和大括号中间保留空格</p>
-<figure class="highlight css"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">div</span> &#123;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>css注释</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*我是css注释*/</span><br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="2-CSS引入方式"><a href="#2-CSS引入方式" class="headerlink" title="2. CSS引入方式"></a>2. CSS引入方式</h2><p>内联样式(行内样式表)</p>
+<h2 id="2-CSS引入方式"><a href="#2-CSS引入方式" class="headerlink" title="2. CSS引入方式"></a>2. CSS引入方式</h2><ul>
+<li>内联样式(行内样式表) inline style<ul>
+<li>存在于HTML元素的style属性中</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red; width: 100px;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>内部样式表(文档样式表)</p>
+<ul>
+<li>内部样式表(文档样式表) internal style sheet<ul>
+<li>放在head的style元素中</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>外部样式表  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css文件路径&quot;</span>&gt;</span><br><br>//import引入<br><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">	<span class="hljs-keyword">@import</span> url(./css/style.css)</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li>外部样式表  external style sheet<ul>
+<li>编写单独的.css样式文件，通过link元素引入</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css文件路径&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">//也可以在css中引入其他的css文件(如果css文件过多时)<br><span class="hljs-keyword">@import</span> url(./css/style.css)<br></code></pre></td></tr></table></figure>
+<ul>
+<li>通过 @import 引入<ul>
+<li>可在style元素或者CSS文件中通过@import引入其它CSS文件</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*import引入*/</span><br>&lt;style&gt;<br>	<span class="hljs-keyword">@import</span> url(./css/style.css)<br>&lt;/style&gt;<br>    <br>/*也可以在css中引入其他的css文件(如果css文件过多时)<br>  url()是css函数 和<span class="hljs-attribute">background-image</span>: url();一样*/<br><span class="hljs-keyword">@import</span> url(./css/style.css)<br></code></pre></td></tr></table></figure>
 
-<p>扩展：</p>
+<ul>
+<li>扩展</li>
+</ul>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css">//单独的css文件最好指定一下css编码，当有中文的时候才能正确解释<br><span class="hljs-keyword">@charset</span> <span class="hljs-string">&quot;utf-8&quot;</span>;  <br><span class="hljs-selector-tag">body</span>&#123;<br>    <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;微软雅黑&quot;</span>;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
+<ul>
+<li><p>css属性相关文档</p>
+<ul>
+<li>官方文档W3C：<a target="_blank" rel="noopener" href="https://www.w3.org/TR/?tag=css">https://www.w3.org/TR/?tag=css</a></li>
+<li>推荐文档MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference#%E7%B4%A2%E5%BC%95://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference#%E7%B4%A2%E5%BC%95://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference</a></li>
+<li>查询css是否可用/兼容：<a target="_blank" rel="noopener" href="https://caniuse.com/">https://caniuse.com/</a></li>
+</ul>
+</li>
+<li><p>一些最基本的CSS属性</p>
+<ul>
+<li>font-size：文字大小</li>
+<li>color：前景色（文字颜色），包括文字、装饰线、边框、外轮廓等的颜色</li>
+<li>background-color：背景色</li>
+<li>width：宽度</li>
+<li>height：高度</li>
+</ul>
+</li>
+</ul>
 <h2 id="3-CSS基础选择器"><a href="#3-CSS基础选择器" class="headerlink" title="3. CSS基础选择器"></a>3. CSS基础选择器</h2><p>   <strong>分类：</strong>标签选择器，类选择器，id选择器，通配符选择器</p>
 <p><strong>（1）标签选择器</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span> &#123;<br>    <span class="hljs-attribute">color</span>: red;  //标签名作为选择器，同类型标签统一设置样式<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -354,18 +431,7 @@
 
 
 
-<h2 id="6-CSS颜色表示"><a href="#6-CSS颜色表示" class="headerlink" title="6. CSS颜色表示"></a>6. CSS颜色表示</h2><p><strong>颜色关键字</strong>表示(只提供了上百种基本颜色的关键字)</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">color</span>: red<br></code></pre></td></tr></table></figure>
-
-<p><strong>RGB颜色</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(red,green,blue);  //十进制<br><span class="hljs-attribute">color</span>: <span class="hljs-number">#ffffff</span>  //十六进制大小写都可 <br>color: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">100%</span>,<span class="hljs-number">0%</span>,<span class="hljs-number">0%</span>) //百分比表示<br><br><br>//尽量使用rgb代替rrggbb，可以缩小css体积，加快网页响应速度<br>//#rrggbb<br>color: <span class="hljs-number">#ff0000</span><br>//#rgb<br>color：<span class="hljs-number">#f00</span><br><br>//十六进制表示，每两位(<span class="hljs-number">00</span>-ff)代表rgb的一个参数<br>//以下三种方法表示的是一个颜色<br>color: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>)<br>color：<span class="hljs-number">#00ff00</span>;  //转成<span class="hljs-number">16</span>进制写法<br><span class="hljs-attribute">color</span>: <span class="hljs-number">#0f0</span>;<br></code></pre></td></tr></table></figure>
-
-<p>red/green/blue：0-255(十进制)    00-ff(十六进制)  </p>
-<p><strong>RGBA颜色</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(red,green,blue,alpha)  /*最后一个参数是alpha透明度，取值范围在<span class="hljs-number">0</span>-<span class="hljs-number">1</span>之间  可省略<span class="hljs-number">0</span>.*/<br></code></pre></td></tr></table></figure>
-
-<p>​                                                                                                                                                    </p>
-<h2 id="7-CSS其他选择器"><a href="#7-CSS其他选择器" class="headerlink" title="7. CSS其他选择器"></a>7. CSS其他选择器</h2><p>分类：属性选择器、后代选择器、子选择器、并集选择器、伪类选择器 等等</p>
+<h2 id="6-CSS颜色表示"><a href="#6-CSS颜色表示" class="headerlink" title="6. CSS颜色表示"></a>6. CSS颜色表示</h2><h2 id="7-CSS其他选择器"><a href="#7-CSS其他选择器" class="headerlink" title="7. CSS其他选择器"></a>7. CSS其他选择器</h2><p>分类：属性选择器、后代选择器、子选择器、并集选择器、伪类选择器 等等</p>
 <p><strong>属性选择器</strong></p>
 <p>注：[]前的标签名E可以不加</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">//E<span class="hljs-selector-attr">[属性]</span> E<span class="hljs-selector-attr">[属性=”val”]</span>  选择属性/属性值val的元素<br><span class="hljs-selector-tag">h1</span><span class="hljs-selector-attr">[title=<span class="hljs-string">&quot;h1&quot;</span>]</span>&#123;&#125;  //选择具有title属性且属性值为<span class="hljs-selector-tag">h1</span>的<span class="hljs-selector-tag">h1</span>元素<br><br>//以下作为了解即可<br>//E<span class="hljs-selector-attr">[属性^=”val”]</span> E<span class="hljs-selector-attr">[属性$=”val”]</span> E<span class="hljs-selector-attr">[属性*=”val”]</span><br>//选择E且val开头  结尾           包含val的元素<br>//E<span class="hljs-selector-attr">[属性|=”val”]</span> E<span class="hljs-selector-attr">[属性~=”val”]</span>  用到再查就ok<br></code></pre></td></tr></table></figure>
@@ -1054,6 +1120,107 @@
 <p>  注意：给电脑平板和手机设置样式,顺序是电脑&gt;平板&gt;手机</p>
 <p> 编写响应式网站步骤: 编写pc样式=&gt;编写平板样式,通过相同选择器覆盖不同样式</p>
 <p>​           =&gt;编写手机样式,通过相同选择器覆盖不同样式</p>
+<h1 id="CSS补充知识"><a href="#CSS补充知识" class="headerlink" title="CSS补充知识"></a>CSS补充知识</h1><h2 id="1-link元素"><a href="#1-link元素" class="headerlink" title="1. link元素"></a>1. link元素</h2><ul>
+<li><p>link是外部资源链接元素，放在head中用来引用外部资源</p>
+</li>
+<li><p>常用于</p>
+<ul>
+<li>链接样式表css</li>
+<li>创建站点图标icon</li>
+</ul>
+</li>
+<li><p>常见属性</p>
+<ul>
+<li><p>href：被链接资源的URL</p>
+</li>
+<li><p>rel：链接类型</p>
+<ul>
+<li><p>文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types</a></p>
+</li>
+<li><p>常见链接类型有：icon、stylesheet</p>
+</li>
+<li><p>不常用的：dns-prefetch 提前解析DNS，性能优化</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-计算机的进制"><a href="#2-计算机的进制" class="headerlink" title="2. 计算机的进制"></a>2. 计算机的进制</h2><ul>
+<li>定义<ul>
+<li>进位制是一种计数方式</li>
+<li>通俗讲：当数字达到某个值时，进一位（比如从1位变成2位）</li>
+</ul>
+</li>
+<li>常用的进制<ul>
+<li>最常用的十进制就是满10进一位（因为人类有十根手指，所以流行十进制）</li>
+<li>其他的还有：二进制、八进制、十六进制</li>
+</ul>
+</li>
+<li>计算机中的进制<ul>
+<li>计算机中使用二进制0、1</li>
+<li>各个进制的表示方法<ul>
+<li>二进制(binary)：0b开头：0、1组成</li>
+<li>八进制(Octonary)：0o开头：0~7组成</li>
+<li>十六进制(hexadecimal)：0x开头：0<del>9、a</del>f组成（大小都可）</li>
+</ul>
+</li>
+<li>进制转换略…</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-CSS颜色表示"><a href="#3-CSS颜色表示" class="headerlink" title="3. CSS颜色表示"></a>3. CSS颜色表示</h2><ul>
+<li><strong>颜色关键字</strong>表示(只提供了上百种基本颜色的关键字)</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">color</span>: red<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>RGB颜色</strong><ul>
+<li>一种通过 R-red、G-green、B-blue三原色不同占比 来组成不同颜色的色彩空间</li>
+<li>三种方式<ul>
+<li>函数式：rgb()、rgba()  </li>
+<li>十六进制：#RRGGBB[AA]</li>
+<li>十六进制省略写法：#RGB[A]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">color</span>: rgb[a](R,G,B[,A]);  //十进制<span class="hljs-number">0</span>~<span class="hljs-number">255</span> 或 百分数<span class="hljs-number">0%</span>~<span class="hljs-number">100%</span><br><span class="hljs-attribute">color</span>: #RRGGBB[AA]  //十六进制大小写都可 <span class="hljs-number">00</span>~ff<br>color: #RGB[A]  //十六进制 <span class="hljs-number">0</span>~f（这种写法只有RGB都要两两相同才能省略写成这样）<br><br>//尽量使用rgb代替rrggbb，可以缩小css体积，加快网页响应速度<br>//#rrggbb<br>color: <span class="hljs-number">#ff0000</span><br>//#rgb<br>color：<span class="hljs-number">#f00</span><br><br>//十六进制表示，每两位(<span class="hljs-number">00</span>-ff)代表rgb的一个参数<br>//以下三种方法表示的是一个颜色<br>color: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">0</span>,<span class="hljs-number">255</span>,<span class="hljs-number">0</span>)<br>color：<span class="hljs-number">#00ff00</span>;  //转成<span class="hljs-number">16</span>进制写法<br><span class="hljs-attribute">color</span>: <span class="hljs-number">#0f0</span>;<br></code></pre></td></tr></table></figure>
+
+<p>red/green/blue：0-255(十进制)    00-ff(十六进制)  </p>
+<ul>
+<li><strong>RGBA颜色</strong><ul>
+<li>上面的三种方式皆可添加透明度，以下只示范函数式的</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(red,green,blue,alpha)  /*最后一个参数是alpha透明度，取值范围在<span class="hljs-number">0</span>-<span class="hljs-number">1</span>之间  可省略<span class="hljs-number">0</span>.*/<br></code></pre></td></tr></table></figure>
+
+<p>​                                                                                                                                                    </p>
+<h2 id="4-Chrome调试工具"><a href="#4-Chrome调试工具" class="headerlink" title="4. Chrome调试工具"></a>4. Chrome调试工具</h2><ul>
+<li>打开浏览器开发工具<ul>
+<li>右键检查（这种方式在某个元素上右键检查会直接定位到某个Element的代码）</li>
+<li>F12</li>
+</ul>
+</li>
+<li>其他技巧<ul>
+<li>ctrl + 或者 ctrl 鼠标滚轮 可以调整页面或调试工具字体大小(光标得在调试工具上)</li>
+<li>可以通过删除某些元素来查看网络结构<ul>
+<li>选中Elements中某个html代码，删除即可</li>
+</ul>
+</li>
+<li>可以通过增删改css来调试网页样式<ul>
+<li>在调试工具的右边Styles中增删改</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-浏览器渲染流程"><a href="#5-浏览器渲染流程" class="headerlink" title="5. 浏览器渲染流程"></a>5. 浏览器渲染流程</h2><p>主线程：Load HTML =&gt; Parse HTML =&gt; 遇到head中的link元素链接的css =&gt; 线程一执行</p>
+<p>线程一： =&gt; Load CSS =&gt; Parse CSS =&gt;如果DOM Tree完成则直接Attach否则等待</p>
+<p>主线程：=&gt; 继续Parse HTML =&gt; <strong>Create DOM Tree</strong> =&gt;等待线程一的CSS解析完…</p>
+<p>​               =&gt; Attach style to DOM nodes =&gt; <strong>Render Tree</strong> =&gt; Display</p>
 <p>​     </p>
 
             </div>

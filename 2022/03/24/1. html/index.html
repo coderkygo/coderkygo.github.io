@@ -18,20 +18,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="HTML1. 基本的HTML5文档结构123456789101112&lt;!DOCTYPE html&gt;  &lt;!--h5文档声明--&gt;&lt;html lang&#x3D;&quot;en&quot;&gt; &lt;!--language-指定语言(en-英文 zh-中文) 帮助翻译工具确定要使用的翻译规则--&gt;&lt;head&gt;           &lt;!--如果为en">
+    <meta name="description" content="一. HTML1.1 基本HTML5结构解析1.1.1 完整的HTML结构 文档声明 html元素（head、body元素）  123456789101112&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;en&quot;&gt; &lt;head&gt;             &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;  &amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML详解">
 <meta property="og:url" content="https://kygo.top/2022/03/24/1.%20html/index.html">
 <meta property="og:site_name" content="欢迎来到Kygo的博客">
-<meta property="og:description" content="HTML1. 基本的HTML5文档结构123456789101112&lt;!DOCTYPE html&gt;  &lt;!--h5文档声明--&gt;&lt;html lang&#x3D;&quot;en&quot;&gt; &lt;!--language-指定语言(en-英文 zh-中文) 帮助翻译工具确定要使用的翻译规则--&gt;&lt;head&gt;           &lt;!--如果为en">
+<meta property="og:description" content="一. HTML1.1 基本HTML5结构解析1.1.1 完整的HTML结构 文档声明 html元素（head、body元素）  123456789101112&lt;!DOCTYPE html&gt;&lt;html lang&#x3D;&quot;en&quot;&gt; &lt;head&gt;             &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;  &amp;l">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kygo.top/img/html%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="https://kygo.top/img/html_html5%E6%96%B0%E5%A2%9E.png">
 <meta property="article:published_time" content="2022-03-24T05:40:04.000Z">
-<meta property="article:modified_time" content="2022-12-23T06:14:49.470Z">
+<meta property="article:modified_time" content="2022-12-29T02:36:39.951Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://kygo.top/img/html_html5%E6%96%B0%E5%A2%9E.png">
+<meta name="twitter:image" content="https://kygo.top/img/html%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86.png">
   
   
   <title>HTML详解 - 欢迎来到Kygo的博客</title>
@@ -213,7 +214,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9.5k 字
+      11k 字
     </span>
   
 
@@ -222,7 +223,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      80 分钟
+      95 分钟
     </span>
   
 
@@ -263,80 +264,190 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022-12-23 14:14:49
+                  本文最后更新于：2022-12-29 10:36:39
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="1-基本的HTML5文档结构"><a href="#1-基本的HTML5文档结构" class="headerlink" title="1. 基本的HTML5文档结构"></a>1. 基本的HTML5文档结构</h2><figure class="highlight html"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>  <span class="hljs-comment">&lt;!--h5文档声明--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!--language-指定语言(en-英文 zh-中文) 帮助翻译工具确定要使用的翻译规则--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>           <span class="hljs-comment">&lt;!--如果为en 浏览器设置为中文，就会提示是否翻译网页--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>  <span class="hljs-comment">&lt;!--所有网页必须都用UTF-8,否则解码可能会出乱码问题--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>head： 内容是一些’’元数据’’-描述网页的信息， 如：网页标题、图标、字符编码</p>
-<p>有：meta、title、style、link、script、noscript</p>
-<p>link-css样式引入、网页图标</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;style.css&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;favicon.ico&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;image/x-icon&quot;</span>&gt;</span>//type可不加<br><span class="hljs-comment">&lt;!--href: hyper reference(超链接) --&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>body：网页的具体内容和结构</p>
-<p>所有标签共有的属性：class、id、title</p>
-<h2 id="2-标题-段落-换行-字符实体"><a href="#2-标题-段落-换行-字符实体" class="headerlink" title="2. 标题/段落/换行/字符实体"></a>2. 标题/段落/换行/字符实体</h2><ul>
-<li><strong>标题/段落/换行</strong></li>
+              <h1 id="一-HTML"><a href="#一-HTML" class="headerlink" title="一. HTML"></a>一. HTML</h1><h2 id="1-1-基本HTML5结构解析"><a href="#1-1-基本HTML5结构解析" class="headerlink" title="1.1 基本HTML5结构解析"></a>1.1 基本HTML5结构解析</h2><h4 id="1-1-1-完整的HTML结构"><a href="#1-1-1-完整的HTML结构" class="headerlink" title="1.1.1 完整的HTML结构"></a>1.1.1 完整的HTML结构</h4><ul>
+<li>文档声明</li>
+<li>html元素（head、body元素）</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>    <span class="hljs-comment">&lt;!-- h1-h6大-&gt;小 --&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>      <span class="hljs-comment">&lt;!-- 段落(pragma)标签 间隔大--&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>       <span class="hljs-comment">&lt;!-- 换行(break)标签 间隔小 --&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>           <br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>注：为什么标签有单/双之分?      因为有的标签不需要内容，如br换行作用</p>
+<h4 id="1-1-2-文档声明和html元素"><a href="#1-1-2-文档声明和html元素" class="headerlink" title="1.1.2 文档声明和html元素"></a>1.1.2 文档声明和html元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">文档类型声明：告诉浏览器当前是h5页面，要以html5的标准去解析</span><br><span class="hljs-comment">必须放在HTML文档最前面不能省略，否则会出现兼容性问题</span><br><span class="hljs-comment">*/</span><br>&lt;!DOCTYPE <span class="hljs-selector-tag">html</span>&gt;  <br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">根元素html，所有元素必须是它的后代，W3C建议为其增加一个lang（language）属性</span><br><span class="hljs-comment">lang作用是：指定网页的语言(en-英文 zh-cn-简体中文) </span><br><span class="hljs-comment">					帮助翻译工具确定要使用的翻译规则</span><br><span class="hljs-comment">					语音合成工具确定要使用的发音</span><br><span class="hljs-comment">*/</span><br>&lt;<span class="hljs-selector-tag">html</span> lang=&quot;en&quot;&gt; <br></code></pre></td></tr></table></figure>
+
+<h4 id="1-1-3-head元素"><a href="#1-1-3-head元素" class="headerlink" title="1.1.3 head元素"></a>1.1.3 head元素</h4><ul>
+<li><p>head中一般包含’’元数据’’-描述页面的配置信息， 如：网页标题、图标、字符编码</p>
+</li>
+<li><p>常见的设置（一般至少会包含以下2个设置）</p>
 <ul>
-<li><strong>SEO优化</strong></li>
+<li><p>网页的标题：title元素</p>
+</li>
+<li><p>网页的编码：meta元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;meta charset=&quot;UTF-<span class="hljs-number">8</span>&quot;&gt;  &lt;!--所有网页必须都用UTF-<span class="hljs-number">8</span>,否则解码可能会出乱码问题--&gt;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<p>SEO：搜索引擎优化(Search Engine Optimization)</p>
-<p>百度、搜狗、Google</p>
-<p>h元素有助于网站的SEO优化，可以促进关键词排名</p>
-<p>建议：在一个网页中最多只有一个h1元素（否则会被搜索引擎认为作弊）</p>
+</li>
+<li><p>head中其他的元素：style、link、script、noscript</p>
 <ul>
-<li><strong>字符实体</strong></li>
+<li><p>link-css样式引入、网页图标</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;link rel=&quot;stylesheet&quot; href=&quot;style<span class="hljs-selector-class">.css</span>&quot;&gt;<br>&lt;link rel=&quot;shortcut <span class="hljs-attribute">icon</span>&quot; href=&quot;favicon<span class="hljs-selector-class">.ico</span>&quot; type=&quot;image/x-<span class="hljs-attribute">icon</span>&quot;&gt;//type可不加<br>&lt;!--href: hyper <span class="hljs-built_in">reference</span>(超链接) --&gt;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-symbol">&amp;nbsp;</span>    //空格<br>text-index: 2em;  //段前缩进<br><br><span class="hljs-symbol">&amp;lt;</span> <span class="hljs-symbol">&amp;gt;</span> //&lt; &gt;符号 less than/great than<br><span class="hljs-symbol">&amp;amp;</span>  //&amp;符号<br><span class="hljs-symbol">&amp;yen;</span>  //￥符号<br><span class="hljs-symbol">&amp;copy;</span> //版权<br><span class="hljs-symbol">&amp;reg;</span>  //注册商标<br><span class="hljs-symbol">&amp;quot;</span> //双引号，在双引号中使用双引号就需要字符实体<br><br><span class="hljs-comment">&lt;!--   --&gt;</span>   //注释<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="3-文本格式化标签"><a href="#3-文本格式化标签" class="headerlink" title="3. 文本格式化标签"></a>3. 文本格式化标签</h2><p>文字粗体、斜线、下划线</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>  <br><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>  <br><span class="hljs-tag">&lt;<span class="hljs-name">del</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">del</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">s</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">s</span>&gt;</span>   <span class="hljs-comment">&lt;!--删除线--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ins</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ins</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">u</span>&gt;</span>	 <span class="hljs-comment">&lt;!--下划线--&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="4-盒子标签-用于布局"><a href="#4-盒子标签-用于布局" class="headerlink" title="4. 盒子标签(用于布局)"></a>4. 盒子标签(用于布局)</h2><p> div/span  独占一行/一行多个</p>
-<h2 id="5-图像标签和路径"><a href="#5-图像标签和路径" class="headerlink" title="5. 图像标签和路径"></a>5. 图像标签和路径</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- image缩写/单标签/宽或高设置一个另一个自适应 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;&quot;</span>/&gt;</span>    <br></code></pre></td></tr></table></figure>
-
-<p>src/alt/title  路径/替换文本/提示文本   src-source</p>
-<p>相对路径(图片相对于html文件位置)  / ./ ../</p>
-<p>绝对路径：完整路径-电脑/网络路径(不推荐)</p>
-<p>png、jpg、gif   静态支持透明/静态不支持透明/动态支持透明</p>
-<h2 id="6-超链接标签"><a href="#6-超链接标签" class="headerlink" title="6. 超链接标签"></a>6. 超链接标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- _self(当前,默认)  _blank新窗口 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_self/_blank&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>    <br></code></pre></td></tr></table></figure>
-
+</li>
+</ul>
+<h4 id="1-1-4-body元素和html注释"><a href="#1-1-4-body元素和html注释" class="headerlink" title="1.1.4 body元素和html注释"></a>1.1.4 body元素和html注释</h4><ul>
+<li><p>body：网页的具体内容和结构</p>
+</li>
+<li><p>注释：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--   --&gt;</span> <br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="1-2-常见的HTML元素"><a href="#1-2-常见的HTML元素" class="headerlink" title="1.2 常见的HTML元素"></a>1.2 常见的HTML元素</h2><ul>
+<li>html元素很多，但是常用的就那么几个，掌握常用的<ul>
+<li>不常用的查文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-1-常用的元素"><a href="#1-2-1-常用的元素" class="headerlink" title="1.2.1 常用的元素"></a>1.2.1 常用的元素</h3><ul>
+<li>p元素、h元素</li>
+<li>img元素、a元素、iframe元素</li>
+<li>div元素、span元素</li>
+</ul>
+<h3 id="1-2-2-元素显示原理"><a href="#1-2-2-元素显示原理" class="headerlink" title="1.2.2 元素显示原理"></a>1.2.2 元素显示原理</h3><ul>
+<li><p>不同元素在浏览器显示不同的原因，只是浏览器加的样式不同</p>
+</li>
+<li><p>user agent stylesheet（用户代理样式表-浏览器默认设置的）</p>
+<p><img src="/img/html%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+<h3 id="1-2-3-p元素和h元素"><a href="#1-2-3-p元素和h元素" class="headerlink" title="1.2.3 p元素和h元素"></a>1.2.3 p元素和h元素</h3><ul>
+<li><strong>h元素</strong><ul>
+<li><p>标题（Heading）元素，h1-h6：大=&gt;小</p>
+</li>
+<li><p>一般用于一些比较重要的文字作为标题</p>
+</li>
+<li><p>h元素和SEO优化有关</p>
+</li>
+</ul>
+</li>
+<li><strong>p元素</strong><ul>
+<li>段落（paragraph）元素</li>
+<li>p元素多个段落之间会有一定的间距</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-4-img元素"><a href="#1-2-4-img元素" class="headerlink" title="1.2.4 img元素"></a>1.2.4 img元素</h3><ul>
+<li>image（图片）标签</li>
+<li>img是一个可替换元素<ul>
+<li>可替换元素：元素的属性值会将元素在浏览器中显示的位置替换掉</li>
+</ul>
+</li>
+<li>两个重要属性<ul>
+<li>src：source（资源）表示文件路径</li>
+<li>alt：替换文本-不是必须（图片加载不成功会显示/屏幕阅读器会将这些描述读出来给使用者）</li>
+</ul>
+</li>
+<li>图片路径<ul>
+<li><p>网络路径：一个URL地址</p>
+</li>
+<li><p>本地图片：本地电脑的图片，后续会和html一起部署服务</p>
 <ul>
-<li><strong>链接分类</strong></li>
+<li><p>相对路径：(图片相对于当前文件位置)  / ./ ../</p>
+</li>
+<li><p>绝对路径：完整路径-电脑/网络路径(不推荐)</p>
+</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--外部链接/内部链接-html跳转--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;index.html&quot;</span>&gt;</span>  <br><span class="hljs-comment">&lt;!--空链接/伪链接--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:void(0);&quot;</span>&gt;</span> <br><span class="hljs-comment">&lt;!--下载链接-地址链接的是文件--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;html.txt&quot;</span>&gt;</span>      <br><span class="hljs-comment">&lt;!--锚点链接：快速定位到文本中某个位置--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#cth&quot;</span>&gt;</span>锚点链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cth&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>  <br></code></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong>两种空链接方法 区别：跳到顶部/死链接</p>
-<ul>
-<li><strong>base元素</strong></li>
+</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--base元素可以指定a链接的基本前缀-会在没有前缀时自动加上--&gt;</span>    <br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">base</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://baidu.com&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!--可以指定基地址和target--&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&quot;</span>&gt;</span>百度Logo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-comment">&lt;!--自动拼接--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.baidu.com&quot;</span>&gt;</span>百度<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>   <span class="hljs-comment">&lt;!--当有协议头时就不会拼接--&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p> 扩展：target其他值扩展：_parent   _Top  iframe的name属性（三个属性都必须和iframe一起使用才有效果）</p>
-<ul>
-<li><strong>URL</strong></li>
+</li>
 </ul>
-<p>URL-Uniform Resource Locator（统一资源定位符）</p>
-<p>URL是资源的地址，网络上每个资源都有唯一的一个URL</p>
-<p><strong>基本格式：</strong>protocol://hostname/path   协议://主机地址/路径</p>
-<p><strong>更具体的格式：</strong>protocol://hostname[:port]/path/[;parameters][?query]#fragment</p>
-<p>​     protocol-http/https/ftp/file   hostname-host.domain(host-www domain-域名) 主机地址  </p>
-<p>​     port：端口号不写默认80    query：请求参数     fragment：锚点链接</p>
+<div class="code-wrapper"><pre><code class="hljs">- 图片格式（了解）
+  png、jpg、gif 、webp 静态支持透明/静态不支持透明/动态支持透明
+</code></pre></div>
 <p>​      </p>
-<p>​                                                                                                                                   </p>
-<h2 id="7-表格标签"><a href="#7-表格标签" class="headerlink" title="7. 表格标签"></a>7. 表格标签</h2><ul>
+<h3 id="1-2-5-a元素"><a href="#1-2-5-a元素" class="headerlink" title="1.2.5 a元素"></a>1.2.5 a元素</h3><ul>
+<li>anchor（锚）元素，用于打开新的URL</li>
+<li>两个属性<ul>
+<li>href：Hypertext Reference</li>
+<li>target：指定在何处显示链接的资源</li>
+</ul>
+</li>
+</ul>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- _self(当前,默认)  _blank新窗口 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_self/_blank&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>    <br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>链接分类、锚点链接</strong></li>
+</ul>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--外部链接/内部链接-html跳转--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;index.html&quot;</span>&gt;</span>  <br><span class="hljs-comment">&lt;!--空链接/伪链接--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:void(0);&quot;</span>&gt;</span> <br><span class="hljs-comment">&lt;!--下载/email链接-地址链接的是文件（本地或网络） 发送email--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;html.txt&quot;</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;mailto:1712373370@qq.com&quot;</span>&gt;</span>发送email<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-comment">&lt;!--锚点链接：快速定位/跳转到文本中某个位置--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#cth&quot;</span>&gt;</span>锚点链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>   <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;cth&quot;</span>&gt;</span>标题1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>  <br><span class="hljs-comment">&lt;!--图片链接：整个图片是一个链接--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;图片&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>  <strong>注意：</strong>两种空链接方法 区别：跳到顶部/死链接</p>
+<ul>
+<li><strong>base元素</strong>（了解）</li>
+</ul>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--base元素可以指定a链接的基本前缀-会在没有前缀时自动加上--&gt;</span>    <br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">base</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://baidu.com&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!--可以指定基地址和target--&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png&quot;</span>&gt;</span>百度Logo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-comment">&lt;!--自动拼接--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.baidu.com&quot;</span>&gt;</span>百度<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>   <span class="hljs-comment">&lt;!--当有协议头时就不会拼接--&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>  ​      </p>
+<h3 id="1-2-6-iframe元素"><a href="#1-2-6-iframe元素" class="headerlink" title="1.2.6 iframe元素"></a>1.2.6 iframe元素</h3><ul>
+<li><p>可以在一个html文档中嵌入另一个HTML</p>
+</li>
+<li><p>属性：</p>
+<ul>
+<li>src：要嵌入的HTML页面url</li>
+<li>frameborder：边框 1-显示 0-不显示</li>
+</ul>
+</li>
+<li><p>iframe和a元素结合使用</p>
+<ul>
+<li>结合情况：当我们iframe嵌入的网页中有a元素时，且多层嵌套时 </li>
+<li>target=_top 在顶层窗口打开链接</li>
+<li>target=_parent 在父层窗口打开链接</li>
+</ul>
+</li>
+<li><p>禁止其他网站使用iframe嵌入自己网站方法（淘宝可以嵌入到iframe，而京东小米等不能的原因）</p>
+<ul>
+<li>在Response Headers中设置：X-Frame-Options: SAMEORIGIN</li>
+<li>原理：sameorigin是同源的意思，如果其他网站使用iframe嵌入就是异源，所以禁止其他网站嵌入</li>
+<li>可以在浏览器Network中，查看第一个文件如：<a target="_blank" rel="noopener" href="http://www.mi.com/">www.mi.com</a> 中的Response Headers中是否有X-Frame-Options</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-7-div和span元素"><a href="#1-2-7-div和span元素" class="headerlink" title="1.2.7 div和span元素"></a>1.2.7 div和span元素</h3><ul>
+<li><p>历史</p>
+<ul>
+<li><p>div元素：division，分开分配的意思</p>
+</li>
+<li><p>span元素：跨域、涵盖的意思</p>
+</li>
+<li><p>html基本元素=&gt;添加各种包含样式的html元素（strong、i、del）=&gt;css样式结构分离</p>
+<p>=&gt;div/span+css 代替了所有html元素 =&gt; 元素语义化（目前）</p>
+</li>
+</ul>
+</li>
+<li><p> div/span都是纯粹的容器，可以理解成盒子    - 每个div独占一行，通常用于包裹其他元素，布局    - 多个span在一行显示，通常用来包裹（添加css）显示一些关键字</p>
+</li>
+</ul>
+<h3 id="1-2-8-不常用元素"><a href="#1-2-8-不常用元素" class="headerlink" title="1.2.8 不常用元素"></a>1.2.8 不常用元素</h3><ul>
+<li>strong元素：加粗强调</li>
+<li>i元素：字体倾斜-现在用于字体图标</li>
+<li>code元素：显示代码-等宽字体    font-family:monospace(一般用span然后加上这个样式)</li>
+<li>br元素：换行，开发已经不用</li>
+<li>其他<ul>
+<li> script/noscript link style meta hr iframe     - hr：分割线（不常用，一般用div代替）    - pre：对文字按照原来的格式显示，比如空格、换行</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-9-HTML全局属性"><a href="#1-2-9-HTML全局属性" class="headerlink" title="1.2.9 HTML全局属性"></a>1.2.9 HTML全局属性</h3><ul>
+<li><p>Global Attributes：有的属性是所有元素都可以设置的叫全局属性</p>
+</li>
+<li><p>文档：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes</a></p>
+</li>
+<li><p>常见四个全局属性：</p>
+<ul>
+<li>class、id、title、style</li>
+</ul>
+</li>
+</ul>
+<p>​             </p>
+<h2 id="1-2-和css相关的HTML元素"><a href="#1-2-和css相关的HTML元素" class="headerlink" title="1.2 和css相关的HTML元素"></a>1.2 和css相关的HTML元素</h2><h3 id="1-2-1-表格标签"><a href="#1-2-1-表格标签" class="headerlink" title="1.2.1 表格标签"></a>1.2.1 表格标签</h3><ul>
 <li><strong>作用和基本用法</strong></li>
 </ul>
 <p>作用：展示数据基本</p>
@@ -366,7 +477,7 @@
 <p> 跨列：最左侧单元格（写合并代码）</p>
 <p>合并步骤：（三部曲）</p>
 <p>  确定跨行还是跨列-&gt;找到目标单元格写合并方式-&gt;删除多余单元格</p>
-<h2 id="8-列表标签-用于布局）"><a href="#8-列表标签-用于布局）" class="headerlink" title="8. 列表标签(用于布局）"></a>8. 列表标签(用于布局）</h2><p>分类：无序/有序/自定义列表</p>
+<h3 id="1-2-2-列表标签-用于布局）"><a href="#1-2-2-列表标签-用于布局）" class="headerlink" title="1.2.2 列表标签(用于布局）"></a>1.2.2 列表标签(用于布局）</h3><p>分类：无序/有序/自定义列表</p>
 <ul>
 <li><strong>无序列表（重点）</strong></li>
 </ul>
@@ -397,7 +508,7 @@
 
 
 
-<h2 id="9-表单标签"><a href="#9-表单标签" class="headerlink" title="9. 表单标签"></a>9. 表单标签</h2><ul>
+<h3 id="1-2-3-表单标签"><a href="#1-2-3-表单标签" class="headerlink" title="1.2.3 表单标签"></a>1.2.3 表单标签</h3><ul>
 <li><strong>介绍</strong></li>
 </ul>
 <p>使用表单标签目的：收集用户信息（一般用于登录注册页面）</p>
@@ -469,7 +580,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">	action-用于提交表单数据的请求URL</span><br><span class="hljs-comment">	method-请求方法 get/post 默认是get</span><br><span class="hljs-comment">	target-在什么地方打开URL(和a元素的target一样)</span><br><span class="hljs-comment">	enctype-规定了在向服务器发送表单数据之前如何对数据进行编码</span><br><span class="hljs-comment">		application/x-www-form-urlencoded 默认的编码方式</span><br><span class="hljs-comment">		multipart/from-data 文件上传时必须为这个值，并且method必须是post</span><br><span class="hljs-comment">		text/plain  普通文本传输</span><br><span class="hljs-comment">--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>注意：</strong>文件上传时，enctype 必须为 multipart/from-data</p>
-<h2 id="10-表单提交"><a href="#10-表单提交" class="headerlink" title="10. 表单提交"></a>10. 表单提交</h2><ul>
+<h3 id="1-2-4-表单提交"><a href="#1-2-4-表单提交" class="headerlink" title="1.2.4 表单提交"></a>1.2.4 表单提交</h3><ul>
 <li><strong>表单提交的两种方式</strong></li>
 </ul>
 <p>简介：用户在form中填写的信息提交给服务器</p>
@@ -497,11 +608,7 @@
 <p><strong>post</strong></p>
 <p>​    发送服务器的参数全部放在请求体中</p>
 <p>​    理论上，post传递的数据量没有限制(具体还得看服务器的处理能力)</p>
-<h2 id="11-不常用标签"><a href="#11-不常用标签" class="headerlink" title="11. 不常用标签"></a>11. <strong>不常用标签</strong></h2><p>  script/noscript link style meta hr iframe </p>
-<p>code：设置等宽字体，相对于css   font-family:monospace(一般用span然后加上这个样式)</p>
-<p>hr：分割线（不常用，一般用div代替）</p>
-<p>pre：对文字按照原来的格式显示，比如空格、换行</p>
-<h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><p><strong>新增标签</strong>（IE9+以上浏览器支持）</p>
+<h1 id="二-HTML5"><a href="#二-HTML5" class="headerlink" title="二. HTML5"></a>二. HTML5</h1><p><strong>新增标签</strong>（IE9+以上浏览器支持）</p>
 <h2 id="1-新增的语义化标签"><a href="#1-新增的语义化标签" class="headerlink" title="1. 新增的语义化标签"></a>1. 新增的语义化标签</h2><p>header头部  nav 导航  article 内容</p>
 <p>section 定义文档某个区域  aside侧边栏   footer尾部</p>
 <p> <img src="/img/html_html5%E6%96%B0%E5%A2%9E.png" srcset="/img/loading.gif" lazyload alt="img"></p>
@@ -536,6 +643,90 @@
 <p>​    -当用户输入时显示用户之前输入的记录</p>
 <p><strong>multiple</strong> 多选文件(multiple=”multiple”)</p>
 <p>  PS: 可通过input::placeholder{color:pink;}修改里面文字颜色</p>
+<h1 id="三-知识补充"><a href="#三-知识补充" class="headerlink" title="三. 知识补充"></a>三. 知识补充</h1><h2 id="3-1-字符实体"><a href="#3-1-字符实体" class="headerlink" title="3.1 字符实体"></a>3.1 字符实体</h2><ul>
+<li>通常用于显示保留字符（会被解析成html代码，如&lt; &gt;）和不可见字符（空格）</li>
+<li>格式：&amp;开头   ;号结尾</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">&amp;nbsp;    <span class="hljs-comment">//空格   text-index: 2em;  //段前缩进</span><br>&amp;lt; &amp;gt; <span class="hljs-comment">//&lt; &gt;符号 less than/great than</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-2-URL地址"><a href="#3-2-URL地址" class="headerlink" title="3.2 URL地址"></a>3.2 URL地址</h2><ul>
+<li><p><strong>URL</strong></p>
+<ul>
+<li>URL-Uniform Resource Locator（统一资源定位符）</li>
+<li>URL是资源的地址，网络上每个资源都有唯一的一个URL</li>
+</ul>
+</li>
+<li><p>格式</p>
+<ul>
+<li><p>协议类型://服务器地址:端口号/文件路径/文件名?查询#片断ID</p>
+</li>
+<li><p>scheme://host:port/path?query#[fragment]</p>
+</li>
+<li><p>protocol://hostname[:port]/path/[;parameters][?query]#fragment</p>
+</li>
+<li><p>举例：<a target="_blank" rel="noopener" href="https://www.baidu.com:80/image/test?name=kygo&amp;age=18#top">https://www.baidu.com:80/image/test?name=kygo&amp;age=18#top</a></p>
+<p>注意：query中可以传递多个参数用&amp;连接、片断ID指的是a元素锚点链接</p>
+</li>
+</ul>
+</li>
+<li><p>URL和URI的区别</p>
+<ul>
+<li>URI：URL-Uniform Resource Identifier 统一资源标志符(标识Web技术使用的逻辑或物理资源)</li>
+<li>URL：统一资源定位符（网络地址，相当于网络中的门牌号）</li>
+<li>URI在某个规则下能把一个资源独一无二的识别出来，所以URL属于URI，但URI不一定都是URL</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-元素语义化"><a href="#3-3-元素语义化" class="headerlink" title="3.3 元素语义化"></a>3.3 元素语义化</h2><ul>
+<li><p>用正确的元素做正确的事：比如实现标题就用h元素而不是div等</p>
+</li>
+<li><p>好处：</p>
+<ul>
+<li><p>方便代码维护</p>
+</li>
+<li><p>减少开发者之间的沟通成本</p>
+</li>
+<li><p>有利于SEO</p>
+</li>
+<li><p>让语音合成工具正确识别网页元素的用途，以便做出正确的反应</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-4-SEO优化"><a href="#3-4-SEO优化" class="headerlink" title="3.4 SEO优化"></a>3.4 SEO优化</h2><ul>
+<li><p>SEO：搜索引擎优化(Search Engine Optimization)</p>
+</li>
+<li><p>是通过了解搜索引擎的运作规则来调整网站，以及提高网站在搜索引擎内排名的方式</p>
+</li>
+<li><p>h元素有助于网站的SEO优化，可以促进关键词排名</p>
+<p>建议：在一个网页中最多只有一个h1元素（否则会被搜索引擎认为作弊）</p>
+</li>
+</ul>
+<h2 id="3-5-字符编码"><a href="#3-5-字符编码" class="headerlink" title="3.5 字符编码"></a>3.5 字符编码</h2><ul>
+<li>为什么需要字符编码<ul>
+<li>计算机底层只能识别0、1组成的二进制数（底层硬件实现就是电路的开和闭）</li>
+<li>所以为了能在计算机上表示、存储、处理像文字、图像、符号等，就需要转换成二进制</li>
+<li>所以就出现了编码（encode）和解码（decode）</li>
+</ul>
+</li>
+<li>字符的编码和解码<ul>
+<li>编码encode：文本、符号、图像等通过一定的编码格式=&gt;二进制存储在计算机内</li>
+<li>解码decode：计算机内部存储的二进制 =&gt; 我们看到的文本、图像、符号等</li>
+</ul>
+</li>
+<li>编码类型<ul>
+<li>编码/解码过程中需要选择用哪种编码/解码的方式来实现</li>
+<li>常见的方式：ASCLL、GBK、UTF-8</li>
+<li>其中最常用的就是UTF-8</li>
+</ul>
+</li>
+<li>乱码出现的情况<ul>
+<li>必须保证编码和解码用的是同一种方式 否则就会出现乱码</li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr>

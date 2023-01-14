@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://kygo.top/img/css_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png">
 <meta property="og:image" content="https://kygo.top/img/css_vertical-align.png">
 <meta property="article:published_time" content="2023-01-06T14:51:00.658Z">
-<meta property="article:modified_time" content="2023-01-11T00:34:34.607Z">
+<meta property="article:modified_time" content="2023-01-14T02:05:32.989Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      31k 字
+      32k 字
     </span>
   
 
@@ -227,7 +227,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      260 分钟
+      271 分钟
     </span>
   
 
@@ -268,7 +268,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023-01-11 08:34:34
+                  本文最后更新于：2023-01-14 10:05:32
                 
               </p>
             
@@ -689,16 +689,6 @@
 
 
 
-<h3 id="10-4-行内级元素之间的空格"><a href="#10-4-行内级元素之间的空格" class="headerlink" title="10.4 行内级元素之间的空格"></a>10.4 行内级元素之间的空格</h3><p>行内级元素(包括inline-block) 代码之间有空格或换行，会被解析显示为空格</p>
-<p>解决方法：</p>
-<div class="code-wrapper"><pre><code class="hljs">代码之间不留空格
-
-注释掉空格&lt;!-- --&gt;
-
-设置父元素font-size : 0;   (此方法在Safari不适用)
-
-给元素添加float (推荐)
-</code></pre></div>
 <h2 id="11-元素的显示与隐藏"><a href="#11-元素的显示与隐藏" class="headerlink" title="11. 元素的显示与隐藏"></a>11. 元素的显示与隐藏</h2><p>本质：让一个元素在页面中隐藏或显示出来</p>
 <p>(举例：网站广告点击关闭及不见了，刷新重新出现)</p>
 <p>分类：    display/visibility 显示隐藏</p>
@@ -875,44 +865,107 @@
 <ul>
 <li>文字阴影（了解）<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">和box-shadow类似，用于给文字添加阴影效果</span><br><span class="hljs-comment">它没有spread和inset</span><br><span class="hljs-comment">*/</span><br><span class="hljs-attribute">text-shadow</span>: h-shadow v-shadow blur color<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="13-CSS浮动"><a href="#13-CSS浮动" class="headerlink" title="13. CSS浮动"></a>13. CSS浮动</h2><h3 id="13-1-浮动的用法"><a href="#13-1-浮动的用法" class="headerlink" title="13.1 浮动的用法"></a>13.1 浮动的用法</h3><p>传统网页布局的三种方式： 普通流(标准流) 浮动 定位</p>
-<p>（1）浮动定义</p>
-<div class="code-wrapper"><pre><code class="hljs">float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘
-</code></pre></div>
-<p>（2）浮动作用</p>
-<div class="code-wrapper"><pre><code class="hljs">浮动可以让多个块级盒子一行没有缝隙排列显示经常用于横向排列盒子
-</code></pre></div>
+<h2 id="13-CSS浮动"><a href="#13-CSS浮动" class="headerlink" title="13. CSS浮动"></a>13. CSS浮动</h2><h3 id="13-1-认识浮动"><a href="#13-1-认识浮动" class="headerlink" title="13.1 认识浮动"></a>13.1 认识浮动</h3><ul>
+<li><p>传统网页布局的三种方式： 普通流(标准流) 浮动 定位</p>
+</li>
+<li><p>浮动的历史</p>
+<ul>
+<li>浮动最初只是用在一段文本内浮动图像，实现文字环绕效果</li>
+<li>但早期的css标准并没有提供好的左右布局方案，所以在一段时间里它成为多列布局最常用工具</li>
+<li>浮动可以允许文本和内联元素环绕它</li>
+</ul>
+</li>
+<li><p>浮动定义</p>
+<ul>
+<li>float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘</li>
+</ul>
+</li>
+<li><p>浮动作用</p>
+<ul>
+<li>浮动可以让多个块级盒子一行没有缝隙排列显示经常用于横向排列盒子</li>
+</ul>
+</li>
+</ul>
 <p>（3）语法</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">float</span>: left/right/none;  //左浮右浮不浮动(默认) <br></code></pre></td></tr></table></figure>
 
-<p>（4）<strong>浮动的特性（重难点)</strong></p>
-<p>脱标(不占有位置) 浮起来盖住其他盒子</p>
-<p>一行内没有缝隙显示并且元素顶部对齐</p>
-<p>父盒子装不下会再起一行显示,具有行内块元素的特征    </p>
-<p>（5）<strong>用法</strong></p>
-<p>浮动元素经常搭配标准流的父元素</p>
-<p>用标准流的父元素排列上下位置,子元素采用浮动排列左右位置</p>
-<h3 id="13-2-浮动的清除"><a href="#13-2-浮动的清除" class="headerlink" title="13.2 浮动的清除"></a>13.2 浮动的清除</h3><p>（1）浮动产生的影响</p>
-<p>当一个盒子有很多个浮动子盒子时，不方便给父盒子高度，但子盒子浮动不占位置</p>
-<p>最后父级盒子高度为0，就会影响下面的标准流盒子。</p>
-<p>（2）解决方法</p>
-   <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器&#123;<span class="hljs-attribute">clear</span><span class="hljs-selector-pseudo">:left</span>/<span class="hljs-attribute">right</span>/both;&#125;   //清除左/右/两侧浮动<br></code></pre></td></tr></table></figure>
 
-<p>具体方法：</p>
-<ol>
-<li><p>额外标签法/隔墙法-不推荐</p>
-<p>在浮动父元素末尾添加一个块级空标签，如div </p>
+
+<h3 id="13-2-浮动规则"><a href="#13-2-浮动规则" class="headerlink" title="13.2 浮动规则"></a>13.2 浮动规则</h3><ul>
+<li><p>规则一：脱离标准流（不占有位置）</p>
+<ul>
+<li>浮动元素朝左或右移动，直到自己的边缘紧贴着包含块或其他浮动元素的边界为止</li>
+<li>定位元素会层叠在浮动元素上面</li>
+<li>具有行内块元素的特征  </li>
+</ul>
 </li>
-<li><p>父级添加overflow: hidden属性</p>
-<div class="code-wrapper"><pre><code class="hljs"> 优点：代码简介 缺点：无法显示溢出部分   
-</code></pre></div>
+<li><p>规则二：浮动元素的左右边界不能超出包含块的左右边界</p>
 </li>
-<li><p>父级添加after伪元素 </p>
+<li><p>规则三：浮动元素之间不能层叠</p>
+<ul>
+<li>后浮动的元素会贴着先浮动的元素边缘</li>
+<li>如果水平方向剩余空间不够显示浮动元素，浮动元素将向下移动，直到有充足空间为止</li>
+</ul>
 </li>
-<li><p>父级添加双伪元素   </p>
-<p> ​                        </p>
+<li><p>规则四：浮动元素不能与行内级内容层叠，行内级内容会被浮动元素推出</p>
+<ul>
+<li>如 inlie元素、inline-block元素、块级元素的文字内容</li>
+</ul>
 </li>
-</ol>
+<li><p>规则五：一行内没有缝隙显示并且元素顶部对齐</p>
+<ul>
+<li>inlie、inline-block元素浮动后，其顶部与所在行顶部对齐</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-3-去除行内级元素之间的空格"><a href="#10-3-去除行内级元素之间的空格" class="headerlink" title="10.3 去除行内级元素之间的空格"></a>10.3 去除行内级元素之间的空格</h3><ul>
+<li><p>空格产生原因</p>
+<ul>
+<li>行内级元素(包括inline-block) 代码之间有空格或换行，会被解析显示为空格</li>
+</ul>
+</li>
+<li><p>解决方法</p>
+<ul>
+<li>代码之间不留空格</li>
+<li>设置父元素font-size : 0; 但是需要子元素设置回来  (此方法在Safari不适用)</li>
+<li>给元素添加float (推荐)</li>
+<li>flex布局</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-4-浮动的清除"><a href="#13-4-浮动的清除" class="headerlink" title="13.4 浮动的清除"></a>13.4 浮动的清除</h3><ul>
+<li><p>浮动产生的影响-高度塌陷</p>
+<ul>
+<li>当一个盒子有很多个浮动子盒子时，不方便给父盒子高度，但子盒子浮动不占位置(高度)</li>
+<li>最后父级盒子高度为0，就会影响下面的标准流盒子。</li>
+</ul>
+</li>
+<li><p>解决方法-clear</p>
+<ul>
+<li>clear属性可以指定一个元素是否移动到在它之前的浮动元素的最下面</li>
+<li>left/right/both/none：移动到之前的向左、右、全部、默认(无)的浮动元素底部</li>
+</ul>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">选择器&#123;<span class="hljs-attribute">clear</span><span class="hljs-selector-pseudo">:left</span>/<span class="hljs-attribute">right</span>/both;&#125;   //清除左/右/两侧浮动<br></code></pre></td></tr></table></figure></li>
+<li><p>具体方法</p>
+<ul>
+<li><p>额外标签法/隔墙法（不推荐）</p>
+<ul>
+<li>在浮动元素父元素内容末尾添加一个块级空标签，如div ，设置clear:both</li>
+</ul>
+</li>
+<li><p>父级添加overflow: hidden属性（不推荐）</p>
+<ul>
+<li>优点：代码简介   缺点：无法显示溢出部分   </li>
+</ul>
+</li>
+<li><p>父级添加::after伪元素 （推荐）</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*转化成块级元素才能占据空间，clear:both才有用*/</span><br><span class="hljs-selector-class">.clear_fix</span><span class="hljs-selector-pseudo">::after</span>&#123;<br>  <span class="hljs-attribute">content</span>:<span class="hljs-string">&quot;&quot;</span>;<br>  <span class="hljs-attribute">clear</span>: both;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-comment">/*浏览器兼容：有的浏览器可能显示没有内容的伪元素且可能会有高度,所以将其隐藏但必须占据位置*/</span><br>  <span class="hljs-attribute">visibility</span>: hidden;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;<br>&#125; <br></code></pre></td></tr></table></figure>
+
+<p>​                        </p>
 <h2 id="14-CSS定位"><a href="#14-CSS定位" class="headerlink" title="14. CSS定位"></a>14. CSS定位</h2><h3 id="14-1-定位介绍"><a href="#14-1-定位介绍" class="headerlink" title="14.1 定位介绍"></a>14.1 定位介绍</h3><ul>
 <li><p>normal flow标准流</p>
 <ul>
@@ -1234,49 +1287,173 @@ animation-name/animation-duration/animation-timing-function
 
  -控制子元素是否开启三维立体环境(代码给父级,影响的是子盒子)  
 </code></pre></div>
-<h1 id="CSS布局相关"><a href="#CSS布局相关" class="headerlink" title="CSS布局相关"></a>CSS布局相关</h1><h2 id="1-flex伸缩布局-弹性布局"><a href="#1-flex伸缩布局-弹性布局" class="headerlink" title="1. flex伸缩布局(弹性布局)"></a>1. flex伸缩布局(弹性布局)</h2><p> display: flex  给父盒子添加flex属性，来控制子盒子的位置和排列方式</p>
-<p>伸缩容器-设置display: flex的元素  伸缩项-伸缩容器子元素</p>
-<p>主轴-默认水平方向 伸缩容器最左端-&gt;最右    </p>
-<p>侧轴-默认垂直方向 伸缩容器最顶部-&gt;最底部</p>
-<p> <strong>flex-direction</strong>(主轴方向)</p>
-<p>flex-direction: row/row-reverse/column/column-reverse</p>
-<p>主轴左起点(默认)/右起点/顶部/底部</p>
-<p>注意：主轴侧轴始终十字交叉(主轴改为垂直,那么侧轴变为水平)</p>
-<p> <strong>justify-content</strong>(主轴对齐方式)</p>
-<p>   justify-content: flex-start/flex-end/center/space-between/space-around</p>
-<p>   与主轴起点对齐(默认)/终点对齐/中间对齐/两端对齐/环绕对齐</p>
-<p> <strong>align-items/align-self</strong>(侧轴对齐方式)</p>
-<p>   align-items: flex-start/flex-end/center/baseline/stretch</p>
-<p>   与主轴起点对齐(默认)/终点对齐/中间/基线对齐/拉伸对齐(拉伸为侧轴高度)</p>
-<p>注意: 设置拉伸对齐,伸缩项不能设置高度,否则会失效</p>
-<p>align-self:flex-start/flex-end…  //取值一样,控制某个伸缩项,写到伸缩项中</p>
-<p> <strong>flex-wrap/align-content</strong>(换行和换行对齐)</p>
-<p>   默认情况伸缩容器不会换行,放不下会等比压缩伸缩项</p>
-<p>   flex-wrap: nowrap/wrap/wrap-reverse  不换行(默认)/换行/换行反转  </p>
-<p>  换行对齐  只有伸缩项发生换行这个属性才有效</p>
-<p>   align-content: flex-start/end-start/center/space-between/space-around</p>
-<p> 侧轴起点对齐/终点对齐/居中/两端对齐/环绕对齐</p>
-<p> 注意：默认拉伸对齐-stretch</p>
-<p><strong>order</strong>(伸缩项排序)</p>
-<p>   添加给伸缩项,每一个伸缩项都有一个order属性-默认为0</p>
-<p>   order: 0;  //从小到大,数字越大排在越后面,可以为负</p>
-<p><strong>flew-grow</strong>(伸缩项扩充)</p>
-<p>  flew-grow: 0;  //默认为0-不需扩充,值越大所占份数越多</p>
-<p>  //用于使伸缩项宽度总和填满整个伸缩容器</p>
-<p>  注意: 当所有伸缩项宽度总和小于伸缩容器宽度时才有效</p>
-<p><strong>flex-shrink</strong>(伸缩项缩小)</p>
-<p>  当伸缩项宽度和&gt;伸缩容器宽度,默认不换行,会等比缩放伸缩容器</p>
-<p>  flex-shrink: 1;  //默认是1  0-超出伸缩容器也不缩小</p>
-<p>   注意: 当所有伸缩项宽度总和大于伸缩容器宽度时才有效  </p>
-<p> *伸缩项扩充缩小注意点</p>
-<p>   没有指定/flex-grow:0;  不会被扩充</p>
-<p>   flex-shrink: 0;  当前伸缩项不会被缩小</p>
-<p>   扩充和缩小可以是高度或宽度,由主轴决定的,扩充缩小的是主轴上的</p>
-<p> <strong>flex-basis</strong>(伸缩项宽度设置)</p>
-<p>   flex-basis: px  //设置伸缩项的宽度,伸缩布局中才有用,默认auto</p>
-<p>   通过flex-basis设置了宽度,width就无效</p>
-<p> <strong>flex</strong>(伸缩项属性连写)</p>
-<p>   flex: 扩充 缩小 宽度;  默认：flex: 0,1,auto  flex: 1===flex: 1,1,0</p>
+<h1 id="CSS布局相关"><a href="#CSS布局相关" class="headerlink" title="CSS布局相关"></a>CSS布局相关</h1><h2 id="1-布局方案总结"><a href="#1-布局方案总结" class="headerlink" title="1. 布局方案总结"></a>1. 布局方案总结</h2><ul>
+<li><p>标准流</p>
+<ul>
+<li>垂直布局</li>
+</ul>
+</li>
+<li><p>浮动</p>
+<ul>
+<li>水平布局</li>
+</ul>
+</li>
+<li><p>定位</p>
+<ul>
+<li>层叠布局</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-flex布局-弹性布局"><a href="#2-flex布局-弹性布局" class="headerlink" title="2. flex布局(弹性布局)"></a>2. flex布局(弹性布局)</h2><h3 id="2-1-初识flex"><a href="#2-1-初识flex" class="headerlink" title="2.1 初识flex"></a>2.1 初识flex</h3><ul>
+<li>认识flexbox<ul>
+<li>Flexbox翻译成弹性盒子<ul>
+<li>弹性盒子是一种用于<strong>按行或按列布局元素</strong>的<strong>一维布局方法</strong></li>
+<li>元素可以<strong>膨胀以填充额外空间</strong>，<strong>收缩以适应更小的空间</strong></li>
+</ul>
+</li>
+<li>flex布局是目前web开发中使用最多的布局方案<ul>
+<li>flex布局、弹性布局、flexible布局</li>
+<li>在移动端已经完全普及</li>
+<li>在PC端也基本普及，只有非常少数网站还在使用浮动来布局</li>
+</ul>
+</li>
+<li>为什么需要flex布局？<ul>
+<li>长久以来，css中唯一可靠且跨浏览器兼容的布局方案只有float和position</li>
+<li>但是他们都有很大的局限性，用他们布局也是无奈之举</li>
+</ul>
+</li>
+<li>原来布局存在的痛点<ul>
+<li>在父元素中垂直居中一个块级元素（做不到多个元素一起垂直居中）</li>
+<li>使容器的所有子项等分可用宽度高度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>flex布局的重要概念<ul>
+<li>flex container(伸缩容器)：开启了flex布局的元素<ul>
+<li>display属性设置成flex或inline-flex可以成为flex container</li>
+<li>flex：flex container以block-level形式存在（flex：inline-level）</li>
+</ul>
+</li>
+<li>flex item(伸缩项)：flex container中的直接子元素<ul>
+<li>flex item不再严格区分块级元素和行内级元素（默认包裹内容，可设置宽高）</li>
+<li>flex item布局受flex container属性的设置来控制布局</li>
+</ul>
+</li>
+<li>主轴main axis和交叉轴cross axis<ul>
+<li>主轴方向：默认水平方向 伸缩容器最左端-&gt;最右 （main start-mian end）</li>
+<li>交叉轴方向：默认垂直方向 伸缩容器最顶部-&gt;最底部（cross start-cross end）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-flex中常用属性"><a href="#2-2-flex中常用属性" class="headerlink" title="2.2 flex中常用属性"></a>2.2 flex中常用属性</h3><h4 id="2-2-1-flex-container属性"><a href="#2-2-1-flex-container属性" class="headerlink" title="2.2.1 flex-container属性"></a>2.2.1 flex-container属性</h4><ul>
+<li><p>flex-direction</p>
+<ul>
+<li>作用：修改主轴方向（主轴和交叉轴始终垂直，主轴改变交叉轴也会改变）</li>
+<li>flex-direction: row(默认值)/row-reverse/column/column-reverse</li>
+<li>主轴左起点(默认)/右起点/顶部/底部</li>
+</ul>
+</li>
+<li><p>flex-wrap</p>
+<ul>
+<li>作用：决定flex container是单行还是多行（是否换行）</li>
+<li>flex-wrap: nowrap(默认)/wrap/wrap-reverse </li>
+<li>注意： 默认情况伸缩容器不会换行,放不下会等比压缩伸缩项(flex-shrink默认为1)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>flex-flow</p>
+<ul>
+<li>缩写属性： flex-flow: flex-direction||flex-wrap</li>
+<li>顺序任意，并且都可省略</li>
+</ul>
+</li>
+<li><p>justify-content(主轴对齐方式)</p>
+<ul>
+<li>justify-content: flex-start/flex-end/center/space-between/space-around</li>
+<li>与主轴起点对齐(默认)/终点对齐/中间对齐/两端对齐/环绕对齐</li>
+</ul>
+</li>
+<li><p>align-content</p>
+<ul>
+<li>换行对齐  只有伸缩项发生换行这个属性才有效</li>
+<li>align-content: flex-start/end-start/center/space-between/space-around</li>
+<li>侧轴起点对齐/终点对齐/居中/两端对齐/环绕对齐</li>
+<li>注意：默认拉伸对齐-stretch</li>
+</ul>
+</li>
+<li><p>align-items</p>
+<ul>
+<li><p>align-items: flex-start/flex-end/center/baseline/stretch</p>
+</li>
+<li><p>与主轴起点对齐(默认)/终点对齐/中间/基线对齐/拉伸对齐(拉伸为侧轴高度)</p>
+</li>
+<li><p>注意: 设置拉伸对齐,伸缩项不能设置高度,否则会失效</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-2-flex-item属性"><a href="#2-2-2-flex-item属性" class="headerlink" title="2.2.2 flex-item属性"></a>2.2.2 flex-item属性</h4><ul>
+<li><p>align-self</p>
+<ul>
+<li>align-self:flex-start/flex-end…  //取值一样,控制某个伸缩项,写到伸缩项中</li>
+</ul>
+</li>
+<li><p>order(伸缩项排序)</p>
+<ul>
+<li><p>添加给伸缩项,每一个伸缩项都有一个order属性-默认为0</p>
+</li>
+<li><p>order: 0;  //从小到大,数字越大排在越后面,可以为负</p>
+</li>
+</ul>
+</li>
+<li><p>flew-grow(伸缩项扩充)</p>
+<ul>
+<li><p>flew-grow: 0;  //默认为0-不需扩充,值越大所占份数越多</p>
+</li>
+<li><p>用于使伸缩项宽度总和填满整个伸缩容器</p>
+</li>
+<li><p>注意: 当所有伸缩项宽度总和小于伸缩容器宽度时才有效</p>
+</li>
+</ul>
+</li>
+<li><p>flex-shrink(伸缩项缩小)</p>
+<ul>
+<li><p>当伸缩项宽度和&gt;伸缩容器宽度,默认不换行,会等比缩放伸缩容器</p>
+</li>
+<li><p>flex-shrink: 1;  //默认是1  0-超出伸缩容器也不缩小</p>
+</li>
+<li><p>注意: 当所有伸缩项宽度总和大于伸缩容器宽度时才有效  </p>
+</li>
+<li><p>伸缩项扩充缩小注意点</p>
+<ul>
+<li><p>没有指定/flex-grow:0;  不会被扩充</p>
+</li>
+<li><p>flex-shrink: 0;  当前伸缩项不会被缩小</p>
+</li>
+<li><p>扩充和缩小可以是高度或宽度,由主轴决定的,扩充缩小的是主轴上的</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>flex-basis(伸缩项宽度设置)</p>
+<ul>
+<li><p>flex-basis: px  //设置伸缩项的宽度,伸缩布局中才有用,默认auto</p>
+</li>
+<li><p>通过flex-basis设置了宽度,width就无效</p>
+</li>
+</ul>
+</li>
+<li><p>flex(伸缩项属性连写)</p>
+<ul>
+<li>flex: 扩充 缩小 宽度;  默认：flex: 0,1,auto  flex: 1===flex: 1,1,0</li>
+</ul>
+</li>
+</ul>
 <h2 id="2-圣杯布局和双飞翼布局"><a href="#2-圣杯布局和双飞翼布局" class="headerlink" title="2. 圣杯布局和双飞翼布局"></a>2. 圣杯布局和双飞翼布局</h2><p>  两边宽度不变,中间自适应的三栏布局</p>
 <p> *圣杯布局</p>
 <p>搞一个容器,里面放三个盒子</p>

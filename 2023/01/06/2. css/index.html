@@ -30,9 +30,8 @@
 <meta property="og:image" content="https://kygo.top/img/css_%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.png">
 <meta property="og:image" content="https://kygo.top/img/css_%E5%85%83%E7%B4%A0%E5%88%86%E7%B1%BB.png">
 <meta property="og:image" content="https://kygo.top/img/css_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png">
-<meta property="og:image" content="https://kygo.top/img/css_vertical-align.png">
 <meta property="article:published_time" content="2023-01-06T14:51:00.658Z">
-<meta property="article:modified_time" content="2023-01-14T02:05:32.989Z">
+<meta property="article:modified_time" content="2023-01-18T15:16:53.440Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
@@ -218,7 +217,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      32k 字
+      36k 字
     </span>
   
 
@@ -227,7 +226,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      271 分钟
+      299 分钟
     </span>
   
 
@@ -268,7 +267,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023-01-14 10:05:32
+                  本文最后更新于：2023-01-18 23:16:53
                 
               </p>
             
@@ -636,7 +635,7 @@
 <p>若子元素有文字大小，则子元素当前文字大小的1.5倍</p>
 <p>若无，则是父元素的文字大小的1.5倍</p>
 <p>优点：子元素可以根据自己的文字大小自动调整行高</p>
-<h2 id="10-CSS的元素显示模式"><a href="#10-CSS的元素显示模式" class="headerlink" title="10. CSS的元素显示模式"></a>10. CSS的元素显示模式</h2><h3 id="10-1-元素显示模式的由来"><a href="#10-1-元素显示模式的由来" class="headerlink" title="10.1 元素显示模式的由来"></a>10.1 元素显示模式的由来</h3><ul>
+<h2 id="10-元素显示模式-类型"><a href="#10-元素显示模式-类型" class="headerlink" title="10. 元素显示模式(类型)"></a>10. 元素显示模式(类型)</h2><h3 id="10-1-元素显示模式的由来"><a href="#10-1-元素显示模式的由来" class="headerlink" title="10.1 元素显示模式的由来"></a>10.1 元素显示模式的由来</h3><ul>
 <li><p>定义：元素（标签）以什么方式进行显示</p>
 </li>
 <li><p>HTML定义元素类型的思路</p>
@@ -1132,12 +1131,281 @@
 </code></pre></div>
 </li>
 </ul>
+<h2 id="15-vertical-align"><a href="#15-vertical-align" class="headerlink" title="15. vertical-align"></a>15. vertical-align</h2><ul>
+<li><p>行内级元素奇怪的对齐方式</p>
+<ul>
+<li>行内级元素，比如图片底部有空隙、图片和文字对不齐…</li>
+</ul>
+</li>
+<li><p>行盒 line boxes的理解</p>
+<ul>
+<li>在没有设置高度的情况下，元素的高度由内容撑起来</li>
+<li>内容中其实就是行高，所以是行高撑起了盒子</li>
+<li>每一行都有一个行盒，会包裹这一行中的所有inline-level（包括line-height）</li>
+</ul>
+</li>
+<li><p>官方文档：vertical-align会影响<strong>行内级元素</strong>在一个<strong>行盒</strong>中垂直方向的位置</p>
+</li>
+<li><p>作用：设置元素垂直对齐方式(只对行内元素有效)</p>
+</li>
+<li><p>vertical-align默认值是baseline对齐</p>
+<ul>
+<li>文本的baseline是字母x的下方</li>
+<li>line-block默认的baseline是margin-bottom底部（没有margin就是盒子底部）</li>
+<li>line-block有文本时，baseline是最后一行文本的x的下方</li>
+</ul>
+</li>
+<li><p>vertical-align其他值</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*文字基线（默认） </span><br><span class="hljs-comment">top/bottom 将行内级盒子的顶部和line boxes的顶部对齐，bottom则是底部</span><br><span class="hljs-comment">middle 行内级盒子的中心点与父盒基线加上(往上)x-height一半的线对齐，也就是x的中间*/</span><br><span class="hljs-attribute">vertical-align</span>: baseline/top/bottom/middle<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>vertical-align: middle不能用作行内级元素垂直居中原因<ul>
+<li>设置middle会将该行内级元素的中心点与父盒子基线往上半个x的位置对齐</li>
+<li>而x的中心位置其实是在中线和基线之间的（我们平时书写也是这样），而不是中线</li>
+<li>所以设置middle的行内级元素在垂直方向上会稍微偏下，不能垂直居中</li>
+</ul>
+</li>
+<li>解决图片(inline-block level)下边缘空隙问题<ul>
+<li>方法一：设置vertical-align为top/middle/bottom</li>
+<li>方法二：设置为block元素</li>
+</ul>
+</li>
+<li>基线对齐和继承行高容易造成的问题<ul>
+<li>场景<ul>
+<li>父div元素给定高度，里面放一段文本，再放一个inline-block的子盒子，盒子中放段文本</li>
+<li>当我们给父div设置line-height=height想让文本垂直居中，没问题，但是这时候子盒子有问题了</li>
+<li>子盒子出现自己的文字跑到盒子下方的情况</li>
+</ul>
+</li>
+<li>原因<ul>
+<li>子盒子继承了line-height，行高&gt;子盒子高度，所以文字会跑到盒子下方</li>
+<li>因为默认是baseline对齐，所以跑出子盒子的文本会和父盒子中的文字对齐</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="CSS3新特性"><a href="#CSS3新特性" class="headerlink" title="CSS3新特性"></a>CSS3新特性</h1><p>新增选择器/盒子模型以及其他特征(IE9+支持) </p>
-<h2 id="1-CSS3盒子模型border-box"><a href="#1-CSS3盒子模型border-box" class="headerlink" title="1. CSS3盒子模型border-box"></a>1. CSS3盒子模型border-box</h2><p>box-sizing: content-box/border-box</p>
-<p>content-box===width+padding+border(默认)</p>
-<p> border-box ===width(padding和border不会撑大盒子)</p>
-<p>*{ padding: 0;margin: 0;box-sizing: border-box; }</p>
-<h2 id="2-其他特性（了解）"><a href="#2-其他特性（了解）" class="headerlink" title="2. 其他特性（了解）"></a>2. 其他特性（了解）</h2><p>  <strong>图片变模糊</strong></p>
+<h2 id="1-transform-2d"><a href="#1-transform-2d" class="headerlink" title="1. transform(2d)"></a>1. transform(2d)</h2><h3 id="1-1-transform介绍"><a href="#1-1-transform介绍" class="headerlink" title="1.1 transform介绍"></a>1.1 transform介绍</h3><ul>
+<li>transform是形变的意思，该属性允许对元素进行一些形变如：旋转、缩放、平移、倾斜等</li>
+<li>语法<ul>
+<li>transform: transform-list(transform-function)</li>
+<li>一些形变函数，如 rgba()就是形变函数<ul>
+<li>平移：translate(x,y)</li>
+<li>缩放：scale(x,y)</li>
+<li>旋转：rotate(deg)s</li>
+<li>倾斜：skew(deg,deg)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注意点<ul>
+<li>除了<strong>行内非替换元素</strong>，所有元素都可进行transform</li>
+<li>进行transform后不会影响其他的元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-translate"><a href="#1-2-translate" class="headerlink" title="1.2 translate"></a>1.2 translate</h3><ul>
+<li><p>translate是翻译的意思，物理上也可表示平移</p>
+</li>
+<li><p>作用：可以改变元素位置，类似定位，移动位置还有margin</p>
+</li>
+<li><p>语法</p>
+<ul>
+<li><p>合并写法：transform: translate(x,y);  </p>
+<ul>
+<li>一个参数是设置x上的位移，两个参数x、y上的位移</li>
+<li>x，y值的类型：单位px或百分比（<strong>参照元素自身</strong>-x参照width-y参照height）</li>
+</ul>
+</li>
+<li><p>分开写法：transform: translateX(n);    translateY(n);     </p>
+</li>
+</ul>
+</li>
+<li><p>应用-盒子水平垂直居中</p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*加定位，这个地方可用绝对定位(父元素加相对定位)或相对定位*/</span><br><span class="hljs-attribute">position</span>: relative;  <br><span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>; <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>; <br><span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translate</span>(-<span class="hljs-number">50%</span>,-<span class="hljs-number">50%</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="1-3-scale"><a href="#1-3-scale" class="headerlink" title="1.3 scale"></a>1.3 scale</h3><ul>
+<li><p>作用：缩放元素</p>
+</li>
+<li><p>语法：</p>
+<ul>
+<li>transform: scale(x,y);      x,y修改的宽和高-倍数 </li>
+<li>scalex()     scaley() </li>
+</ul>
+</li>
+<li><p>注意</p>
+<ul>
+<li><p>参数不跟单位-倍数,小于1就是缩放(可小数)，大于1放大</p>
+</li>
+<li><p>若只有一个参数则宽高同时修改n倍（设置一个参数默认是给宽，高缩放默认是和宽相等）</p>
+</li>
+</ul>
+</li>
+<li><p>优点：不会影响其他盒子，且可以设置缩放中心点transform-origin</p>
+</li>
+</ul>
+<h3 id="1-4-rotate"><a href="#1-4-rotate" class="headerlink" title="1.4 rotate"></a>1.4 rotate</h3><ul>
+<li><p>作用：二维平面顺时针或逆时针旋转</p>
+</li>
+<li><p>语法：transform: rotate(deg) </p>
+</li>
+<li><p>注意：单位deg,角度正-顺时针转, 角度负-逆时针转       </p>
+</li>
+<li><p>补充（了解）</p>
+<ul>
+<li><p>rotate是rotateZ函数的简写写法</p>
+</li>
+<li><p>rotate的其他单位：度deg、百分度、弧度、圈数</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5-transform-origin和skew"><a href="#1-5-transform-origin和skew" class="headerlink" title="1.5 transform-origin和skew"></a>1.5 transform-origin和skew</h3><ul>
+<li><p>作用: 形变中心点设置（旋转和缩放时都有中心点）</p>
+</li>
+<li><p>语法</p>
+<ul>
+<li><p>transform-origin: x y;   默认(50% 50%)</p>
+</li>
+<li><p>可以设置百分比/像素px/方位名词(top bottom left right center)</p>
+</li>
+</ul>
+</li>
+<li><p>skew倾斜（了解）</p>
+<ul>
+<li>作用：使元素进行倾斜（类似font-style: italic）</li>
+<li>语法：skew(x,y)<ul>
+<li>单位deg倾斜角度，一个值x轴倾斜</li>
+<li>正数往正方向倾斜、负数往负方向</li>
+</ul>
+</li>
+<li>倾斜的原点也受origin的影响</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-6-transform综合写法"><a href="#1-6-transform综合写法" class="headerlink" title="1.6 transform综合写法"></a>1.6 transform综合写法</h3><div class="code-wrapper"><pre><code class="hljs">-transform: translate() rotate() scale();  空格隔开
+</code></pre></div>
+<p>   -顺序会影响转换效果，当有位移和其他属性时，必须把<strong>位移放到最前</strong></p>
+<h2 id="2-transition过渡动画"><a href="#2-transition过渡动画" class="headerlink" title="2. transition过渡动画"></a>2. transition过渡动画</h2><ul>
+<li><p>transition-过渡</p>
+</li>
+<li><p>作用：从一个状态渐渐的过渡到另一个状态(常和hover一起搭配)</p>
+</li>
+<li><p>哪些属性可以支持过渡动画</p>
+<ul>
+<li>mdn中可执行动画的css属性查阅：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties">https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties</a></li>
+<li>mdn中在每个属性的 animation type</li>
+</ul>
+</li>
+<li><p>语法  </p>
+<ul>
+<li><p>transition: property duration timing-function transition-delay</p>
+<ul>
+<li><p>transition: 要过渡的属性 花费时间 运动曲线 何时开始;</p>
+</li>
+<li><p>过渡属性: all/width/height/top/margin… </p>
+</li>
+<li><p>时间: s(可以省略默认为0，所以省略没效果)  </p>
+</li>
+<li><p>运动曲线: 默认ease(可省)    何时开始: s (可省)</p>
+</li>
+<li><p>多个属性可用逗号进行分割(all) 如: transition: width 2s,height 2s;</p>
+</li>
+<li><p>transition是复合写法，也可以指定如 transition-property</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>口诀：谁做过渡给谁加，初始状态必须写</p>
+</li>
+<li><p>注意：使用transition必须写初始状态否则不起作用，即使是left也要写left: 0;</p>
+</li>
+</ul>
+<h2 id="3-animation动画"><a href="#3-animation动画" class="headerlink" title="3. animation动画"></a>3. animation动画</h2><h3 id="3-1-animation简介"><a href="#3-1-animation简介" class="headerlink" title="3.1 animation简介"></a>3.1 animation简介</h3><ul>
+<li><p>transition过度动画的缺点</p>
+<ul>
+<li>只能定义开始和结束两个状态，不能控制中间状态</li>
+<li>只能执行一次，除非手动多次触发</li>
+<li>必须在特定条件下触发，如手指放上去</li>
+</ul>
+</li>
+<li><p>相比于过渡，动画可以实现更多变化，控制，连续自动播放等效果</p>
+</li>
+<li><p>基本使用：定义动画=&gt;使用(调用)动画</p>
+</li>
+</ul>
+<h3 id="3-2-动画的定义和使用"><a href="#3-2-动画的定义和使用" class="headerlink" title="3.2 动画的定义和使用"></a>3.2 动画的定义和使用</h3><ul>
+<li><p>定义动画</p>
+<ul>
+<li>使用@keyframes定义动画序列（每一帧动画怎么执行）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">使用percentage百分比来指定动画发生的时间点</span><br><span class="hljs-comment">0%/100%叫动画序列，也可用from/to</span><br><span class="hljs-comment">可以改变任意多的样式和次数,如中间的10%...</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">@keyframes</span> 动画名称&#123;<br> <span class="hljs-number">0%</span>&#123; <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;&#125;<br> <span class="hljs-number">100%</span>&#123; <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;&#125;<br>&#125;  <br><span class="hljs-comment">/*有几个状态变化可分几个百分比，自动根据百分比分配时间*/</span><br><span class="hljs-keyword">@keyframes</span> move&#123;<span class="hljs-number">0%</span>&#123;...&#125;<span class="hljs-number">25%</span>&#123;...&#125;<span class="hljs-number">50%</span>&#123;...&#125;<span class="hljs-number">75%</span>&#123;...&#125;<span class="hljs-number">100%</span>&#123;...&#125;&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>使用动画</p>
+<ul>
+<li><p>指定动画名称、持续时间、运动曲线、执行参数…</p>
+</li>
+<li><p>animation-name: 动画名称  animation-duration: 持续时间</p>
+</li>
+<li><p>这两个必须同时使用才生效，也可直接使用缩写属性</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-动画常见属性"><a href="#3-3-动画常见属性" class="headerlink" title="3.3 动画常见属性"></a>3.3 动画常见属性</h3><ul>
+<li><p>@keyframes   规定动画</p>
+</li>
+<li><p>animation   简写属性(除了animation-play-state)  </p>
+</li>
+<li><p>animation-name/animation-duration/animation-timing-function</p>
+<ul>
+<li>动画名称(必须)/持续时间(必须) s或ms/运动曲线，默认ease</li>
+</ul>
+</li>
+<li><p>animation-delay/animation-iteration-count</p>
+<ul>
+<li>规定动画延迟执行时间(默认0s)  播放次数(默认1,infinite-无限次)</li>
+</ul>
+</li>
+<li><p>animation-direction /animation-fill-mode/ animation-play-state</p>
+<ul>
+<li><p>是否逆向播放alternate逆播放，默认normal，reverse反转</p>
+</li>
+<li><p>动画结束状态  </p>
+<ul>
+<li>backwards(默认)-第一帧位置</li>
+<li>none-没有执行动画位置  </li>
+<li>forwards-最后一帧位置 </li>
+</ul>
+</li>
+<li><p>动画运行或停止-默认running ,pause暂停（在JS中使用）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-动画属性简写"><a href="#3-4-动画属性简写" class="headerlink" title="3.4 动画属性简写"></a>3.4 动画属性简写</h3><ul>
+<li><p>语法</p>
+<ul>
+<li><p>animation: 名称 持续时间 运动曲线 何时开始 播放次数 是否逆向 起始结束状态  </p>
+</li>
+<li><p>前面两个一定要写                                                            2020.9.27                                 </p>
+</li>
+</ul>
+</li>
+<li><p>速度曲线细节（了解）</p>
+<ul>
+<li>animation-timing-function: 规定动画运动曲线，默认ease</li>
+<li>ease/linear  动画低速开始-然后加快-结束时变慢/匀速    </li>
+<li>ease-in/ease-out/ease-in-out 低速开始/低速结束/低速开始和结束  </li>
+</ul>
+</li>
+</ul>
+<h2 id="4-其他特性（了解）"><a href="#4-其他特性（了解）" class="headerlink" title="4. 其他特性（了解）"></a>4. 其他特性（了解）</h2><p>  <strong>图片变模糊</strong></p>
 <div class="code-wrapper"><pre><code class="hljs">滤镜filter -可以将图片模糊或颜色偏移
 
 -filter: 函数()  如：filter: blur(5px); //数值越大越模糊
@@ -1147,105 +1415,6 @@
 
 -width: calc(100% - 80px);  +-*/中间用空格隔开
 </code></pre></div>
-<h2 id="3-CSS3过渡（重点）"><a href="#3-CSS3过渡（重点）" class="headerlink" title="3. CSS3过渡（重点）"></a>3. CSS3过渡（重点）</h2><p>  <strong>transition(过渡)</strong></p>
-<p>   -从一个状态渐渐的过渡到</p>
-<p>另一个状态(常和hover一起搭配)</p>
-<p>   -transition: 要过渡的属性 花费时间 运动曲线 何时开始;</p>
-<p>   -过渡属性: 宽度高度/背景颜色/内外边距都可 all(所有)</p>
-<p>   -时间: s(必须)  运动曲线: 默认ease(可省)  何时开始: s (可省)</p>
-<p>  口诀：谁做过渡给谁加</p>
-<p>   -多个属性可用逗号进行分割(all) 如: transition: width 2s,height 2s;</p>
-<p>注：使用transition必须写初始状态否则不起作用，即使是left也要写left: 0;</p>
-<div class="code-wrapper"><pre><code class="hljs">                              -2020.9.26
-</code></pre></div>
-<h2 id="4-2D转换"><a href="#4-2D转换" class="headerlink" title="4. 2D转换"></a>4. 2D转换</h2><p>转换(transform)</p>
-<p> -移动(translate)/旋转(rotate)/缩放(scale)</p>
-<p><strong>移动translate</strong>   </p>
-<p>-可以改变元素位置，类似定位，移动位置还有margin</p>
-<p>   -transform: translate(x,y);  x,y的坐标，单位px或百分比</p>
-<div class="code-wrapper"><pre><code class="hljs">transform: translateX(n);/translateY(n);  只移动x/y    
-</code></pre></div>
-<p>   -优点：不会影响到其他元素(类似相对定位)</p>
-<p>   -注：translate中百分比单位是相对于自身元素的,行内元素不起作用</p>
-<p>   <strong>应用-盒子水平垂直居中</strong>：</p>
-<div class="code-wrapper"><pre><code class="hljs">position: absolute;  加定位，父元素加相对定位
-
-left: 50%; top: 50%; transform(translate(-50%,-50%))
-</code></pre></div>
-<p> <strong>旋转rotate</strong></p>
-<p>-二维平面顺时针或逆时针旋转</p>
-<p>-语法：transform: rotate(度数) </p>
-<div class="code-wrapper"><pre><code class="hljs">-重点：单位deg,角度正-顺时针转, 角度负-逆时针转       
-
--旋转中心点：transform-origin: x y; 默认(50% 50%)
-
-可以设置百分比/像素px/方位名词(top bottom left right center)
-</code></pre></div>
-<p>  <strong>缩放scale</strong></p>
-<div class="code-wrapper"><pre><code class="hljs">-控制放大和缩小
-
--语法：transform: scale(x,y);  x,y修改的宽和高-倍数  
-
--注意：参数不跟单位-倍数,小于1就是缩放(可小数)
-
-   若只有一个参数则宽高同时修改n倍
-
--优点：不会影响其他盒子，且可以设置缩放中心点transform-origin
-
-   (原来的直接改变宽高会影响其他盒子)
-</code></pre></div>
-<p>  <strong>2D转换综合写法</strong></p>
-<div class="code-wrapper"><pre><code class="hljs">-transform: translate() rotate() scale();  空格隔开
-</code></pre></div>
-<p>   -顺序会影响转换效果，当有位移和其他属性时，必须把位移放到最前</p>
-<h2 id="5-动画animation"><a href="#5-动画animation" class="headerlink" title="5. 动画animation"></a>5. 动画animation</h2><p>-相比于过渡，动画可以实现更多变化，控制，连续自动播放等效果</p>
-<p>-基本使用：定义动画=&gt;使用(调用)动画</p>
-<ol>
-<li>定义动画-@keyframes</li>
-</ol>
-<p>  @keyframes 动画名称{</p>
-<p> 0%{ width: 100px;}</p>
-<p>  100%{ height: 100px;}}  </p>
-<p>0%/100%叫动画序列，也可用from/to</p>
-<p>可以改变任意多的样式和次数</p>
-<ol start="2">
-<li>使用动画</li>
-</ol>
-<p> animation-name: 动画名称  animation-duration: 持续时间</p>
-<div class="code-wrapper"><pre><code class="hljs"> (这两个必须同时使用才生效)
-</code></pre></div>
-<p>  <strong>可以做多个状态的变化</strong></p>
-<div class="code-wrapper"><pre><code class="hljs">有几个状态变化可分几个百分比，自动根据百分比分配时间
-</code></pre></div>
-<p>如：@keyframes move{0%{…}25%{…}50%{…}75%{…}100%{…}}</p>
-<div class="code-wrapper"><pre><code class="hljs">其中0%可写也可不写也可为空
-</code></pre></div>
-<p>  <strong>动画常见属性</strong></p>
-<div class="code-wrapper"><pre><code class="hljs">@keyframes/animation 规定动画  简写属性(除了animation-play-state)  
-
-animation-name/animation-duration/animation-timing-function
-</code></pre></div>
-<p>动画名称(必须)/持续时间(必须) s或ms/运动曲线，默认ease</p>
-<p>animation-delay/animation-iteration-count</p>
-<p>规定动画何时开始(默认0s)  播放次数(默认1,infinite-无限次)</p>
-<div class="code-wrapper"><pre><code class="hljs">animation-direction /animation-fill-mode/ animation-play-state
-</code></pre></div>
-<p>是否逆向播放alternate逆播放，默认normal</p>
-<div class="code-wrapper"><pre><code class="hljs">动画结束状态  保持forwards 回到初始backwards(默认)
-
-鼠标放上去是否停止-默认running ,pause(加在hover)
-</code></pre></div>
-<p>  <strong>动画属性简写</strong></p>
-<p>   animation: 名称 持续时间 运动曲线 何时开始 播放次数 是否逆向 起始结束状态  </p>
-<p>   （前面两个一定要写）                 2020.9.27                                 </p>
-<p>  -速度曲线细节 </p>
-<p>animation-timing-function: 规定动画运动曲线，默认ease</p>
-<div class="code-wrapper"><pre><code class="hljs">ease/linear  动画低速开始-然后加快-结束时变慢/匀速    
-</code></pre></div>
-<p>ease-in/ease-out/ease-in-out 低速开始/低速结束/低速开始和结束  </p>
-<div class="code-wrapper"><pre><code class="hljs">steps()  时间函数中的间隔数量步长-动画需要多少步完成
-</code></pre></div>
-<p>​      </p>
 <h2 id="6-3D"><a href="#6-3D" class="headerlink" title="6. 3D"></a>6. 3D</h2><div class="code-wrapper"><pre><code class="hljs">***\*三维坐标系\****：
 
    x轴-右正左负/y轴-下正上负/z轴-往外正往里负       
@@ -1287,7 +1456,52 @@ animation-name/animation-duration/animation-timing-function
 
  -控制子元素是否开启三维立体环境(代码给父级,影响的是子盒子)  
 </code></pre></div>
-<h1 id="CSS布局相关"><a href="#CSS布局相关" class="headerlink" title="CSS布局相关"></a>CSS布局相关</h1><h2 id="1-布局方案总结"><a href="#1-布局方案总结" class="headerlink" title="1. 布局方案总结"></a>1. 布局方案总结</h2><ul>
+<h1 id="CSS布局相关"><a href="#CSS布局相关" class="headerlink" title="CSS布局相关"></a>CSS布局相关</h1><h2 id="1-居中方案总结"><a href="#1-居中方案总结" class="headerlink" title="1. 居中方案总结"></a>1. 居中方案总结</h2><ul>
+<li><strong>水平居中</strong><ul>
+<li>行内级元素水平居中 <ul>
+<li>父元素设置 text-align:center;</li>
+</ul>
+</li>
+<li>块级元素水平居中 <ul>
+<li>当前元素设置 margin: 0 auto;      注意：必须指定宽度</li>
+</ul>
+</li>
+<li>绝对定位水平居中 <ul>
+<li>left: 0; right: 0; margin: 0 auto;  给定宽度</li>
+</ul>
+</li>
+<li>flex布局水平居中 <ul>
+<li>justify-content: center;</li>
+</ul>
+</li>
+<li>transform+定位水平居中 <ul>
+<li>transform: translate(-50%,0); position: relative; left: 50%;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>垂直居中</strong><ul>
+<li>单行字体垂直居中 <ul>
+<li>height=line-height</li>
+</ul>
+</li>
+<li>绝对定位垂直居中 <ul>
+<li>top=0; bottom=0; margin: auto 0; 给定高度</li>
+</ul>
+</li>
+<li>flex布局垂直居中 <ul>
+<li>align-items: center;   </li>
+<li>flex布局中所有元素都会被垂直居中</li>
+</ul>
+</li>
+<li>translate+定位垂直居中 <ul>
+<li>position: relative; transform: translate(0,-50%); top: 50%;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-布局方案总结"><a href="#2-布局方案总结" class="headerlink" title="2. 布局方案总结"></a>2. 布局方案总结</h2><ul>
 <li><p>标准流</p>
 <ul>
 <li>垂直布局</li>
@@ -1304,7 +1518,7 @@ animation-name/animation-duration/animation-timing-function
 </ul>
 </li>
 </ul>
-<h2 id="2-flex布局-弹性布局"><a href="#2-flex布局-弹性布局" class="headerlink" title="2. flex布局(弹性布局)"></a>2. flex布局(弹性布局)</h2><h3 id="2-1-初识flex"><a href="#2-1-初识flex" class="headerlink" title="2.1 初识flex"></a>2.1 初识flex</h3><ul>
+<h2 id="3-flex布局-弹性布局"><a href="#3-flex布局-弹性布局" class="headerlink" title="3. flex布局(弹性布局)"></a>3. flex布局(弹性布局)</h2><h3 id="3-1-初识flex"><a href="#3-1-初识flex" class="headerlink" title="3.1 初识flex"></a>3.1 初识flex</h3><ul>
 <li>认识flexbox<ul>
 <li>Flexbox翻译成弹性盒子<ul>
 <li>弹性盒子是一种用于<strong>按行或按列布局元素</strong>的<strong>一维布局方法</strong></li>
@@ -1348,7 +1562,7 @@ animation-name/animation-duration/animation-timing-function
 </ul>
 </li>
 </ul>
-<h3 id="2-2-flex中常用属性"><a href="#2-2-flex中常用属性" class="headerlink" title="2.2 flex中常用属性"></a>2.2 flex中常用属性</h3><h4 id="2-2-1-flex-container属性"><a href="#2-2-1-flex-container属性" class="headerlink" title="2.2.1 flex-container属性"></a>2.2.1 flex-container属性</h4><ul>
+<h3 id="3-2-flex中常用属性"><a href="#3-2-flex中常用属性" class="headerlink" title="3.2 flex中常用属性"></a>3.2 flex中常用属性</h3><h4 id="3-2-1-flex-container属性"><a href="#3-2-1-flex-container属性" class="headerlink" title="3.2.1 flex-container属性"></a>3.2.1 flex-container属性</h4><ul>
 <li><p>flex-direction</p>
 <ul>
 <li>作用：修改主轴方向（主轴和交叉轴始终垂直，主轴改变交叉轴也会改变）</li>
@@ -1367,70 +1581,84 @@ animation-name/animation-duration/animation-timing-function
 <ul>
 <li><p>flex-flow</p>
 <ul>
-<li>缩写属性： flex-flow: flex-direction||flex-wrap</li>
+<li>缩写属性    flex-flow: flex-direction||flex-wrap</li>
 <li>顺序任意，并且都可省略</li>
 </ul>
 </li>
 <li><p>justify-content(主轴对齐方式)</p>
 <ul>
-<li>justify-content: flex-start/flex-end/center/space-between/space-around</li>
-<li>与主轴起点对齐(默认)/终点对齐/中间对齐/两端对齐/环绕对齐</li>
+<li>作用：决定了flex items在main axis上的对齐方式（如何分配主轴上的剩余空间）</li>
+<li>justify-content: flex-start/flex-end/center/space-between/space-around/space-evenly</li>
+<li>与主轴起点对齐(默认)/终点对齐/中间对齐/两端对齐/环绕对齐/均分对齐</li>
 </ul>
 </li>
-<li><p>align-content</p>
+<li><p>align-content（用得较少）</p>
 <ul>
-<li>换行对齐  只有伸缩项发生换行这个属性才有效</li>
-<li>align-content: flex-start/end-start/center/space-between/space-around</li>
-<li>侧轴起点对齐/终点对齐/居中/两端对齐/环绕对齐</li>
-<li>注意：默认拉伸对齐-stretch</li>
+<li>作用：决定了<strong>多行</strong>flex items在cross axis上的对齐方式，用法和justify-content类似</li>
+<li>align-content: stretch/flex-start/flex-end/center/space-between/space-around/space-evenly</li>
+<li>拉升对齐(默认)/侧轴起点对齐/终点对齐/居中/两端对齐/环绕对齐/等分对齐</li>
+<li>注意：换行对齐-只有设置了flex-warp这个属性才有效</li>
 </ul>
 </li>
 <li><p>align-items</p>
 <ul>
-<li><p>align-items: flex-start/flex-end/center/baseline/stretch</p>
+<li><p>作用：决定了flex items在cross axis上的对齐方式（一般是单行）</p>
 </li>
-<li><p>与主轴起点对齐(默认)/终点对齐/中间/基线对齐/拉伸对齐(拉伸为侧轴高度)</p>
+<li><p>align-items: flex-start/flex-end/center/baseline/stretch/normal</p>
+</li>
+<li><p>与主轴起点对齐(默认)/终点对齐/中间/基线对齐/拉伸对齐(拉伸为侧轴高度)/效果和stretch一样</p>
 </li>
 <li><p>注意: 设置拉伸对齐,伸缩项不能设置高度,否则会失效</p>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="2-2-2-flex-item属性"><a href="#2-2-2-flex-item属性" class="headerlink" title="2.2.2 flex-item属性"></a>2.2.2 flex-item属性</h4><ul>
+<h4 id="3-2-2-flex-item属性"><a href="#3-2-2-flex-item属性" class="headerlink" title="3.2.2 flex-item属性"></a>3.2.2 flex-item属性</h4><ul>
 <li><p>align-self</p>
 <ul>
-<li>align-self:flex-start/flex-end…  //取值一样,控制某个伸缩项,写到伸缩项中</li>
+<li>作用：覆盖flex container中设置的align-items，单独设置某个伸缩项对齐方式</li>
+<li>align-self: flex-start/flex-end…  </li>
+<li>取值和align-items一样,控制某个伸缩项</li>
 </ul>
 </li>
-<li><p>order(伸缩项排序)</p>
+<li><p>order</p>
 <ul>
-<li><p>添加给伸缩项,每一个伸缩项都有一个order属性-默认为0</p>
+<li><p>作用：伸缩项排序</p>
 </li>
-<li><p>order: 0;  //从小到大,数字越大排在越后面,可以为负</p>
+<li><p>可设置任意整数（正、负、0），默认为0</p>
 </li>
-</ul>
-</li>
-<li><p>flew-grow(伸缩项扩充)</p>
-<ul>
-<li><p>flew-grow: 0;  //默认为0-不需扩充,值越大所占份数越多</p>
-</li>
-<li><p>用于使伸缩项宽度总和填满整个伸缩容器</p>
-</li>
-<li><p>注意: 当所有伸缩项宽度总和小于伸缩容器宽度时才有效</p>
+<li><p>order: 0;  数字越小优先级越高</p>
 </li>
 </ul>
 </li>
-<li><p>flex-shrink(伸缩项缩小)</p>
+<li><p>flew-grow</p>
 <ul>
+<li><p>作用：决定伸缩项拉伸，用于使伸缩项宽度总和填满整个伸缩容器</p>
+</li>
+<li><p>flew-grow: 0;  //非负数字，默认为0-不需扩充,值越大所占份数越多</p>
+</li>
+<li><p>注意</p>
+<ul>
+<li>当flex container在main-axis上有剩余空间时flex-grow才有效</li>
+<li>flex items扩展后的size不能超过其设置的max-height/max-width</li>
+<li>没有指定/flex-grow:0;  不会被扩充</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>flex-shrink</p>
+<ul>
+<li><p>作用：决定伸缩项收缩</p>
+</li>
+<li><p>flex-shrink: 1;  //非负数字，默认是1，设置0-超出伸缩容器也不缩小</p>
+</li>
 <li><p>当伸缩项宽度和&gt;伸缩容器宽度,默认不换行,会等比缩放伸缩容器</p>
 </li>
-<li><p>flex-shrink: 1;  //默认是1  0-超出伸缩容器也不缩小</p>
-</li>
-<li><p>注意: 当所有伸缩项宽度总和大于伸缩容器宽度时才有效  </p>
-</li>
-<li><p>伸缩项扩充缩小注意点</p>
+<li><p>注意</p>
 <ul>
-<li><p>没有指定/flex-grow:0;  不会被扩充</p>
+<li><p>当flex items在main-axis上超过container时flex-grow才有效  </p>
+</li>
+<li><p>items收缩后的size不能小于其设置的min-height/min-width</p>
 </li>
 <li><p>flex-shrink: 0;  当前伸缩项不会被缩小</p>
 </li>
@@ -1440,21 +1668,48 @@ animation-name/animation-duration/animation-timing-function
 </li>
 </ul>
 </li>
-<li><p>flex-basis(伸缩项宽度设置)</p>
+<li><p>flex-basis</p>
 <ul>
+<li><p>作用：设置flex items在mian axis方向上的base size</p>
+</li>
 <li><p>flex-basis: px  //设置伸缩项的宽度,伸缩布局中才有用,默认auto</p>
 </li>
-<li><p>通过flex-basis设置了宽度,width就无效</p>
-</li>
-</ul>
-</li>
-<li><p>flex(伸缩项属性连写)</p>
+<li><p>注意</p>
 <ul>
-<li>flex: 扩充 缩小 宽度;  默认：flex: 0,1,auto  flex: 1===flex: 1,1,0</li>
+<li>通过flex-basis设置了宽度,width就无效</li>
+<li>决定最终base size因素优先级：max-wid/hei min-wid/hei &gt;flex-basis&gt;width/height&gt;内容本身size</li>
 </ul>
 </li>
 </ul>
-<h2 id="2-圣杯布局和双飞翼布局"><a href="#2-圣杯布局和双飞翼布局" class="headerlink" title="2. 圣杯布局和双飞翼布局"></a>2. 圣杯布局和双飞翼布局</h2><p>  两边宽度不变,中间自适应的三栏布局</p>
+</li>
+<li><p>flex</p>
+<ul>
+<li><p>作用：伸缩项属性连写  none |  [&lt;’flex-grow’&gt;&lt;’flex-shrink’&gt;?||&lt;’flex-basis’&gt;]</p>
+</li>
+<li><p>语法解释：</p>
+<ul>
+<li>一个值：grow或basis（有单位就是basis）     关键字：none、auto、initial</li>
+<li>两个值：第一个为grow，第二个shrink或basis</li>
+<li>三个值…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-flex布局中的常见问题解决"><a href="#3-3-flex布局中的常见问题解决" class="headerlink" title="3.3 flex布局中的常见问题解决"></a>3.3 flex布局中的常见问题解决</h3><ul>
+<li><p>flex布局中justify-content最后一行布局问题</p>
+<ul>
+<li>问题：如果每一行4个item，最后一行&lt;4，就会出现最后一行不能和其他对齐(间隙不同)</li>
+<li>解决方案：在flex container的最后添加<strong>n-2</strong>个span/i/div都可，并且设置其宽度为items的宽度</li>
+<li>原理<ul>
+<li>添加的元素没有高度和内容所以不会显示，但是有宽度会占据flex中位置</li>
+<li>从而替代（补齐）最后一行的元素的空位，使最后一行的布局正确</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-圣杯布局和双飞翼布局"><a href="#4-圣杯布局和双飞翼布局" class="headerlink" title="4. 圣杯布局和双飞翼布局"></a>4. 圣杯布局和双飞翼布局</h2><p>  两边宽度不变,中间自适应的三栏布局</p>
 <p> *圣杯布局</p>
 <p>搞一个容器,里面放三个盒子</p>
 <p>设置两侧盒子宽度(固定)</p>
@@ -1465,7 +1720,7 @@ animation-name/animation-duration/animation-timing-function
 <p>设置右边盒子margin-left: -px   通过定位调整位置使其不盖住中间区域</p>
 <p>给容器设置最小宽度,防止缩小变形  min-width: px;</p>
 <p> *双飞翼布局</p>
-<h2 id="3-响应式布局-媒体查询"><a href="#3-响应式布局-媒体查询" class="headerlink" title="3. 响应式布局(媒体查询)"></a>3. 响应式布局(媒体查询)</h2><p> 媒体查询：</p>
+<h2 id="5-响应式布局-媒体查询"><a href="#5-响应式布局-媒体查询" class="headerlink" title="5. 响应式布局(媒体查询)"></a>5. 响应式布局(媒体查询)</h2><p> 媒体查询：</p>
 <p>响应式网页-不同的设备上呈现出不同样式</p>
 <p>css3新增媒体查询-获取宽度后,根据不同浏览器的宽度设置不同的样式</p>
 <p>注意点：不适合比较复杂的网页</p>
@@ -1726,19 +1981,34 @@ animation-name/animation-duration/animation-timing-function
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css">//鼠标在元素上的样式-<span class="hljs-attribute">auto</span>浏览器根据上下文决定指针显示样式 工具 箭头 小手 移动 文本 禁止 没有任何样式<br><span class="hljs-attribute">cursor</span>: auto/default/pointer/move/text/not-allowed/none<br><br>//表单轮廓outline-光标定到text中，会有蓝色轮廓线，通常情况去掉 <br>input&#123;outline: none/<span class="hljs-number">0</span>;&#125;<br><br>//防止拖拽文本域-默认文本域右下的三角可以拖动会影响布局<br><span class="hljs-attribute">resize</span>: textarea&#123;resize: none;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>注意：文本域尽量放到一行，不然中间有空格</p>
-<h2 id="12-vertical-align"><a href="#12-vertical-align" class="headerlink" title="12. vertical-align"></a>12. vertical-align</h2><p>作用：设置元素垂直对齐方式(只对行内元素有效)</p>
-<p><img src="/img/css_vertical-align.png" srcset="/img/loading.gif" lazyload></p>
-<p>text-align-设置给父元素  vertical-align-谁对齐设置给谁  </p>
-<p>默认情况图片和文字基线(最短文字下端)对齐</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">//文字基线 盒子顶部/底部 文字顶部/底部/中线<br><span class="hljs-attribute">vertical-align</span>: baseline/top/bottom/text-top/text-bottom//middle<br></code></pre></td></tr></table></figure>
-
-<p> (中线不是正中间,而是基线往上四分之一)     </p>
 <h2 id="13-溢出的文字省略号显示"><a href="#13-溢出的文字省略号显示" class="headerlink" title="13. 溢出的文字省略号显示"></a>13. 溢出的文字省略号显示</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">//单行文本溢出显示省略号<br><span class="hljs-attribute">white-space</span>: nowrap;  //先强制一行内显示文本(默认<span class="hljs-attribute">normal</span>自动换行)<br><span class="hljs-attribute">overflow</span>: hidden; 	  //超出的部分隐藏  <br><span class="hljs-attribute">text-overflow</span>: ellipsis; //文字用省略号替代超出的部分<br></code></pre></td></tr></table></figure>
 
 <p>多行文本溢出显示省略号  </p>
-<h2 id="14-常见布局技巧"><a href="#14-常见布局技巧" class="headerlink" title="14. 常见布局技巧"></a>14. 常见布局技巧</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">//<span class="hljs-attribute">margin</span>负值的运用-浮动的相邻盒子中间边框会加粗<br><span class="hljs-attribute">margin</span>: -<span class="hljs-number">1px</span><br></code></pre></td></tr></table></figure>
-
-
+<h2 id="14-margin负值的应用"><a href="#14-margin负值的应用" class="headerlink" title="14. margin负值的应用"></a>14. margin负值的应用</h2><ul>
+<li><p>问题一</p>
+<ul>
+<li>使用浮动横向排布盒子时，每个盒子设置margin-right，而每行最右边的盒子不需要margin-right</li>
+<li>这时，本该在最右边的盒子就会跑到下一行显示，打乱了布局</li>
+</ul>
+</li>
+<li><p>解决方法</p>
+<ul>
+<li>给所有item包一个div元素，给div设置margin-right: item盒子的margin-right值</li>
+</ul>
+</li>
+<li><p>原理</p>
+<ul>
+<li>加的div默认宽度是最外层的盒子，给其设置margin-right负值，会使它的宽度增加</li>
+<li>增加的div没有高度不影响显示，而我们正好需要增加的宽度来装每一行最后一个item的margin-right</li>
+</ul>
+</li>
+<li><p>问题二</p>
+<ul>
+<li>浮动的相邻盒子中间边框会加粗</li>
+<li>解决：margin: -1px</li>
+</ul>
+</li>
+</ul>
 <h2 id="15-边框图片和渐变"><a href="#15-边框图片和渐变" class="headerlink" title="15. 边框图片和渐变"></a>15. 边框图片和渐变</h2><p><strong>边框图片：border-image</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-image-source</span>: <span class="hljs-built_in">url</span>()  //默认将图片放边框四个顶点<br></code></pre></td></tr></table></figure>
 
@@ -1761,6 +2031,58 @@ animation-name/animation-duration/animation-timing-function
 <p>   //同时指定扩散位置和范围 (100px at 200px 100px,red,green)</p>
 <div class="code-wrapper"><pre><code class="hljs">                                                                                                                   2021.4.26
 </code></pre></div>
+<h1 id="CSS项目技巧"><a href="#CSS项目技巧" class="headerlink" title="CSS项目技巧"></a>CSS项目技巧</h1><h2 id="1-代码规范"><a href="#1-代码规范" class="headerlink" title="1. 代码规范"></a>1. 代码规范</h2><ul>
+<li><p>基本的代码规范</p>
+<ul>
+<li>如建议缩进两个空格（Vue、React等都是两个空格缩进）</li>
+</ul>
+</li>
+<li><p>参考凹凸实验室代码规范</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://guide.aotu.io./">https://guide.aotu.io./</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-样式编写顺序"><a href="#2-样式编写顺序" class="headerlink" title="2. 样式编写顺序"></a>2. 样式编写顺序</h2><ul>
+<li><p>解释：给一个元素指定多个css样式时，我们要按照一定的顺序排布</p>
+</li>
+<li><p>好处：方便查找、代码整洁高效、思路清晰</p>
+</li>
+<li><p>顺序</p>
+<ul>
+<li><p>定位和布局（确定元素本身如何布局）</p>
+<ul>
+<li>position(top…)、float、flexbox</li>
+</ul>
+</li>
+<li><p>元素类型和可见性</p>
+<ul>
+<li>Display、visibility、opacity</li>
+</ul>
+</li>
+<li><p>盒子模型</p>
+<ul>
+<li>width/height、margin、box-shadow、border、border-radius、padding</li>
+</ul>
+</li>
+<li><p>字体、文本</p>
+<ul>
+<li>font、text、line-height、color</li>
+</ul>
+</li>
+<li><p>背景设置</p>
+</li>
+<li><p>其他属性</p>
+<ul>
+<li>overflow、cursor、transform、transition、animation、white-space</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-组件化开发思想"><a href="#3-组件化开发思想" class="headerlink" title="3. 组件化开发思想"></a>3. 组件化开发思想</h2><ul>
+<li>将一个页面分解成多个”组件”编写，编写好后再合并到一起，化繁为简</li>
+</ul>
 <h1 id="日常总结"><a href="#日常总结" class="headerlink" title="日常总结"></a>日常总结</h1><h2 id="1-锚点链接和书签链接"><a href="#1-锚点链接和书签链接" class="headerlink" title="1. 锚点链接和书签链接"></a>1. 锚点链接和书签链接</h2><p>  锚点链接：<a href="#名称1"></a>  <h3 id="名称1"></h3></p>
 <p>  书签链接：<a href="#名称2"></a>  &lt;a name=名称2”&gt;</a></p>
 <p>  跨页面跳转:<a href="xxx.html#名称1"></a> 用id/name都可</p>

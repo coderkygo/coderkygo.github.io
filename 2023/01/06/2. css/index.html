@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://kygo.top/img/css_%E5%85%83%E7%B4%A0%E5%88%86%E7%B1%BB.png">
 <meta property="og:image" content="https://kygo.top/img/css_%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.png">
 <meta property="article:published_time" content="2023-01-06T14:51:00.658Z">
-<meta property="article:modified_time" content="2023-01-18T15:16:53.440Z">
+<meta property="article:modified_time" content="2023-01-25T01:20:31.140Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
@@ -217,7 +217,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      36k 字
+      38k 字
     </span>
   
 
@@ -226,7 +226,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      299 分钟
+      321 分钟
     </span>
   
 
@@ -267,7 +267,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023-01-18 23:16:53
+                  本文最后更新于：2023-01-25 09:20:31
                 
               </p>
             
@@ -1405,17 +1405,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="4-其他特性（了解）"><a href="#4-其他特性（了解）" class="headerlink" title="4. 其他特性（了解）"></a>4. 其他特性（了解）</h2><p>  <strong>图片变模糊</strong></p>
-<div class="code-wrapper"><pre><code class="hljs">滤镜filter -可以将图片模糊或颜色偏移
-
--filter: 函数()  如：filter: blur(5px); //数值越大越模糊
-</code></pre></div>
-<p>   <strong>计算盒子宽度width: calc函数</strong></p>
-<div class="code-wrapper"><pre><code class="hljs">-calc()此CSS函数让你在声明CSS属性值时执行一些计算
-
--width: calc(100% - 80px);  +-*/中间用空格隔开
-</code></pre></div>
-<h2 id="6-3D"><a href="#6-3D" class="headerlink" title="6. 3D"></a>6. 3D</h2><div class="code-wrapper"><pre><code class="hljs">***\*三维坐标系\****：
+<h2 id="4-3D"><a href="#4-3D" class="headerlink" title="4. 3D"></a>4. 3D</h2><div class="code-wrapper"><pre><code class="hljs">***\*三维坐标系\****：
 
    x轴-右正左负/y轴-下正上负/z轴-往外正往里负       
 
@@ -1455,6 +1445,16 @@
  transform-style: preserve-3d 开启立体空间(默认flat不开启)
 
  -控制子元素是否开启三维立体环境(代码给父级,影响的是子盒子)  
+</code></pre></div>
+<h2 id="5-其他特性（了解）"><a href="#5-其他特性（了解）" class="headerlink" title="5. 其他特性（了解）"></a>5. 其他特性（了解）</h2><p>  <strong>图片变模糊</strong></p>
+<div class="code-wrapper"><pre><code class="hljs">滤镜filter -可以将图片模糊或颜色偏移
+
+-filter: 函数()  如：filter: blur(5px); //数值越大越模糊
+</code></pre></div>
+<p>   <strong>计算盒子宽度width: calc函数</strong></p>
+<div class="code-wrapper"><pre><code class="hljs">-calc()此CSS函数让你在声明CSS属性值时执行一些计算
+
+-width: calc(100% - 80px);  +-*/中间用空格隔开
 </code></pre></div>
 <h1 id="CSS布局相关"><a href="#CSS布局相关" class="headerlink" title="CSS布局相关"></a>CSS布局相关</h1><h2 id="1-居中方案总结"><a href="#1-居中方案总结" class="headerlink" title="1. 居中方案总结"></a>1. 居中方案总结</h2><ul>
 <li><strong>水平居中</strong><ul>
@@ -1550,7 +1550,7 @@
 </ul>
 </li>
 <li>flex item(伸缩项)：flex container中的直接子元素<ul>
-<li>flex item不再严格区分块级元素和行内级元素（默认包裹内容，可设置宽高）</li>
+<li>flex item<strong>不再严格区分</strong>块级元素和行内级元素（默认包裹内容，可设置宽高）</li>
 <li>flex item布局受flex container属性的设置来控制布局</li>
 </ul>
 </li>
@@ -1597,7 +1597,7 @@
 <li>作用：决定了<strong>多行</strong>flex items在cross axis上的对齐方式，用法和justify-content类似</li>
 <li>align-content: stretch/flex-start/flex-end/center/space-between/space-around/space-evenly</li>
 <li>拉升对齐(默认)/侧轴起点对齐/终点对齐/居中/两端对齐/环绕对齐/等分对齐</li>
-<li>注意：换行对齐-只有设置了flex-warp这个属性才有效</li>
+<li>注意：换行对齐-只有设置了flex-warp这个属性并且flex container设置固定高度才有效</li>
 </ul>
 </li>
 <li><p>align-items</p>
@@ -1696,7 +1696,38 @@
 </ul>
 </li>
 </ul>
-<h3 id="3-3-flex布局中的常见问题解决"><a href="#3-3-flex布局中的常见问题解决" class="headerlink" title="3.3 flex布局中的常见问题解决"></a>3.3 flex布局中的常见问题解决</h3><ul>
+<h3 id="3-3-align-items和align-content比较"><a href="#3-3-align-items和align-content比较" class="headerlink" title="3.3 align-items和align-content比较"></a>3.3 align-items和align-content比较</h3><ul>
+<li>相同点<ul>
+<li>都是设置交叉轴上的的对齐方式</li>
+<li>都可以实现ceter</li>
+</ul>
+</li>
+<li>不同点<ul>
+<li>基本单位不同<ul>
+<li>align-items是以每个flex item为基本单位，在当前行设置items居中等</li>
+<li>align-content是以每行row作为基本单位，类似于justify-content以每一列</li>
+</ul>
+</li>
+<li>属性值不同<ul>
+<li>align-items有baseline对齐，而没有align-content的space相关属性</li>
+</ul>
+</li>
+<li>可能失效的情况不同<ul>
+<li>align-items不会失效</li>
+<li>align-content会失效<ul>
+<li>当flex container没有设置高度时，该属性无效</li>
+<li>当flex container一行时，该属性值无效<ul>
+<li>如果设置了 flex-wrap: wrap，会被认为是多行，就算只有一行也会失效</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-flex布局中的常见问题解决"><a href="#3-4-flex布局中的常见问题解决" class="headerlink" title="3.4 flex布局中的常见问题解决"></a>3.4 flex布局中的常见问题解决</h3><ul>
 <li><p>flex布局中justify-content最后一行布局问题</p>
 <ul>
 <li>问题：如果每一行4个item，最后一行&lt;4，就会出现最后一行不能和其他对齐(间隙不同)</li>
@@ -1709,18 +1740,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="4-圣杯布局和双飞翼布局"><a href="#4-圣杯布局和双飞翼布局" class="headerlink" title="4. 圣杯布局和双飞翼布局"></a>4. 圣杯布局和双飞翼布局</h2><p>  两边宽度不变,中间自适应的三栏布局</p>
-<p> *圣杯布局</p>
-<p>搞一个容器,里面放三个盒子</p>
-<p>设置两侧盒子宽度(固定)</p>
-<p>设置中间盒子宽度等于容器的宽度(100%)</p>
-<p>设置容器的左右padding等于两侧盒子的宽度 padding: 0 px;</p>
-<p>三个盒子都在同一方向上浮动 </p>
-<p>设置左边盒子margin-left: -100%  通过定位调整位置使其不盖住中间区域</p>
-<p>设置右边盒子margin-left: -px   通过定位调整位置使其不盖住中间区域</p>
-<p>给容器设置最小宽度,防止缩小变形  min-width: px;</p>
-<p> *双飞翼布局</p>
-<h2 id="5-响应式布局-媒体查询"><a href="#5-响应式布局-媒体查询" class="headerlink" title="5. 响应式布局(媒体查询)"></a>5. 响应式布局(媒体查询)</h2><p> 媒体查询：</p>
+<h2 id="4-响应式布局-媒体查询"><a href="#4-响应式布局-媒体查询" class="headerlink" title="4. 响应式布局(媒体查询)"></a>4. 响应式布局(媒体查询)</h2><p> 媒体查询：</p>
 <p>响应式网页-不同的设备上呈现出不同样式</p>
 <p>css3新增媒体查询-获取宽度后,根据不同浏览器的宽度设置不同的样式</p>
 <p>注意点：不适合比较复杂的网页</p>
@@ -1832,11 +1852,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="5-浏览器渲染流程"><a href="#5-浏览器渲染流程" class="headerlink" title="5. 浏览器渲染流程"></a>5. 浏览器渲染流程</h2><p>主线程：Load HTML =&gt; Parse HTML =&gt; 遇到head中的link元素链接的css =&gt; 线程一执行</p>
-<p>线程一： =&gt; Load CSS =&gt; Parse CSS =&gt;如果DOM Tree完成则直接Attach否则等待</p>
-<p>主线程：=&gt; 继续Parse HTML =&gt; <strong>Create DOM Tree</strong> =&gt;等待线程一的CSS解析完…</p>
-<div class="code-wrapper"><pre><code class="hljs">           =&gt; Attach style to DOM nodes =&gt; **Render Tree** =&gt; Display
-</code></pre></div>
+<h2 id="5-浏览器渲染流程"><a href="#5-浏览器渲染流程" class="headerlink" title="5. 浏览器渲染流程"></a>5. 浏览器渲染流程</h2><ul>
+<li>主线程：Load HTML =&gt; Parse HTML =&gt; 遇到head中的link元素链接的css =&gt; 线程一执行</li>
+</ul>
+<ul>
+<li>线程一： =&gt; Load CSS =&gt; Parse CSS =&gt;如果DOM Tree完成则直接Attach否则等待</li>
+</ul>
+<ul>
+<li><p>主线程：=&gt; 继续Parse HTML =&gt; <strong>Create DOM Tree</strong> =&gt;等待线程一的CSS解析完…</p>
+</li>
+<li><p>=&gt; Attach style to DOM nodes =&gt; <strong>Render Tree</strong> =&gt; Display</p>
+</li>
+</ul>
 <h2 id="6-水平居中"><a href="#6-水平居中" class="headerlink" title="6. 水平居中"></a>6. 水平居中</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">	行内元素居中(包括行内替换和非替换元素)</span><br><span class="hljs-comment">	需要加在父元素上</span><br><span class="hljs-comment">*/</span><br><span class="hljs-attribute">text-align</span>: center;  <br><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	块级元素水平居中</span><br><span class="hljs-comment">	谁需要居中加在谁上</span><br><span class="hljs-comment">	居中原理：auto会平分剩余空间：margin-left/margin-right平分水平方向剩余空间，所以水平居中</span><br><span class="hljs-comment">	注意：auto不适用于垂直居中</span><br><span class="hljs-comment">*/</span><br><span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto; 	<br></code></pre></td></tr></table></figure>
 
 
@@ -1981,9 +2008,104 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css">//鼠标在元素上的样式-<span class="hljs-attribute">auto</span>浏览器根据上下文决定指针显示样式 工具 箭头 小手 移动 文本 禁止 没有任何样式<br><span class="hljs-attribute">cursor</span>: auto/default/pointer/move/text/not-allowed/none<br><br>//表单轮廓outline-光标定到text中，会有蓝色轮廓线，通常情况去掉 <br>input&#123;outline: none/<span class="hljs-number">0</span>;&#125;<br><br>//防止拖拽文本域-默认文本域右下的三角可以拖动会影响布局<br><span class="hljs-attribute">resize</span>: textarea&#123;resize: none;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>注意：文本域尽量放到一行，不然中间有空格</p>
-<h2 id="13-溢出的文字省略号显示"><a href="#13-溢出的文字省略号显示" class="headerlink" title="13. 溢出的文字省略号显示"></a>13. 溢出的文字省略号显示</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">//单行文本溢出显示省略号<br><span class="hljs-attribute">white-space</span>: nowrap;  //先强制一行内显示文本(默认<span class="hljs-attribute">normal</span>自动换行)<br><span class="hljs-attribute">overflow</span>: hidden; 	  //超出的部分隐藏  <br><span class="hljs-attribute">text-overflow</span>: ellipsis; //文字用省略号替代超出的部分<br></code></pre></td></tr></table></figure>
+<h2 id="12-white-space-text-overflow"><a href="#12-white-space-text-overflow" class="headerlink" title="12. white-space/text-overflow"></a>12. white-space/text-overflow</h2><ul>
+<li><p>white-space</p>
+<ul>
+<li>作用：设置空白处理和换行规则</li>
+<li>常用值<ul>
+<li>normal(默认)/nowrap/pre/pre-wrap/pre-line</li>
+<li>normal-合并所有连续空白(显示一个空白)，允许单词超屏自动换行</li>
+<li>nowrap-合并空白，不允许换行       </li>
+<li>pre-阻止合并空白，不允许换行（其余了解，用到再去查）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>text-overflow</p>
+<ul>
+<li>作用：设置文字溢出时的行为</li>
+<li>常用值<ul>
+<li>clip  默认值，裁剪溢出部分(单词可能显示不完整)</li>
+<li>ellipsis  溢出那行结尾处用省略号显示</li>
+</ul>
+</li>
+<li>注意：只有当overflow的值不为visible(默认)时，text-overflow才生效</li>
+</ul>
+</li>
+<li><p><strong>应用：溢出的文字省略号显示</strong></p>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css">//单行文本溢出显示省略号<br><span class="hljs-attribute">white-space</span>: nowrap;  //先强制一行内显示文本(默认<span class="hljs-attribute">normal</span>自动换行)<br><span class="hljs-attribute">overflow</span>: hidden; 	  //超出的部分隐藏  <br><span class="hljs-attribute">text-overflow</span>: ellipsis; //文字用省略号替代超出的部分<br></code></pre></td></tr></table></figure>
 
-<p>多行文本溢出显示省略号  </p>
+
+
+<h2 id="13-CSS中的函数"><a href="#13-CSS中的函数" class="headerlink" title="13. CSS中的函数"></a>13. CSS中的函数</h2><ul>
+<li><p>之前学过的css函数：rgb/translate/rotate/scale等</p>
+</li>
+<li><p>其他比较好用的css函数</p>
+<ul>
+<li>var、calc、blur、gradient</li>
+</ul>
+</li>
+<li><p>var()</p>
+<ul>
+<li><p>作用：使用css定义的变量</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*自定义属性：属性名必须&quot;--&quot;开头，属性值可以是任何有效的CSS值*/</span><br><span class="hljs-selector-tag">html</span>&#123;<br>  --kygo-<span class="hljs-attribute">color</span>: <span class="hljs-number">#f00</span>;<br>&#125;<br><span class="hljs-comment">/*通过var函数来使用*/</span><br><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--kygo-color);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>注意：推荐在 html/:root中自定义属性（只有后代元素才能使用自定义属性）</p>
+</li>
+</ul>
+</li>
+<li><p>calc() - calculate缩写</p>
+<ul>
+<li><p>作用：允许在声明css属性值时执行一些计算，通常用于计算元素大小或位置</p>
+</li>
+<li><p>支持：加减乘除的运算，注意<strong>运算符两边必须留空格</strong></p>
+</li>
+<li><p>语法</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*父元素宽度少100px*/</span><br><span class="hljs-selector-class">.item1</span>&#123;<br>   <span class="hljs-attribute">width</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">100%</span> - <span class="hljs-number">100px</span>);<br>   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#0f0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>blur()</p>
+<ul>
+<li><p>作用：将高斯模糊应用于图片或元素</p>
+</li>
+<li><p>语法：blur(radius)</p>
+<ul>
+<li><p>通常会和filter、backdrop-filter一起使用</p>
+</li>
+<li><p>区别：filter直接作用于图片或元素，backdrop-filter作用于元素后面的区域(一般搭配rgba使用)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*filter直接作用于box元素*/</span><br><span class="hljs-selector-class">.box</span>&#123;<br>   <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">10px</span>);<br>&#125;<br><span class="hljs-comment">/*backdrop-filter作用于.cover，而cover覆盖在其他元素上*/</span><br><span class="hljs-selector-class">.cover</span>&#123;<br>   <span class="hljs-comment">/* background-color: rgba(0,0,0,.3); */</span><br>   backdrop-<span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(<span class="hljs-number">10px</span>);<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>gradient渐变函数</p>
+<ul>
+<li><p>由来：是一种image类型，可用于background-image/border-image/content…</p>
+</li>
+<li><p>作用：设置颜色的渐变</p>
+</li>
+<li><p>gradient常见的函数实现</p>
+<ul>
+<li><p>linear-gradient()</p>
+<ul>
+<li>线性渐变(默认从上到下) to关键字  默认从上到下渐变</li>
+<li>创建一个表示两种或多种颜色线性渐变的图片</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/*</span><br><span class="hljs-comment">可以斜着渐变-到右上角：to top right  也可度数: 45deg</span><br><span class="hljs-comment">注意：至少传递两个颜色,没有上限，默认系统自己计算纯色和渐变色范围</span><br><span class="hljs-comment">*/</span><br><span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">liner-gradient</span>(red,green)<br>background-image: <span class="hljs-built_in">liner-gradient</span>(to top,red,green)<br>background-image: <span class="hljs-built_in">liner-gradient</span>(to top right,green)<br>background-image: <span class="hljs-built_in">liner-gradient</span>(<span class="hljs-number">45deg</span>,red,green)<br><br>/*指定渐变范围*/<br>background-image: <span class="hljs-built_in">liner-gradient</span>(to right,red <span class="hljs-number">100px</span>,green <span class="hljs-number">10%</span>,orange)  <br></code></pre></td></tr></table></figure></li>
+<li><p>radial-gradient()</p>
+<ul>
+<li>镜像渐变(默认中间往四周) at关键字</li>
+<li>以原点出发创建一个两种或多种颜色逐步过度组成的图片</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 左上角到四周渐变 */</span><br><span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">radial-gradient</span>(at top left,red,green) <br>/*<br>了解：<br>某个点开始镜像渐变(at <span class="hljs-number">200px</span> <span class="hljs-number">100px</span>,red,green)<br>控制扩散范围(<span class="hljs-number">100px</span>,red,green) <br>同时指定扩散位置和范围 (<span class="hljs-number">100px</span> at <span class="hljs-number">200px</span> <span class="hljs-number">100px</span>,red,green)<br>*/<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="14-margin负值的应用"><a href="#14-margin负值的应用" class="headerlink" title="14. margin负值的应用"></a>14. margin负值的应用</h2><ul>
 <li><p>问题一</p>
 <ul>
@@ -2009,28 +2131,84 @@
 </ul>
 </li>
 </ul>
-<h2 id="15-边框图片和渐变"><a href="#15-边框图片和渐变" class="headerlink" title="15. 边框图片和渐变"></a>15. 边框图片和渐变</h2><p><strong>边框图片：border-image</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border-image-source</span>: <span class="hljs-built_in">url</span>()  //默认将图片放边框四个顶点<br></code></pre></td></tr></table></figure>
-
-<p><strong>渐变</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">//线性渐变(默认从上到下) <span class="hljs-selector-tag">to</span>关键字  默认从上到下渐变<br><span class="hljs-attribute">background</span>: <span class="hljs-built_in">liner-gradient</span>([ to top/to left/to right],red,green) //red-&gt;green<br></code></pre></td></tr></table></figure>
-
-<p>可以斜着渐变：to top right  也可度数: 45deg</p>
-<p>注意：至少传递两个颜色,没有上限</p>
-<div class="code-wrapper"><pre><code class="hljs">       默认系统自己计算纯色和渐变色范围
-</code></pre></div>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">手动:<span class="hljs-built_in">liner-gradient</span>(to right,red <span class="hljs-number">100px</span>,green <span class="hljs-number">200px</span>,...) //颜色 范围<br></code></pre></td></tr></table></figure>
-
-<p>//除了第一个指定的是纯色的范围,后面都是渐变(100-200渐变)</p>
-<p>将背景裁剪为文字的形状：-webkit-background-clip: text;</p>
-<p> 私有属性: -ms/-moz/-webkit/-o 特定浏览器识别 ie/火狐/谷歌</p>
-<p>镜像渐变(默认中间往四周) at关键字</p>
-<p>   background: radial-gradient(at top left,red,green) //左上角到四周渐变</p>
-<p>   //某个点开始镜像渐变(at 200px 100px,red,green)</p>
-<p>   //控制扩散范围(100px,red,green) </p>
-<p>   //同时指定扩散位置和范围 (100px at 200px 100px,red,green)</p>
-<div class="code-wrapper"><pre><code class="hljs">                                                                                                                   2021.4.26
-</code></pre></div>
+<h2 id="15-浏览器前缀"><a href="#15-浏览器前缀" class="headerlink" title="15. 浏览器前缀"></a>15. 浏览器前缀</h2><ul>
+<li>为什么需要浏览器前缀？<ul>
+<li>CSS属性刚开始并没有成为标准(草稿-&gt;推荐版本)</li>
+<li>浏览器为了防止属性在成为推荐版本前被改名或被废弃所以给其特殊的标记以区分</li>
+</ul>
+</li>
+<li>定义：vendor specific extensions   供应商特定扩展</li>
+<li>常见浏览器前缀<ul>
+<li>-o-、-xv-：Opera等</li>
+<li>-ms-、-mso-：IE等</li>
+<li>-moz-：Firefox等</li>
+<li>-webkit-：Safari、Chrome等</li>
+</ul>
+</li>
+<li>注意：不需要我们手动添加，后面学习了模块化打包工具会自动添加浏览器前缀</li>
+</ul>
+<h2 id="16-BFC"><a href="#16-BFC" class="headerlink" title="16. BFC"></a>16. BFC</h2><ul>
+<li><p>什么是FC</p>
+<ul>
+<li>Formatting Context 格式化上下文</li>
+<li>元素在标准流中都是属于一个FC的</li>
+<li>分类<ul>
+<li>BFC - Block Formatting Context（块级元素都是在BFC中布局）</li>
+<li>IFC - Inline Formatting Context（行内级元素都是在IFC中布局）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>BFC</p>
+<ul>
+<li>MDN上总结出以下情况会创建BFC<ul>
+<li>根元素（HTML）</li>
+<li>浮动元素、绝对定位元素（绝对定位+固定定位）</li>
+<li>行内块元素（dib）、表格单元格</li>
+<li>overflow不为visible的块元素</li>
+<li>弹性元素（display为flex或直接子元素）</li>
+<li>网格元素（display为gird或直接子元素）…</li>
+</ul>
+</li>
+<li>BFC的作用（特征）<ul>
+<li>在BFC中，box会在垂直方向上一个挨着一个排布</li>
+<li>垂直方向的间距由margin属性决定</li>
+<li>在同一个BFC中，相邻两个box之间的margin会折叠</li>
+<li>在BFC中，每个元素的左边缘是紧挨着包含块的左边缘的</li>
+</ul>
+</li>
+<li>特征的应用：解决margin折叠问题、解决Float高度塌陷问题</li>
+</ul>
+</li>
+<li><p>BFC的应用</p>
+<ul>
+<li><p>解决margin折叠问题</p>
+<ul>
+<li><p>在同一个BFC中才会有折叠问题，所以只要让两个box不在同一个BFC即可解决问题</p>
+</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">    <span class="hljs-selector-class">.box1</span>&#123;</span><br><span class="css">      <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f00</span>;</span><br><span class="css">      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;</span><br><span class="css">    &#125;</span><br><span class="css">    <span class="hljs-selector-class">.box2</span>&#123;</span><br><span class="css">      <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#0f0</span>;</span><br><span class="css">      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;</span><br><span class="css">    &#125;</span><br><span class="css">    <span class="hljs-selector-class">.contain</span>&#123;</span><br><span class="css">      <span class="hljs-attribute">overflow</span>: auto;</span><br><span class="css">    &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;contain&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>解决浮动高度塌陷问题</p>
+<ul>
+<li>BFC解决高度塌陷需要两个条件<ul>
+<li><strong>浮动元素的父元素触发BFC</strong></li>
+<li>浮动元素父元素高度是auto的，没有指定高度</li>
+</ul>
+</li>
+<li>BFC的高度是auto的情况下，是用以下方法计算高度的<ul>
+<li>如果只有inline元素，是行高的顶部到底部的距离</li>
+<li>如果有block-level，是从最顶层block的上边缘到最底层block的下边缘之间的距离</li>
+<li>如果有绝对定位元素，将会被忽略</li>
+<li><strong>如果有浮动元素，那么会增加高度以包括这些浮动元素的下边缘</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h1 id="CSS项目技巧"><a href="#CSS项目技巧" class="headerlink" title="CSS项目技巧"></a>CSS项目技巧</h1><h2 id="1-代码规范"><a href="#1-代码规范" class="headerlink" title="1. 代码规范"></a>1. 代码规范</h2><ul>
 <li><p>基本的代码规范</p>
 <ul>

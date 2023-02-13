@@ -25,17 +25,17 @@
 <meta property="og:site_name" content="欢迎来到Kygo的博客">
 <meta property="og:description" content="JS基础0. 邂逅JavaScript（了解）0.0 认识编程语言 HTML-标记语言    CSS-样式语言  HTML、CSS、JS都属于计算机语言（我们人和计算机进行沟通交流的语言）  JS不仅属于计算机语言，精确来说是一门编程语言  编程语言特征  数据和数据结构(变量、数组、对象等) 指令及流程控制（if&#x2F;for） 引用机制和重用机制 设计哲学    0.1 编程语言发展历史 机器语言">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/2022/img/js高级_浏览器渲染过程.png">
+<meta property="og:image" content="c:/Users/Administrator/Desktop/2022/img/js高级_V8引擎的原理.png">
 <meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml2868/wps1.png">
 <meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml2868/wps2.png">
 <meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml2868/wps3.png">
-<meta property="og:image" content="c:/Users/Administrator/Desktop/2022/img/js高级_浏览器渲染过程.png">
-<meta property="og:image" content="c:/Users/Administrator/Desktop/2022/img/js高级_V8引擎的原理.png">
 <meta property="article:published_time" content="2022-03-24T05:40:04.000Z">
-<meta property="article:modified_time" content="2023-02-08T00:52:52.010Z">
+<meta property="article:modified_time" content="2023-02-13T00:51:35.003Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml2868/wps1.png">
+<meta name="twitter:image" content="c:/Users/Administrator/Desktop/2022/img/js高级_浏览器渲染过程.png">
   
   
   <title>Javascript详解 - 欢迎来到Kygo的博客</title>
@@ -217,7 +217,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      31k 字
+      39k 字
     </span>
   
 
@@ -226,7 +226,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      257 分钟
+      326 分钟
     </span>
   
 
@@ -267,7 +267,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023-02-08 08:52:52
+                  本文最后更新于：2023-02-13 08:51:35
                 
               </p>
             
@@ -847,7 +847,360 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//执行顺序：先执行begin(只执行一次)，然后进行迭代（先判断condition，成立再执行body，然后step...）</span><br><span class="hljs-keyword">for</span>(begin;condition;step)&#123;<br>  <span class="hljs-comment">//循环代码块</span><br>&#125;<br><span class="hljs-comment">//条件成立执行代码块，不成立不执行</span><br><span class="hljs-keyword">while</span>(循环条件)&#123;<br>  <span class="hljs-comment">//循环代码块</span><br>&#125;<br><span class="hljs-comment">//不管条件成不成立，都会先执行一次循环  </span><br><span class="hljs-keyword">do</span>&#123;<br>	<span class="hljs-comment">//循环代码块 </span><br>&#125;<span class="hljs-keyword">while</span>(循环条件)<br></code></pre></td></tr></table></figure>
 
-<h3 id="2-5-数组"><a href="#2-5-数组" class="headerlink" title="2.5 数组"></a>2.5 数组</h3><ul>
+<h3 id="2-4-函数"><a href="#2-4-函数" class="headerlink" title="2.4 函数"></a>2.4 函数</h3><h4 id="2-4-1-认识函数"><a href="#2-4-1-认识函数" class="headerlink" title="2.4.1 认识函数"></a>2.4.1 认识函数</h4><ul>
+<li><p>程序中的foo、bar、baz</p>
+<ul>
+<li>作用：经常用作函数、变量、文件的名称，本身没有特殊意义</li>
+</ul>
+</li>
+<li><p>什么是函数</p>
+<ul>
+<li>已经学习过的函数：alert、prompt、consloe.log、Number…</li>
+<li>作用：用于封装一段可以随时反复执行的代码块</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-2-函数的使用步骤"><a href="#2-4-2-函数的使用步骤" class="headerlink" title="2.4.2 函数的使用步骤"></a>2.4.2 函数的使用步骤</h4><ul>
+<li><p>声明函数(定义函数) ：是对某些功能的封装过程</p>
+</li>
+<li><p>调用函数：调用自己封装好的某个函数，也可调用默认提供的或第三方库定义好的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//使用关键字function声明函数，()调用函数</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">形参列表</span>)</span>&#123;... <span class="hljs-keyword">return</span>;&#125;  <br>fun();<br></code></pre></td></tr></table></figure></li>
+<li><p>注意</p>
+<ul>
+<li>函数命名规则和变量一样，定义完函数是不会执行的，必须通过()调用才会执行</li>
+<li>形参和返回值可有可无，无返回值默认返回undefined</li>
+<li>return语句和break语句一样后面不要跟代码，永远不会执行</li>
+</ul>
+</li>
+<li><p>函数的参数</p>
+<ul>
+<li>形参(parameter)：定义函数时，小括号中的参数，用来接收参数用的，在函数内部作为变量使用</li>
+<li>实参(argument)：调用函数时，小括号中的参数，用来把数据传递到函数内部用的</li>
+</ul>
+</li>
+<li><p>函数的返回值</p>
+<ul>
+<li>使用return关键字来返回结果</li>
+<li>一旦在函数中执行return，当前函数会终止</li>
+<li>没有使用return或return后什么也不跟，都是返回undefined</li>
+</ul>
+</li>
+<li><p>arguments变量(JS高级学习)</p>
+<ul>
+<li>由来：arguments对象是所有(非箭头)函数中都可用的局部变量</li>
+<li>作用：该对象中保存所有传递给函数的实参（从0位置开始，依次存放）</li>
+<li>注意：arguments变量类型是object(array-like)，不是一个数组</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-3-函数的递归"><a href="#2-4-3-函数的递归" class="headerlink" title="2.4.3 函数的递归"></a>2.4.3 函数的递归</h4><ul>
+<li><p>作用：将一个复杂的任务，转换成可以重复执行的相同任务</p>
+</li>
+<li><p>函数自己调用自己的过程就叫做递归-Recursion（必须有结束条件，否则会无限调用，造成报错）</p>
+</li>
+<li><p>练习</p>
+<ul>
+<li>用递归实现一个自己的幂函数pow</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//x的n次幂: pow(x,n)=x * pow(x,n-1)</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pow</span>(<span class="hljs-params">x,n</span>)</span>&#123;<br>  <span class="hljs-keyword">if</span>(n === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> x<br>  <span class="hljs-keyword">return</span> x * pow(x,n-<span class="hljs-number">1</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>实现斐波那契数列（使用递归和不使用递归都实现一编）<ul>
+<li>某一个数是前两个数的和：1 1 2 3 5 8 13 21… （第一第二个数都是1）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-4-函数作用域"><a href="#2-4-4-函数作用域" class="headerlink" title="2.4.4 函数作用域"></a>2.4.4 函数作用域</h4><ul>
+<li><p>什么是作用域：变量在某一个范围内可以使用</p>
+</li>
+<li><p>由来：在JS(ES5之前-var定义的)中没有块级作用域的概念，但是函数可以定义自己的作用域</p>
+</li>
+<li><p>函数作用域定义：函数作用域表示在函数内部定义的变量，只有在函数内部才能访问到</p>
+</li>
+<li><p>外部变量、局部变量</p>
+<ul>
+<li>局部变量：定义在函数内部的变量</li>
+<li>外部变量：定义在函数外部的变量（在a函数外，但可能在其他函数中，叫做a的外部变量）</li>
+</ul>
+</li>
+<li><p>全局变量</p>
+<ul>
+<li>范围：在所有函数外部(script中)声明的变量</li>
+<li>全局变量在任何函数中都是可见的</li>
+<li>通过var声明的全局变量会在window对象上添加一个属性</li>
+</ul>
+</li>
+<li><p>函数中的变量访问顺序</p>
+<ul>
+<li>优先访问自己函数中的变量=&gt;没有找到就依次往外部找</li>
+<li>外部函数里也没有=&gt;window对象=&gt;没有定义报错</li>
+</ul>
+</li>
+<li><p>后续学习的：块级作用域、作用域链、变量提升、AO VO GO</p>
+</li>
+</ul>
+<h4 id="2-4-5-函数表达式"><a href="#2-4-5-函数表达式" class="headerlink" title="2.4.5 函数表达式"></a>2.4.5 函数表达式</h4><ul>
+<li><p>函数的另外一种定义方式 - 函数表达式</p>
+<ul>
+<li>函数也是引用数据类型(对象)，所以可以保存到变量中</li>
+<li>function 后面一般省略函数名</li>
+<li>无论怎么创建函数，函数都是一个特殊的值，值类型是一个对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;...&#125;<br>foo()<br></code></pre></td></tr></table></figure></li>
+<li><p>函数声明 VS 函数表达式</p>
+<ul>
+<li><p>语法不同：函数声明是单独的语句声明函数，函数表达式是在表达式或另外的语句中创建函数</p>
+</li>
+<li><p>JS内部创建函数的时机不同</p>
+<ul>
+<li><p>函数表达式是代码执行到的时候函数才被创建，函数仅从那一刻开始可用</p>
+</li>
+<li><p>当JS准备运行脚本时，会在脚本寻找全局函数声明，并创建这些函数，然后再去运行脚本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">foo()  <span class="hljs-comment">//可以成功调用foo函数，因为JS引擎在执行js脚本前会提前创建全局声明的函数</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;...&#125;<br><br>bar()  <span class="hljs-comment">//报错，找不到bar，因为是使用函数表达式创建函数，属于表达式，不会提前创建函数</span><br><span class="hljs-keyword">var</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;...&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>开发选择：首先考虑函数声明语法，因为它更加灵活 - 可以在声明函数前就调用这些函数</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-6-头等函数"><a href="#2-4-6-头等函数" class="headerlink" title="2.4.6 头等函数"></a>2.4.6 头等函数</h4><ul>
+<li><p>定义：是指在程序设计语言中，函数被当做头等公民</p>
+<ul>
+<li>函数可以作为<strong>别的函数的参数、返回值、赋值给变量或存储在数据结构中</strong></li>
+</ul>
+</li>
+<li><p>函数式编程 - 函数作为头等公民的编程方式</p>
+</li>
+<li><p>头等函数的体现</p>
+<ul>
+<li><p>函数可以被赋值给变量 - 函数表达式写法就是它的一种体现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;...&#125;<br><span class="hljs-keyword">var</span> bar = foo<br>bar()<br></code></pre></td></tr></table></figure></li>
+<li><p>函数作为另外一个函数的参数、返回值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">fn</span>)</span>&#123;<br>  fn()<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">baz</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;<br>  <span class="hljs-comment">//函数作为返回值</span><br>  <span class="hljs-keyword">return</span> baz<br>&#125;<br><span class="hljs-comment">//函数作为参数传递</span><br>foo(bar)<br></code></pre></td></tr></table></figure></li>
+<li><p>将函数存储在另外一个数据结构中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> foo = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">running</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;<br>&#125;<br>foo.running()<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-7-回调函数"><a href="#2-4-7-回调函数" class="headerlink" title="2.4.7 回调函数"></a>2.4.7 回调函数</h4><ul>
+<li><p>函数回调的理解（Callback Function）</p>
+<ul>
+<li><p>函数作为参数传递到另外一个函数内部，通过参数去调用函数称为函数的回调</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">fn</span>)</span>&#123;<br>  <span class="hljs-comment">//通过fn去调用bar的过程称为函数的回调</span><br>  fn()<br>&#125;<br>foo(bar)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>函数回调的案例</p>
+<ul>
+<li><p>需求：通过URL向服务器发送网络请求，需要花较长时间拿到返回的结果</p>
+</li>
+<li><p>因为拿到结果需要一定的时间，所以我们可以传入一个回调函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">request</span>(<span class="hljs-params">url,callback</span>)</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;通过URL向服务器发送网络请求，需要花较长时间拿到返回的结果&quot;</span>)<br>  <span class="hljs-comment">//假如拿到了结果</span><br>  <span class="hljs-keyword">var</span> resultList = [<span class="hljs-string">&quot;JS&quot;</span>, <span class="hljs-string">&quot;Vue&quot;</span>, <span class="hljs-string">&quot;React&quot;</span>]<br>  callback(resultList)<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleResult</span>(<span class="hljs-params">res</span>)</span>&#123;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;在handleResult中拿到的结果:&quot;</span>,res)&#125;<br><span class="hljs-comment">//传入函数，拿到结果</span><br>request(<span class="hljs-string">&quot;http://www.baidu.com/abc/getResult&quot;</span>, handleResult)<br><br><span class="hljs-comment">/*-----------代码重构--------------*/</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">request</span>(<span class="hljs-params">url,callback</span>)</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;通过URL向服务器发送网络请求，需要花较长时间拿到返回的结果&quot;</span>)<br>  <span class="hljs-comment">//假如拿到了结果</span><br>  <span class="hljs-keyword">var</span> resultList = [<span class="hljs-string">&quot;JS&quot;</span>, <span class="hljs-string">&quot;Vue&quot;</span>, <span class="hljs-string">&quot;React&quot;</span>]<br>  callback(resultList)<br>&#125;<br><span class="hljs-comment">//传入的函数是没有名字的 - 匿名函数</span><br>request(<span class="hljs-string">&quot;http://www.baidu.com/abc/getResult&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">res</span>)</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;在handleResult中拿到的结果:&quot;</span>,res<br>&#125;)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>高阶函数和匿名函数</p>
+<ul>
+<li>高阶函数至少满足两个条件<ul>
+<li>接受一个或多个函数作为输入</li>
+<li>输出一个函数</li>
+</ul>
+</li>
+<li><strong>匿名函数</strong><ul>
+<li>如果在传入一个函数时，我们没有指定这个变量的名称或通过函数表达式创建函数就称为匿名函数</li>
+<li>应用：匿名函数经常作为其他函数的参数或返回值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-4-8-立即执行函数"><a href="#2-4-8-立即执行函数" class="headerlink" title="2.4.8 立即执行函数"></a>2.4.8 立即执行函数</h4><ul>
+<li><p>什么是立即执行函数</p>
+<ul>
+<li><p>专业名字：IIFE - Immediately-Invoked Function Expression（立即调用函数表达式）</p>
+</li>
+<li><p>含义：函数定义完后立即执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//匿名函数 + ()</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;我是一个立即执行函数&quot;</span>)<br>&#125;)()<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>立即执行函数的作用</p>
+<ul>
+<li>立即执行函数中定义的变量有自己的作用域 - 函数作用域</li>
+<li>会创建一个函数作用域，可以避免外界访问或修改内部变量</li>
+</ul>
+</li>
+<li><p>应用场景</p>
+<ul>
+<li><p>场景一：ES6之前的协同开发就是使用这种方式-防止全局变量的命名冲突</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//应用一: 有自己的函数作用域,可以防止变量的命名冲突</span><br><span class="hljs-keyword">var</span> kygoModule = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-comment">//定义要对外暴露的对象</span><br>  <span class="hljs-keyword">var</span> kygoModule = &#123;&#125;<br>  <br>  <span class="hljs-keyword">var</span> name = <span class="hljs-string">&quot;kygo&quot;</span><br>  <span class="hljs-keyword">var</span> age = <span class="hljs-number">18</span><br>  <br>  <span class="hljs-comment">//将外界需要用到的变量和函数添加到对象上</span><br>  kygoModule.age = age<br>  <span class="hljs-keyword">return</span> kygoModule<br>&#125;)()<br><span class="hljs-comment">//只能通过暴露的对象访问</span><br><span class="hljs-built_in">console</span>.log(kygoModule.age)<br></code></pre></td></tr></table></figure></li>
+<li><p>场景二：获取所有按钮的监听点击</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//应用二: 遍历按钮并依次添加点击事件,要求打印出第n个按钮被点击了</span><br><span class="hljs-comment">//问题: 每次点击任意按钮都会打印出: 第4个按钮被点击了</span><br><span class="hljs-keyword">var</span> Eles = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&quot;.btn&quot;</span>)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) &#123;<br>  Eles[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`我是第<span class="hljs-subst">$&#123;i + <span class="hljs-number">1</span>&#125;</span>个按钮`</span>)<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">//重构代码: 使用立即执行函数的函数作用域解决问题</span><br><span class="hljs-comment">//也可以直接使用let定义i就可解决问题</span><br><span class="hljs-keyword">var</span> Eles = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&quot;.btn&quot;</span>)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) &#123;<br>  <span class="hljs-comment">//这里光光使用立即执行函数包裹是不行的,需要每次传递i进入立即函数作用域中</span><br>  (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">j</span>)</span>&#123;<br>    Eles[i].onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`我是第<span class="hljs-subst">$&#123;j + <span class="hljs-number">1</span>&#125;</span>个按钮`</span>)<br>  &#125;<br>  &#125;)(i)<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>立即执行函数的其他写法</p>
+<ul>
+<li><p>立即执行函数必须是一个表达式（整体），不能是一个函数声明</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//错误的写法，这种情况()前面的会被当做函数声明，因为不是一个整体</span><br><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;()<br><span class="hljs-comment">//正确写法，()前面会被当做一个表达式</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;)()<br><span class="hljs-comment">//其他写法(了解即可)</span><br>+<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;()<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-5-对象"><a href="#2-5-对象" class="headerlink" title="2.5 对象"></a>2.5 对象</h3><h4 id="2-5-1-对象的基本使用"><a href="#2-5-1-对象的基本使用" class="headerlink" title="2.5.1 对象的基本使用"></a>2.5.1 对象的基本使用</h4><ul>
+<li><p>为什么需要对象类型？</p>
+<ul>
+<li>基本数据类型可以存储一些简单的值，但是当需要存储比如：一辆车的信息，一个人的信息</li>
+<li>对象类型就是将一类事物的特征和行为组织到了一起</li>
+</ul>
+</li>
+<li><p>对象类型的语法和使用</p>
+<ul>
+<li><p>使用{Key: Value}  键值对的方式来表示对象</p>
+</li>
+<li><p>键值对可以是：属性、方法</p>
+</li>
+<li><p>Key是字符串（我们一般省略引号不写）</p>
+</li>
+<li><p>value可以是任意类型：基本数据类型、函数、对象等</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//创建一个对象</span><br><span class="hljs-keyword">var</span> foo = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">running</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;I am Running!&quot;</span>)<br>  &#125;,<br>  <span class="hljs-string">&quot;my friend&quot;</span>: &#123;  <span class="hljs-comment">//不推荐这样写，只是为了验证key是字符串</span><br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kobe&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">30</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>函数和方法</p>
+<ul>
+<li>Function  通过function默认定义的结构就是函数</li>
+<li>Method  将一个函数放到对象中作为对象的一个属性，那么这个函数称为方法</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-5-2-对象的创建方式"><a href="#2-5-2-对象的创建方式" class="headerlink" title="2.5.2 对象的创建方式"></a>2.5.2 对象的创建方式</h4><ul>
+<li><p>创建对象的三种方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//方式一: 对象字面量创建</span><br><span class="hljs-keyword">var</span> foo = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span><br>&#125;<br><br><span class="hljs-comment">//方式二: 通过new Obj创建</span><br><span class="hljs-keyword">var</span> foo1 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()<br>foo1.name = <span class="hljs-string">&quot;kygo1&quot;</span><br><br><span class="hljs-comment">//方式三: 通过其他类创建</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Bar</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br><span class="hljs-keyword">var</span> foo2 = <span class="hljs-keyword">new</span> Bar()<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-5-3-对象的常见操作"><a href="#2-5-3-对象的常见操作" class="headerlink" title="2.5.3 对象的常见操作"></a>2.5.3 对象的常见操作</h4><ul>
+<li><p>对象属性、方法的增删改查</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> foo = &#123;&#125;<br><span class="hljs-comment">//增加</span><br>foo.name = <span class="hljs-string">&quot;kygo&quot;</span><br>foo.age = <span class="hljs-number">18</span><br>foo.bar = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br><br><span class="hljs-comment">//删除 delete操作符</span><br><span class="hljs-keyword">delete</span> foo.age<br><br><span class="hljs-comment">//修改（没有属性增加，有属性修改）</span><br>foo.name = <span class="hljs-string">&quot;kygo1&quot;</span><br><br><span class="hljs-comment">//查询</span><br><span class="hljs-built_in">console</span>.log(foo.name)<br><br><span class="hljs-comment">//删除对象属性: </span><br><span class="hljs-keyword">delete</span> obj.name;<br></code></pre></td></tr></table></figure></li>
+<li><p>对象的方括号使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//操作对象属性另一种方式:对象[&quot;属性名&quot;]=属性值 (属性名可不遵守规则)</span><br><span class="hljs-keyword">var</span> baz = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-string">&quot;my friend&quot;</span>: <span class="hljs-string">&quot;kobe&quot;</span>,<br>  <span class="hljs-string">&quot;eating something&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br>&#125;<br><br><span class="hljs-built_in">console</span>.log(baz[<span class="hljs-string">&quot;my friend&quot;</span>])<br><span class="hljs-comment">//将字符串保存在变量中,通过[]使用属性、调用方法</span><br><span class="hljs-keyword">var</span> nameKey = <span class="hljs-string">&quot;name&quot;</span>,eatKey = <span class="hljs-string">&quot;eating something&quot;</span><br><span class="hljs-built_in">console</span>.log(baz[nameKey])<br>baz[eatKey]()<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-5-4-对象的遍历"><a href="#2-5-4-对象的遍历" class="headerlink" title="2.5.4 对象的遍历"></a>2.5.4 对象的遍历</h4><ul>
+<li><p>两种遍历数组的方式</p>
+<ul>
+<li>遍历/迭代：获取对象的所有属性和方法</li>
+<li>Object.key(obj) 会返回一个对象的属性名组成的数组</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> foo = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>  <span class="hljs-attr">height</span>: <span class="hljs-number">1.88</span><br>&#125;<br><br><span class="hljs-comment">//普通for循环遍历: 先拿到对象的属性名和属性个数-object.keys</span><br><span class="hljs-keyword">var</span> items = <span class="hljs-built_in">Object</span>.keys(foo)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; items.length; i++) &#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">$&#123;items[i]&#125;</span>: <span class="hljs-subst">$&#123;foo[items[i]]&#125;</span>`</span>)<br>&#125;<br><br><span class="hljs-comment">//for...in遍历数组,item会依次拿到每个属性名</span><br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> item <span class="hljs-keyword">in</span> foo)&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">$&#123;item&#125;</span>: <span class="hljs-subst">$&#123;foo[item]&#125;</span>`</span>)<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-5-5-JS内存分配"><a href="#2-5-5-JS内存分配" class="headerlink" title="2.5.5 JS内存分配"></a>2.5.5 JS内存分配</h4><ul>
+<li><p>堆内存heap和栈内存stack</p>
+<ul>
+<li>程序是需要加载到内存中执行的，而内存可以分为堆内存和栈内存</li>
+<li>原始类型占据的空间是在栈内存中分配的</li>
+<li>对象类型占据的空间是在堆内存中分配的</li>
+</ul>
+</li>
+<li><p>值类型和引用类型</p>
+<ul>
+<li><p>值类型：原始数据类型在变量中保存的是值本身</p>
+</li>
+<li><p>引用类型：对象类型在变量中保存的是对象的 “引用”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//bar存储在栈内存中，保存的是值类型</span><br><span class="hljs-keyword">var</span> bar = <span class="hljs-string">&quot;kygo&quot;</span><br><br><span class="hljs-comment">//foo对象是分为两个地方存储</span><br><span class="hljs-comment">//&#123;...&#125;对象存储在堆内存中: 假如内存地址是0X110</span><br><span class="hljs-comment">//在栈内存中会存储对象的引用: foo = 0X110 来指向对象</span><br><span class="hljs-keyword">var</span> foo = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">18</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>一些现象的解释</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//现象一： 引用类型的比较</span><br><span class="hljs-keyword">var</span> foo = &#123;&#125;<br><span class="hljs-keyword">var</span> foo1 = &#123;&#125;<br><span class="hljs-built_in">console</span>.log(foo === foo1)<span class="hljs-comment">//false</span><br><br><span class="hljs-comment">//现象二： 引用类型的赋值</span><br><span class="hljs-keyword">var</span> bar = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">friend</span>: &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kobe&quot;</span><br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> friend = bar.friend<br>friend.name = <span class="hljs-string">&quot;kobe1&quot;</span><br><span class="hljs-built_in">console</span>.log(bar.friend.name)<span class="hljs-comment">//kobe1</span><br><br><span class="hljs-comment">//现象三： 值传递</span><br><span class="hljs-keyword">var</span> b = <span class="hljs-number">213</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">baz</span>(<span class="hljs-params">arg</span>) </span>&#123;<br>  arg = <span class="hljs-number">318</span><br>&#125;<br>baz(b)<br><span class="hljs-built_in">console</span>.log(b)<span class="hljs-comment">//213</span><br><br><span class="hljs-comment">//现象四： 引用传递，但是在函数中创建了一个新对象，没有对传入对象进行修改</span><br><span class="hljs-keyword">var</span> obj = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo2</span>(<span class="hljs-params">obj</span>) </span>&#123;<br>  obj = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kobe&quot;</span><br>  &#125;<br>&#125;<br>foo2(obj)<br><span class="hljs-built_in">console</span>.log(obj)<span class="hljs-comment">//&quot;kygo&quot;</span><br><br><span class="hljs-comment">//现象五： 引用传递，但是对传入的对象进行了修改</span><br><span class="hljs-keyword">var</span> obj1 = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo3</span>(<span class="hljs-params">obj</span>) </span>&#123;<br>  obj.name = <span class="hljs-string">&quot;kobe&quot;</span><br>&#125;<br>foo3(obj1)<br><span class="hljs-built_in">console</span>.log(obj1)<span class="hljs-comment">//&quot;kobe&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-5-6-函数中的this指向"><a href="#2-5-6-函数中的this指向" class="headerlink" title="2.5.6 函数中的this指向"></a>2.5.6 函数中的this指向</h4><ul>
+<li><p>什么是this</p>
+<ul>
+<li>函数中有一个this的变量，大多数情况下this会指向一个对象</li>
+</ul>
+</li>
+<li><p>this的指向</p>
+<ul>
+<li><p>以默认的方式调用一个函数，this指向window</p>
+</li>
+<li><p>通过对象调用，this指向调用的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//普通函数声明的this</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>)<br>&#125; <br>foo() <span class="hljs-comment">//指向window</span><br><br><span class="hljs-comment">//方法的调用（通过对象调用）</span><br><span class="hljs-keyword">var</span> bar = &#123;<br>  <span class="hljs-attr">baz</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>)<br>  &#125;,<br>  <span class="hljs-attr">friend</span>: &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kobe&quot;</span>,<br>    <span class="hljs-attr">running</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>      <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>)<br>    &#125;<br>  &#125;<br>&#125;<br><span class="hljs-comment">//谁调用this就指向谁</span><br><span class="hljs-built_in">console</span>.log(bar.baz())  <span class="hljs-comment">//指向bar对象</span><br>bar.friend.running()  <span class="hljs-comment">//指向bar.friend对象</span><br><br><br><span class="hljs-comment">//考验题目一</span><br><span class="hljs-keyword">var</span> baz = bar.baz<br>baz() <span class="hljs-comment">//  this指向window对象</span><br><span class="hljs-comment">//考验题目二</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>)<br>&#125;<br><span class="hljs-keyword">var</span> foo1 = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">fun</span>: fun<br>&#125;<br>foo1.fun()  <span class="hljs-comment">//this指向foo1</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>this的应用</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> foo = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;kygo&quot;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>  <span class="hljs-attr">running</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">//没有this的情况</span><br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">$&#123;foo.name&#125;</span> is running! age is <span class="hljs-subst">$&#123;foo.age&#125;</span>`</span>)<br>    <span class="hljs-comment">//使用this</span><br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.name&#125;</span> is running! age is <span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.age&#125;</span>`</span>)<br>  &#125;<br>&#125;<br>foo.running()<br></code></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="2-5-7-构造函数和类"><a href="#2-5-7-构造函数和类" class="headerlink" title="2.5.7 构造函数和类"></a>2.5.7 构造函数和类</h4><ul>
+<li><p>创建一系列相似对象的方式</p>
+<ul>
+<li>在开发中需要创建一系列的相似对象，如一系列的学生对象</li>
+<li>一种方法是直接创建一系列对象，但是这样重复代码太多</li>
+<li>第二种方法是封装一个函数用于创建对象 - 工厂函数</li>
+<li>第三种方法就是使用构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//方式一: 挨个创建</span><br><span class="hljs-keyword">var</span> obj1 = &#123;&#125;<br><span class="hljs-keyword">var</span> obj2 = &#123;&#125;<br><br><span class="hljs-comment">//方式二: 工厂函数创建对象，缺点-打印的对象都是Object类型</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">name, age, heigt</span>) </span>&#123;<br>  <span class="hljs-keyword">var</span> obj = &#123;&#125;<br>  obj.name = name<br>  obj.age = age<br>  obj.height = heigt<br>  <span class="hljs-keyword">return</span> obj<br>&#125;<br><span class="hljs-keyword">var</span> foo1 = foo(<span class="hljs-string">&quot;kygo&quot;</span>, <span class="hljs-number">18</span>, <span class="hljs-number">1.88</span>)<br><span class="hljs-keyword">var</span> foo2 = foo(<span class="hljs-string">&quot;kobe&quot;</span>, <span class="hljs-number">30</span>, <span class="hljs-number">1.98</span>)<br><span class="hljs-built_in">console</span>.log(foo1, foo2)<br></code></pre></td></tr></table></figure></li>
+<li><p>认识构造函数</p>
+<ul>
+<li>构造函数也称为构造器constructor，是我们在创建对象时会调用的函数</li>
+<li>在其他编程语言中，构造函数其实是类中的一个方法，称之为构造方法</li>
+<li>JS中的构造函数有点不太一样，构造函数扮演了其他语言中类的角色</li>
+<li>ES5之前，都是通过function来声明一个构造函数(类)，之后通过new关键字来对其调用</li>
+<li>ES6之后，JS可以向别的语言一样，通过class来声明一个类</li>
+<li>类和对象的关系：类是一类事物的统称(如：水果)，而对象是具体的体现（如：苹果）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>类(ES5)</p>
+<ul>
+<li>JS中的类的表示形式就是构造函数，构造函数===类</li>
+<li>构造函数<ul>
+<li>构造函数也是一个普通的函数，表现形式和其他函数没有任何区别</li>
+<li>如果一个普通函数使用new操作符来调用了，这个函数就称为构造函数</li>
+</ul>
+</li>
+<li>函数被new操作符调用了，会执行以下操作（了解）<ul>
+<li>在内存中创建一个新的空对象</li>
+<li>这个对象内部的[prototype]属性会被赋值为该构造函数的[prototype]属性</li>
+<li>构造函数内部的this，会指向创建出来的新对象</li>
+<li>执行函数的内部代码</li>
+<li>如果构造函数没有返回非空对象，则返回创建出来的新对象</li>
+</ul>
+</li>
+<li>构造函数的补充<ul>
+<li>构造函数的名称：使用大驼峰</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>创建对象的方案 - 类</p>
+<ul>
+<li><p>构造函数可以确保创建的对象是Person类型的(实际是constructor属性)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//构造函数创建对象</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age, height</span>) </span>&#123;<br>  <span class="hljs-built_in">this</span>.name = name<br>  <span class="hljs-built_in">this</span>.age = age<br>  <span class="hljs-built_in">this</span>.height = height<br>  <span class="hljs-built_in">this</span>.running = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`my name is <span class="hljs-subst">$&#123;name&#125;</span>`</span>)<br>  &#125;<br>&#125;<br><span class="hljs-keyword">var</span> person1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&quot;kygo&quot;</span>, <span class="hljs-number">18</span>, <span class="hljs-number">1.88</span>)<br><span class="hljs-keyword">var</span> person2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&quot;kobe&quot;</span>, <span class="hljs-number">30</span>, <span class="hljs-number">1.98</span>)<br><span class="hljs-built_in">console</span>.log(person1, person2)<br></code></pre></td></tr></table></figure></li>
+<li><p>构造函数的其他特征（JS高级）</p>
+<ul>
+<li>原型、原型链、实现继承的方案</li>
+<li>ES6中的类、继承的实现</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-5-8-全局对象window"><a href="#2-5-8-全局对象window" class="headerlink" title="2.5.8 全局对象window"></a>2.5.8 全局对象window</h4><ul>
+<li><p>由来</p>
+<ul>
+<li>浏览器中有一个全局对象window</li>
+</ul>
+</li>
+<li><p>作用</p>
+<ul>
+<li><p>查找变量最终会查找到window上</p>
+</li>
+<li><p>将一些浏览器全局提供给我们的变量、函数、对象，放在window对象上</p>
+</li>
+<li><p>使用var定义的变量会被默认添加到window上面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>)<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.console === <span class="hljs-built_in">console</span>)  <span class="hljs-comment">//true</span><br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.document === <span class="hljs-built_in">document</span>)  <span class="hljs-comment">//true</span><br><br><span class="hljs-keyword">var</span> foo = <span class="hljs-number">213</span>, bar = &#123;&#125;<br><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.foo, <span class="hljs-built_in">window</span>.bar === bar) <span class="hljs-comment">//213</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-5-9-函数也是对象"><a href="#2-5-9-函数也是对象" class="headerlink" title="2.5.9 函数也是对象"></a>2.5.9 函数也是对象</h4><h3 id="2-6-数组"><a href="#2-6-数组" class="headerlink" title="2.6 数组"></a>2.6 数组</h3><ul>
 <li>数组的创建方式</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//对象创建</span><br><span class="hljs-keyword">let</span> arr=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(size);<br><span class="hljs-comment">//构造函数创建</span><br><span class="hljs-keyword">let</span> arr=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(data1,data2...);  <span class="hljs-comment">//空/data/size</span><br><span class="hljs-comment">//字面量创建(一般使用)</span><br><span class="hljs-keyword">let</span> arr=[data1,data2...];  <span class="hljs-comment">//可为空数组</span><br></code></pre></td></tr></table></figure>
@@ -912,213 +1265,7 @@
 
 
 
-<h3 id="2-6-函数"><a href="#2-6-函数" class="headerlink" title="2.6 函数"></a>2.6 函数</h3><p>作用：用于封装一段可以随时反复执行的代码块</p>
-<ul>
-<li><strong>函数定义</strong></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">形参列表</span>)</span>&#123;... <span class="hljs-keyword">return</span>;&#125;  <br>fun();<br></code></pre></td></tr></table></figure>
-
-<p>注意：形参和返回值可有可无，无返回值默认返回undefined</p>
-<p>​            return语句和break语句一样后面不要跟代码，永远不会执行</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//函数和数组一样也是引用数据类型(对象)，可以保存到一个变量中</span><br><span class="hljs-comment">//另外一种定义函数的格式-函数表达式创建</span><br><span class="hljs-keyword">let</span> fun=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;;  <br></code></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><strong>函数的arguments</strong></li>
-</ul>
-<p>arguments作用：保存所有传递给函数的实参</p>
-<p>每个函数里面都有一个arguments 伪数组，可直接调用</p>
-<p>举例：console.log()  log()就是一个函数，可以接收一个或多个参数（内部实现就用到了arguments）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">a, b</span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>);<br>&#125;<br>fun(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">Result:</span><br><span class="hljs-comment">Arguments(2) [1, 2, callee: ƒ, Symbol(Symbol.iterator): ƒ]</span><br><span class="hljs-comment">0: 1</span><br><span class="hljs-comment">1: 2</span><br><span class="hljs-comment">length: 2 ... */</span><br></code></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><strong>扩展运算符</strong></li>
-</ul>
-<p>扩展运算符在函数形参列表中的作用</p>
-<p>将传递给函数的所有实参打包到一个数组中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">...arr</span>) </span>&#123;   <span class="hljs-comment">//将参数打包到arr数组</span><br>  <span class="hljs-built_in">console</span>.log(arr); <br>&#125;<br>fun(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
-
-<p>注意：和在等号左边一样，也只能写在形参列表最后 </p>
-<ul>
-<li><strong>形参默认值</strong></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//ES6: 直接在形参指定默认值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">a = <span class="hljs-number">6</span>, b = <span class="hljs-number">6</span></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(a, b);  <span class="hljs-comment">//Result: 6 6</span><br>&#125;<br>fun()<br></code></pre></td></tr></table></figure>
-
-<p>可以将函数作为其他函数的参数和返回值</p>
-<p>JS中函数可以嵌套定义(函数中可以定义函数)</p>
-<ul>
-<li><strong>匿名函数和立即执行函数</strong></li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//匿名函数不能只定义不使用</span><br><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;  <br><span class="hljs-comment">//立即执行函数,立即执行(一次)</span><br>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;)(参数);  <br></code></pre></td></tr></table></figure>
-
-<p>应用场景：作为其他函数的参数/返回值</p>
-<p>​                   作为一个立即执行函数</p>
-<p>​          </p>
-<ul>
-<li><strong>箭头函数</strong></li>
-</ul>
-<p>ES6新增定义函数的格式，为了简化定义函数代码 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//let 函数名称=(形参列表)=&gt;&#123;...&#125;</span><br><span class="hljs-keyword">let</span> fun=<span class="hljs-function">(<span class="hljs-params">a</span>)=&gt;</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(a);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>注意点：</p>
-<p>​    如果()只有一个形参，括号可以省略 </p>
-<p>​    如果大括号中只有一句代码，那么{}也可以省略</p>
-<p>箭头函数和普通函数的区别</p>
-<p>​    普通函数/方法，谁调用this就是谁</p>
-<p>​    箭头函数的this，是父作用域的this，不是调用者  </p>
-<p>​    注意：箭头函数中的this永远都只看它所属的作用域的this,不能通过bind/call/apply来修改   </p>
-<ul>
-<li><strong>递归函数</strong></li>
-</ul>
-<p>函数中自己调用自己，一定程度上可以实现循环的功能                                                                                                                                     -2021.4.2写/2022.2.27整理</p>
-<ul>
-<li><strong>变量作用域</strong></li>
-</ul>
-<p>JS的三种作用域：全局作用域、局部作用域、块级作用域</p>
-<p>函数{} -局部作用域   if/while/for…{} -块级作用域(除了函数)</p>
-<p>注意：</p>
-<p>​        局部作用域中无论用什么定义都是局部变量(let定义的外界也不能访问)</p>
-<p>​        块级作用域和局部作用域区别：</p>
-<p>​            块级作用域var定义是全局变量，局部作用域是局部变量</p>
-<p>​            无论是块级还是局部作用域，省略let或var就会变全局变量</p>
-<ul>
-<li><strong>作用域链</strong></li>
-</ul>
-<p>ES6之前作用域链：</p>
-<p>​    全局作用域是0级作用域</p>
-<p>​    定义函数开启的作用域是1/2/3…级</p>
-<p>​    JS会将这些作用域连接起来形成作用域链</p>
-<p>​    0-&gt;1-&gt;2-&gt;3-&gt;4… (0级作用域里定义的函数就是1级)</p>
-<p>变量在作用域链查找规则：</p>
-<p>​    先在当前找，找到就使用当前作用域的</p>
-<p>​    当前没有就去上一级作用域查找</p>
-<p>​    以此类推直到0级为止，0级没有找到就报错</p>
-<p>ES6作用域链：</p>
-<p>​    除了定义函数会开启作用域外，代码块也会开启作用域</p>
-<p>​    注意点：要用ES6就全部用ES6如：let、箭头函数(不然容易混淆)</p>
-<p>​    函数预解析：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//ES6之前这种定义函数方式，可以提前调用(会将函数的声明提升到当前作用域最前面)</span><br>say()  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">say</span>(<span class="hljs-params"></span>)</span>&#123;&#125;  <br><span class="hljs-comment">//报错，这样只有变量才会预解析</span><br>say()  <span class="hljs-keyword">var</span> say=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;  <br><span class="hljs-comment">//不会被预解析,let定义的</span><br>say()  <span class="hljs-keyword">let</span> say = <span class="hljs-function">() =&gt;</span> &#123;&#125;  <br></code></pre></td></tr></table></figure>
-
-
-
 <p>​       </p>
-<h3 id="2-7-对象"><a href="#2-7-对象" class="headerlink" title="2.7 对象"></a>2.7 对象</h3><p>类 =&gt; 对象 （默认类Object，所有类都是obj的子类）</p>
-<ul>
-<li>创建对象的三种方法</li>
-</ul>
-<p>Way 1</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//通过默认类创建对象</span><br><span class="hljs-keyword">let</span> obj=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>()<br><span class="hljs-comment">//给对象添加属性和行为</span><br>obj.name=”cth”;  obj.say=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;;<br><span class="hljs-comment">//调用  </span><br>obj.name;  obj.say();<br></code></pre></td></tr></table></figure>
-
-<p>Way 2</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> obj=&#123;&#125;;  obj.name=<span class="hljs-string">&quot;cth&quot;</span> ...<br></code></pre></td></tr></table></figure>
-
-<p>Way 3</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//属性与属性值:隔开  属性间,隔开</span><br><span class="hljs-keyword">let</span> obj=&#123;<span class="hljs-attr">name</span>: <span class="hljs-string">&quot;cth&quot;</span>,<span class="hljs-attr">age</span>: <span class="hljs-number">33</span>, say():<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;&#125;; <br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>属性的操作</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//删除对象属性: delete 对象名.属性名;</span><br><span class="hljs-keyword">delete</span> obj.name;<br><br><span class="hljs-comment">//操作对象属性另一种方式:对象[“属性名”]=属性值 (属性名可不遵守规则)</span><br><span class="hljs-comment">//赋值和读取均要使用这种方式</span><br>obj[<span class="hljs-string">&quot;name&quot;</span>]=<span class="hljs-string">&quot;cth&quot;</span>  <br></code></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li>函数和方法</li>
-</ul>
-<p>没有和类显示绑定在一起就是函数，直接调用</p>
-<p>方法是显示地和其他类绑定在一起，通过对象.方法();调用</p>
-<p>函数内部this是window，方法内部this是当前调用的那个对象</p>
-<p> 工厂函数：专门用于创建对象的函数</p>
-<ul>
-<li>对象的属性方法分类</li>
-</ul>
-<p>实例属性/实例方法:</p>
-<p>​    通过构造函数创建的对象 - 实例对象</p>
-<p>​    通过实例对象访问的属性 - 实例属性</p>
-<p>​    通过实例对象调用的方法 - 实例方法</p>
-<p>静态属性/静态方法:</p>
-<p>​    通过构造函数访问/调用的属性/方法就是静态属性和静态方法</p>
-<p>​    构造函数也是对象：构造函数.属性=…</p>
-<ul>
-<li>构造函数(类)</li>
-</ul>
-<p>作用：专门用于创建对象，是工厂函数简写</p>
-<p>注意：首字母必须大写 只能通过new调用</p>
-<p>​            构造函数中的this就是构造函数创建的对象</p>
-<p>​            将一个构造函数称为一个类(创建的对象-&gt;该类的实例)</p>
-<p><strong>prototype对象</strong> </p>
-<p>可以将构造函数中公共的方法存储到prototype对象中</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">Person.prototype=&#123;<span class="hljs-attr">say</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;&#125;  <span class="hljs-comment">//里面放构造函数公共方法 </span><br></code></pre></td></tr></table></figure>
-
-<p>prototype对象特点：</p>
-<p>​    存储在prototype中的方法可以被对应构造函数创建的所有对象共享(也可存储属性)</p>
-<p>​    prototype中出现和构造函数重名属性或方法，访问到的是构造函数中的</p>
-<p>应用场景：</p>
-<p>​    prototype中一般用于存储所有对象都相同的属性及方法 </p>
-<ul>
-<li>对象三角恋关系</li>
-</ul>
-<p>每个构造函数都有一个默认属性-prototype</p>
-<p>prototype中保存着一个对象-原型对象</p>
-<p>每个原型对象都有一个默认属性-constructor</p>
-<p>constructor指向当前原型对象对应的那个构造函数</p>
-<p>通过构造函数创建的对象-实例对象</p>
-<p>每个实例对象都有一个默认属性 <strong>proto</strong> (两下划线)</p>
-<p><strong>proto</strong> 指向创建它的那个构造函数的原型对象</p>
-<ul>
-<li>Function构造函数</li>
-</ul>
-<p>​    函数是引用类型(对象)，所有函数都是通过Function构造函数创建的对象</p>
-<p>​    构造函数的__proto__比较特殊，指向它自己的原型对象(和prototype一样)</p>
-<p>​    Object构造函数  Object原型对象的__proto__为null</p>
-<p>​      </p>
-<ul>
-<li>函数关系完整关系</li>
-</ul>
-<p>​      Function函数是所有函数的祖先函数</p>
-<p>​      所有构造函数都有一个prototype属性</p>
-<p>​      所有原型对象都有一个constructor属性</p>
-<p>​      所有函数都是对象</p>
-<p>​      所有对象都有一个__proto__属性                 </p>
-<p> <img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml2868\wps1.png" srcset="/img/loading.gif" lazyload alt="img"><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml2868\wps2.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p>​     <img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml2868\wps3.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p>​                            -2021.4.3</p>
-<ul>
-<li><p><strong>原型链</strong></p>
-<p>当给构造函数的(.prototype={})赋值时，为了不破坏原有关系</p>
-<p>需要在自定义的对象中手动添加constructor属性，手动指定指向谁(构造函数)</p>
-<p>通过 __proto__ 连接在一起的链叫做原型链</p>
-<p>当使用对象的属性和方法时，自己有用自己的，自己没有去原型中找</p>
-<p>原型没有，就去原型的原型找，一直找到Object的__proto__为NULL为止</p>
-<p>注意：给对象不存在的属性设置值时，不会去原型中查找，会给当前对象新增</p>
-</li>
-<li><p><strong>封装/继承/多态</strong></p>
-</li>
-</ul>
-<p>JS面向对象的三大特性：封装、继承、多态</p>
-<p><strong>封装性</strong></p>
-<p>默认情况对象属性和方法都是公开的，拿到对象就可以操作对象的属性方法</p>
-<p>构造函数中let/var设置私有属性，通过this.设置公有方法修改和访问私有属性</p>
-<p><strong>继承</strong></p>
-<p>bind-call-apply三个方法</p>
-<p>作用：都是用于修改函数或方法中的this的</p>
-<p>obj是新this的指向对象</p>
-<p>bind方法：函数.bind(obj ,参数…);  会返回一个修改后的新函数</p>
-<p>​     也可以函数传参，只不过参数要写在this对象后面</p>
-<p>call方法： 函数.call(obj ,参数…);  会立即调用新函数  可传参</p>
-<p>apply方法：也是立即调用，但传递参数格式不一样，通过数组传参</p>
-<p>​      函数.apply(obj ,[参数…]);  </p>
-<p>修改方法的this：方法.bind() 一样的做法…</p>
-<p>JS继承的终极方法：</p>
-<p>  在子类的构造函数中通过call借助父类的构造函数</p>
-<p>  将子类的原型对象修改为父类的实例对象\</p>
-<p><strong>多态</strong></p>
-<p>强类型语言-变量使用严格符合定义：int就存储整型</p>
-<p>弱类型-不要求变量使用严格符合-JS就是弱类型</p>
-<p>弱类型语言不关注多态</p>
 <h3 id="2-8-ES6类和对象"><a href="#2-8-ES6类和对象" class="headerlink" title="2.8 ES6类和对象"></a>2.8 ES6类和对象</h3><p>ES6开始，提供class关键字定义类</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>&#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;cth&quot;</span>;age=<span class="hljs-number">21</span>;<span class="hljs-function"><span class="hljs-title">say</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;;  <span class="hljs-comment">//直接添加实例属性和方法即可，不用加this</span><br>    <span class="hljs-keyword">static</span> num=<span class="hljs-number">666</span>;  <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-title">run</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;; <span class="hljs-comment">//静态属性和方法, 通过类名调用</span><br>    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">myname,myage</span>)</span>&#123;<br>        <span class="hljs-built_in">this</span>.name=myname....     <br>	&#125;<br>&#125;<br><span class="hljs-comment">//当创建对象时,自动调用constructor()&#123;&#125;构造方法</span><br><span class="hljs-keyword">let</span> per=<span class="hljs-keyword">new</span> Person(“cth”,<span class="hljs-number">21</span>)  <br></code></pre></td></tr></table></figure>
 
@@ -1665,6 +1812,135 @@
 <li><p>代码执行流程分析</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/*</span><br><span class="hljs-comment"> 1. 代码解析，V8引擎内部会给我们创建一个对象(GlobalObject -&gt; go)</span><br><span class="hljs-comment"> 2. 运行代码</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure></li>
 </ul>
+<ul>
+<li><strong>扩展运算符</strong></li>
+</ul>
+<p>扩展运算符在函数形参列表中的作用</p>
+<p>将传递给函数的所有实参打包到一个数组中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">...arr</span>) </span>&#123;   <span class="hljs-comment">//将参数打包到arr数组</span><br>  <span class="hljs-built_in">console</span>.log(arr); <br>&#125;<br>fun(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<p>注意：和在等号左边一样，也只能写在形参列表最后 </p>
+<ul>
+<li><strong>形参默认值</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//ES6: 直接在形参指定默认值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params">a = <span class="hljs-number">6</span>, b = <span class="hljs-number">6</span></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(a, b);  <span class="hljs-comment">//Result: 6 6</span><br>&#125;<br>fun()<br></code></pre></td></tr></table></figure>
+
+<p>可以将函数作为其他函数的参数和返回值</p>
+<p>JS中函数可以嵌套定义(函数中可以定义函数)</p>
+<p>​          </p>
+<ul>
+<li><strong>箭头函数</strong></li>
+</ul>
+<p>ES6新增定义函数的格式，为了简化定义函数代码 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//let 函数名称=(形参列表)=&gt;&#123;...&#125;</span><br><span class="hljs-keyword">let</span> fun=<span class="hljs-function">(<span class="hljs-params">a</span>)=&gt;</span>&#123;<br>  <span class="hljs-built_in">console</span>.log(a);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意点：</p>
+<p>​    如果()只有一个形参，括号可以省略 </p>
+<p>​    如果大括号中只有一句代码，那么{}也可以省略</p>
+<p>箭头函数和普通函数的区别</p>
+<p>​    普通函数/方法，谁调用this就是谁</p>
+<p>​    箭头函数的this，是父作用域的this，不是调用者  </p>
+<p>​    注意：箭头函数中的this永远都只看它所属的作用域的this,不能通过bind/call/apply来修改   </p>
+<ul>
+<li><strong>作用域链</strong></li>
+</ul>
+<p>ES6之前作用域链：</p>
+<p>​    全局作用域是0级作用域</p>
+<p>​    定义函数开启的作用域是1/2/3…级</p>
+<p>​    JS会将这些作用域连接起来形成作用域链</p>
+<p>​    0-&gt;1-&gt;2-&gt;3-&gt;4… (0级作用域里定义的函数就是1级)</p>
+<p>变量在作用域链查找规则：</p>
+<p>​    先在当前找，找到就使用当前作用域的</p>
+<p>​    当前没有就去上一级作用域查找</p>
+<p>​    以此类推直到0级为止，0级没有找到就报错</p>
+<p>ES6作用域链：</p>
+<p>​    除了定义函数会开启作用域外，代码块也会开启作用域</p>
+<p>​    注意点：要用ES6就全部用ES6如：let、箭头函数(不然容易混淆)</p>
+<p>​    函数预解析：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">//ES6之前这种定义函数方式，可以提前调用(会将函数的声明提升到当前作用域最前面)</span><br>say()  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">say</span>(<span class="hljs-params"></span>)</span>&#123;&#125;  <br><span class="hljs-comment">//报错，这样只有变量才会预解析</span><br>say()  <span class="hljs-keyword">var</span> say=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;  <br><span class="hljs-comment">//不会被预解析,let定义的</span><br>say()  <span class="hljs-keyword">let</span> say = <span class="hljs-function">() =&gt;</span> &#123;&#125;  <br></code></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>对象的属性方法分类</li>
+</ul>
+<p>实例属性/实例方法:</p>
+<p>​    通过构造函数创建的对象 - 实例对象</p>
+<p>​    通过实例对象访问的属性 - 实例属性</p>
+<p>​    通过实例对象调用的方法 - 实例方法</p>
+<p>静态属性/静态方法:</p>
+<p>​    通过构造函数访问/调用的属性/方法就是静态属性和静态方法</p>
+<p>​    构造函数也是对象：构造函数.属性=…</p>
+<p><strong>prototype对象</strong> </p>
+<p>可以将构造函数中公共的方法存储到prototype对象中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">Person.prototype=&#123;<span class="hljs-attr">say</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;&#125;  <span class="hljs-comment">//里面放构造函数公共方法 </span><br></code></pre></td></tr></table></figure>
+
+<p>prototype对象特点：</p>
+<p>​    存储在prototype中的方法可以被对应构造函数创建的所有对象共享(也可存储属性)</p>
+<p>​    prototype中出现和构造函数重名属性或方法，访问到的是构造函数中的</p>
+<p>应用场景：</p>
+<p>​    prototype中一般用于存储所有对象都相同的属性及方法 </p>
+<ul>
+<li>对象三角恋关系</li>
+</ul>
+<p>每个构造函数都有一个默认属性-prototype</p>
+<p>prototype中保存着一个对象-原型对象</p>
+<p>每个原型对象都有一个默认属性-constructor</p>
+<p>constructor指向当前原型对象对应的那个构造函数</p>
+<p>通过构造函数创建的对象-实例对象</p>
+<p>每个实例对象都有一个默认属性 <strong>proto</strong> (两下划线)</p>
+<p><strong>proto</strong> 指向创建它的那个构造函数的原型对象</p>
+<ul>
+<li>Function构造函数</li>
+</ul>
+<p>​    函数是引用类型(对象)，所有函数都是通过Function构造函数创建的对象</p>
+<p>​    构造函数的__proto__比较特殊，指向它自己的原型对象(和prototype一样)</p>
+<p>​    Object构造函数  Object原型对象的__proto__为null</p>
+<p>​      </p>
+<ul>
+<li>函数关系完整关系</li>
+</ul>
+<p>​      Function函数是所有函数的祖先函数</p>
+<p>​      所有构造函数都有一个prototype属性</p>
+<p>​      所有原型对象都有一个constructor属性</p>
+<p>​      所有函数都是对象</p>
+<p>​      所有对象都有一个__proto__属性                 </p>
+<p> <img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml2868\wps1.png" srcset="/img/loading.gif" lazyload alt="img"><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml2868\wps2.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>​     <img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml2868\wps3.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>​                            -2021.4.3</p>
+<ul>
+<li><p><strong>原型链</strong></p>
+<p>当给构造函数的(.prototype={})赋值时，为了不破坏原有关系</p>
+<p>需要在自定义的对象中手动添加constructor属性，手动指定指向谁(构造函数)</p>
+<p>通过 __proto__ 连接在一起的链叫做原型链</p>
+<p>当使用对象的属性和方法时，自己有用自己的，自己没有去原型中找</p>
+<p>原型没有，就去原型的原型找，一直找到Object的__proto__为NULL为止</p>
+<p>注意：给对象不存在的属性设置值时，不会去原型中查找，会给当前对象新增</p>
+</li>
+<li><p><strong>封装/继承/多态</strong></p>
+</li>
+</ul>
+<p>JS面向对象的三大特性：封装、继承、多态</p>
+<p><strong>封装性</strong></p>
+<p>默认情况对象属性和方法都是公开的，拿到对象就可以操作对象的属性方法</p>
+<p>构造函数中let/var设置私有属性，通过this.设置公有方法修改和访问私有属性</p>
+<p><strong>继承</strong></p>
+<p>bind-call-apply三个方法</p>
+<p>作用：都是用于修改函数或方法中的this的</p>
+<p>obj是新this的指向对象</p>
+<p>bind方法：函数.bind(obj ,参数…);  会返回一个修改后的新函数</p>
+<p>​     也可以函数传参，只不过参数要写在this对象后面</p>
+<p>call方法： 函数.call(obj ,参数…);  会立即调用新函数  可传参</p>
+<p>apply方法：也是立即调用，但传递参数格式不一样，通过数组传参</p>
+<p>​      函数.apply(obj ,[参数…]);  </p>
+<p>修改方法的this：方法.bind() 一样的做法…</p>
+<p>JS继承的终极方法：</p>
+<p>  在子类的构造函数中通过call借助父类的构造函数</p>
+<p>  将子类的原型对象修改为父类的实例对象\</p>
+<p><strong>多态</strong></p>
+<p>强类型语言-变量使用严格符合定义：int就存储整型</p>
+<p>弱类型-不要求变量使用严格符合-JS就是弱类型</p>
+<p>弱类型语言不关注多态</p>
 
             </div>
             <hr>

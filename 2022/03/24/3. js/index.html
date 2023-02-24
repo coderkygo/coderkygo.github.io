@@ -35,7 +35,7 @@
 <meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml2868/wps2.png">
 <meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml2868/wps3.png">
 <meta property="article:published_time" content="2022-03-24T05:40:04.000Z">
-<meta property="article:modified_time" content="2023-02-20T00:48:28.664Z">
+<meta property="article:modified_time" content="2023-02-24T00:35:12.913Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
@@ -221,7 +221,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      57k 字
+      67k 字
     </span>
   
 
@@ -230,7 +230,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      472 分钟
+      557 分钟
     </span>
   
 
@@ -271,7 +271,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023-02-20 08:48:28
+                  本文最后更新于：2023-02-24 08:35:12
                 
               </p>
             
@@ -1878,7 +1878,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="4-DOM"><a href="#4-DOM" class="headerlink" title="4. DOM"></a>4. DOM</h2><h3 id="4-1-认识DOM"><a href="#4-1-认识DOM" class="headerlink" title="4.1 认识DOM"></a>4.1 认识DOM</h3><h4 id="4-1-1-认识DOM和BOM"><a href="#4-1-1-认识DOM和BOM" class="headerlink" title="4.1.1 认识DOM和BOM"></a>4.1.1 认识DOM和BOM</h4><ul>
+<h2 id="4-DOM"><a href="#4-DOM" class="headerlink" title="4. DOM"></a>4. DOM</h2><h3 id="4-1-初识DOM"><a href="#4-1-初识DOM" class="headerlink" title="4.1 初识DOM"></a>4.1 初识DOM</h3><h4 id="4-1-1-认识DOM和BOM"><a href="#4-1-1-认识DOM和BOM" class="headerlink" title="4.1.1 认识DOM和BOM"></a>4.1.1 认识DOM和BOM</h4><ul>
 <li>作用<ul>
 <li>前面学习的ECMAScript是JS的基本语法部分，不涉及对网页和浏览器的操作</li>
 <li>DOM和BOM是浏览器提供给开发者去操作页面和浏览器的API</li>
@@ -1900,7 +1900,10 @@
 </li>
 <li>深入理解DOM<ul>
 <li>浏览器考虑到我们会通过js操作页面的元素，所以将所有的元素抽象成了对象</li>
-<li>整个文档被抽象到Document对象中 （如：通过Document.head/body就可拿到head/body元素）</li>
+<li>整个文档被抽象到Document对象中 （如：通过Document.head/body就可拿到head/body元素）<ul>
+<li>如：document.body.style.backgroundColor = “red” 就会让整个页面背景变成红色</li>
+</ul>
+</li>
 <li>所以学习DOM，就是学习怎样通过JS对文档进行操作</li>
 </ul>
 </li>
@@ -1915,7 +1918,7 @@
 <li>获取DOM元素</li>
 <li>DOM节点的type、tag、content</li>
 <li>DOM节点的attributes、properies</li>
-<li>DOM元素的创建、插入、克隆、删除</li>
+<li>DOM节点的创建、插入、克隆、删除</li>
 <li>DOM节点的样式、类</li>
 <li>DOM元素/Window的大小、滚动、坐标</li>
 </ul>
@@ -1950,12 +1953,14 @@
 </li>
 </ul>
 <h3 id="4-2-导航"><a href="#4-2-导航" class="headerlink" title="4.2 导航"></a>4.2 导航</h3><h4 id="4-2-1-节点之间的导航"><a href="#4-2-1-节点之间的导航" class="headerlink" title="4.2.1 节点之间的导航"></a>4.2.1 节点之间的导航</h4><ul>
-<li>什么是节点之间的导航<ul>
+<li><p>什么是节点之间的导航</p>
+<ul>
 <li>当获取到一个节点后，根据这个节点获取其他的结点</li>
 <li>注意：结点包括元素、注释、空行、文本等都属于节点</li>
 </ul>
 </li>
-<li>节点之间存在的关系<ul>
+<li><p>节点之间存在的关系</p>
+<ul>
 <li>父节点：parentNode</li>
 <li>前兄弟节点：previousSibling</li>
 <li>后兄弟节点：nextSibing</li>
@@ -1964,54 +1969,69 @@
 <li>最后一个子节点：lastChild</li>
 </ul>
 </li>
-<li>代码示例</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 我是注释 --&gt;</span><br>  嘿嘿嘿<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是段落哈哈哈哈<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> bodyEl = <span class="hljs-built_in">document</span>.body</span><br><span class="javascript">  <span class="hljs-keyword">var</span> childNodes = bodyEl.childNodes  <span class="hljs-comment">//获取所有子节点</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(childNodes)  <span class="hljs-comment">//[text, comment, text, div.box, text, script]</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = childNodes[<span class="hljs-number">2</span>].nextSibling</span><br><span class="javascript">  <span class="hljs-keyword">var</span> pEl = boxEl.firstChild</span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl1 = pEl.parentNode</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl, boxEl1, pEl)  <span class="hljs-comment">//div.box div.box #text</span></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="4-2-2-元素之间的导航"><a href="#4-2-2-元素之间的导航" class="headerlink" title="4.2.2 元素之间的导航"></a>4.2.2 元素之间的导航</h4><ul>
-<li>什么是元素之间的导航<ul>
+<li><p>什么是元素之间的导航</p>
+<ul>
 <li>同理，通过一个元素获取到其他元素</li>
 </ul>
 </li>
-<li>元素之间存在的关系<ul>
+<li><p>元素之间存在的关系</p>
+<ul>
 <li>父元素：parentElement</li>
-<li>前兄弟节点：previousElementSibling</li>
-<li>后兄弟节点：nextElementSibing</li>
-<li>子节点：children</li>
-<li>第一个子节点：firstElementChild</li>
-<li>最后一个子节点：lastElementChild</li>
+<li>前兄弟元素：previousElementSibling</li>
+<li>后兄弟元素：nextElementSibing</li>
+<li>子元素：children</li>
+<li>第一个子元素：firstElementChild</li>
+<li>最后一个子元素：lastElementChild</li>
 </ul>
 </li>
-<li>代码示例</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs html">哈哈哈哈<br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我是标题<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> bodyEl = <span class="hljs-built_in">document</span>.body</span><br><span class="javascript">  childEls = bodyEl.children  <span class="hljs-comment">//获取body中所有子元素</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(childEls)  <span class="hljs-comment">//[h1, div.box, script]</span></span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> scriptEl = bodyEl.lastElementChild</span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = scriptEl.previousElementSibling</span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl1 = boxEl.lastElementChild.parentElement</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(scriptEl, boxEl, boxEl)  <span class="hljs-comment">//&lt;script&gt; &lt;div&gt; &lt;div&gt;</span></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="4-2-3-table元素之间的导航"><a href="#4-2-3-table元素之间的导航" class="headerlink" title="4.2.3 table元素之间的导航"></a>4.2.3 table元素之间的导航</h4><ul>
-<li>table元素支持以下属性（除了上面给出的）<ul>
+<li><p>table元素支持以下属性（除了上面给出的）</p>
+<ul>
 <li>table.rows    tr元素集合</li>
 <li>table.caption/tHead/tBodies/tFoot    </li>
 </ul>
 </li>
-<li>thead/tbody/tfoot元素提供了rows属性<ul>
+<li><p>thead/tbody/tfoot元素提供了rows属性</p>
+<ul>
 <li>tbody.rows</li>
 </ul>
 </li>
-<li>tr元素<ul>
+<li><p>tr元素</p>
+<ul>
 <li>tr.cells    给定的tr中td和th的集合</li>
 <li>tr.sectionRowIndex/tr.rowIndex    tr在thead/tbody/tfoot中的位置、整个表格中的位置</li>
 </ul>
 </li>
-<li>td和th元素<ul>
+<li><p>td和th元素</p>
+<ul>
 <li>td.cellIndex    封闭的tr中单元格的编号</li>
 </ul>
 </li>
+<li><p>代码示例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> tableEl = <span class="hljs-built_in">document</span>.body.children[<span class="hljs-number">0</span>] <span class="hljs-comment">//as HTMLTableElement</span><br><span class="hljs-keyword">var</span> rows = tableEl.rows  <span class="hljs-comment">//获取所有tr</span><br><span class="hljs-keyword">var</span> theadEl = tableEl.tHead  <span class="hljs-comment">//获取tHead</span><br><span class="hljs-keyword">var</span> tbodyEl = tableEl.tBody  <span class="hljs-comment">//获取tBody</span><br><span class="hljs-keyword">var</span> thRowEl = theadEl.rows  <span class="hljs-comment">//通过tHead获取其中的row</span><br><span class="hljs-keyword">var</span> thsEl = rows[<span class="hljs-number">0</span>].cells  <span class="hljs-comment">//获取th</span><br><span class="hljs-keyword">var</span> rowIndex = rows[<span class="hljs-number">2</span>].rowIndex  <span class="hljs-comment">//获取row是第几个row</span><br><span class="hljs-keyword">var</span> tdIndex = rows[<span class="hljs-number">2</span>].cells[<span class="hljs-number">1</span>].cellIndex  <span class="hljs-comment">//获取td是第几个</span><br><span class="hljs-comment">//&lt;tbale&gt; [tr,tr,tr] true [th,th,th] 2 1</span><br><span class="hljs-built_in">console</span>.log(tableEl, rows, thRowEl[<span class="hljs-number">0</span>] === rows[<span class="hljs-number">0</span>], thsEl, rowIndex, tdIndex)  <br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="4-2-4-form元素之间的导航"><a href="#4-2-4-form元素之间的导航" class="headerlink" title="4.2.4 form元素之间的导航"></a>4.2.4 form元素之间的导航</h4><ul>
-<li>form元素可通过ducument来获取：document.forms</li>
-<li>form元素中的内容可通过elements来获取：form.elements</li>
-<li>可以通过表单子元素的name属性来获取：elements.password</li>
-<li>代码示例</li>
-<li></li>
+<li><p>form元素可通过ducument来获取：document.forms</p>
+</li>
+<li><p>form元素中的内容可通过elements来获取：form.elements</p>
+</li>
+<li><p>可以通过表单子元素的name属性来获取：elements.password</p>
+</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;id&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> formEl = <span class="hljs-built_in">document</span>.forms[<span class="hljs-number">0</span>]</span><br><span class="javascript">  <span class="hljs-keyword">var</span> formAllEl = formEl.elements</span><br><span class="javascript">  <span class="hljs-keyword">var</span> idInputEl = formAllEl.id</span><br><span class="javascript">  <span class="hljs-keyword">var</span> passwordEl = formAllEl.password</span><br><span class="javascript">  <span class="hljs-comment">//result: [input, input, id:input, password:input] </span></span><br><span class="javascript">  <span class="hljs-comment">//&lt;input name=&quot;id&quot;&gt;&lt;/input&gt; &lt;input name=&quot;password&quot;&gt;&lt;/input&gt;</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(formAllEl, idInputEl, passwordEl)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="4-3-获取任意元素的方法"><a href="#4-3-获取任意元素的方法" class="headerlink" title="4.3 获取任意元素的方法"></a>4.3 获取任意元素的方法</h3><ul>
-<li>DOM导航属性只适用于元素之间相邻或相近时（层级太多写起来不方便）</li>
-<li>DOM为我们提供了以下可以任意获取元素的方法<ul>
+<li><p>DOM导航属性只适用于元素之间相邻或相近时（层级太多写起来不方便）</p>
+</li>
+<li><p>DOM为我们提供了以下可以任意获取元素的方法</p>
+<ul>
 <li>querySelector/querySeletorAll<ul>
 <li>通过选择器查找元素，开发最常用</li>
 </ul>
@@ -2026,7 +2046,8 @@
 </li>
 </ul>
 </li>
-<li>是否能在元素上使用，是否实时（了解）<ul>
+<li><p>是否能在元素上使用，是否实时（了解）</p>
+<ul>
 <li>query、ByClass、TagName可以在元素上使用<ul>
 <li>可以通过元素.的方法调用，在其子元素中查询</li>
 </ul>
@@ -2037,6 +2058,8 @@
 </li>
 </ul>
 </li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>我是box<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)  <span class="hljs-comment">//找到第一个满足条件的就返回</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl1 = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&quot;.box&quot;</span>)[<span class="hljs-number">0</span>]</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl2 = <span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">&quot;box&quot;</span>)[<span class="hljs-number">0</span>]</span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl3 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;box&quot;</span>)</span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl4 = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;div&quot;</span>)[<span class="hljs-number">0</span>]</span><br><span class="javascript">  <span class="hljs-keyword">var</span> inputEl = <span class="hljs-built_in">document</span>.getElementsByName(<span class="hljs-string">&quot;password&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">//以下结果都是true</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl === boxEl1)</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl1 === boxEl2)</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl2 === boxEl3)</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl3 ===boxEl4)</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(inputEl)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="4-4-node节点常见属性"><a href="#4-4-node节点常见属性" class="headerlink" title="4.4 node节点常见属性"></a>4.4 node节点常见属性</h3><ul>
 <li><p>主要讨论节点共有的属性</p>
@@ -2058,7 +2081,7 @@
 <ul>
 <li>作用：用于获取node节点的名字，元素的标签名</li>
 <li>不同<ul>
-<li>tagName只适用于Element节点</li>
+<li>tagName只适用于Element元素节点</li>
 <li>nodeName使用于任意节点</li>
 </ul>
 </li>
@@ -2072,7 +2095,7 @@
 </ul>
 </li>
 <li>textContent属性<ul>
-<li>仅仅获取元素中的文本内容</li>
+<li>仅仅获取元素中的文本内容（设置内容时不会解析HTML）</li>
 </ul>
 </li>
 <li>outerHTML属性<ul>
@@ -2092,12 +2115,13 @@
 <li>value（表单元素）、href（a）、id（所有元素的attribute值）</li>
 </ul>
 </li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 注释 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><br>  我是box<br>  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>显示/隐藏<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="handlebars"><span class="xml"></span></span><br><span class="xml"><span class="handlebars">  var bodyEl = document.body</span></span><br><span class="xml"><span class="handlebars">  //节点类型nodeType</span></span><br><span class="xml"><span class="handlebars">  var allNodeEl = bodyEl.childNodes</span></span><br><span class="xml"><span class="handlebars">  //3#text 8<span class="hljs-comment">&lt;!--注释--&gt;</span> 3#text 1<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> 3#text 1<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> item <span class="hljs-keyword">of</span> allNodeEl)&#123;</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">    <span class="hljs-built_in">console</span>.log(item.nodeType, item)</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  &#125;</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-comment">//nodeName/tagName</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(bodyEl.childNodes[<span class="hljs-number">0</span>].nodeName)  <span class="hljs-comment">//#text</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(bodyEl.childNodes[<span class="hljs-number">0</span>].tagName)  <span class="hljs-comment">//undefined</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(bodyEl.childNodes[<span class="hljs-number">3</span>].nodeName)  <span class="hljs-comment">//DIV</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(bodyEl.childNodes[<span class="hljs-number">3</span>].tagName)  <span class="hljs-comment">//DIV</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-comment">//innerHTML/textContent/outerHTML</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(boxEl.innerHTML)  <span class="hljs-comment">//我是box&lt;p&gt;我是段落&lt;p&gt;</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-comment">//&lt;div class=&quot;box&quot;&gt;我是box&lt;p&gt;我是段落&lt;p&gt;&lt;div&gt;</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(boxEl.outerHTML)  </span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(boxEl.textContent)  <span class="hljs-comment">//我是box 我是段落</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  boxEl.innerHTML=<span class="hljs-string">&quot;&lt;h1&gt;我是box中的h1&lt;/h1&gt;&quot;</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-comment">//data/nodeValue</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(allNodeEl[<span class="hljs-number">1</span>].nodeValue)  <span class="hljs-comment">//注释</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-built_in">console</span>.log(allNodeEl[<span class="hljs-number">1</span>].data)  <span class="hljs-comment">//注释</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-comment">//显示和隐藏box</span></span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  <span class="hljs-keyword">var</span> btnEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.btn&quot;</span>)</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  btnEl.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">    boxEl.hidden = !boxEl.hidden </span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars">  &#125;</span></span></span><br><span class="javascript"><span class="xml"><span class="handlebars"></span></span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="4-5-元素"><a href="#4-5-元素" class="headerlink" title="4.5 元素"></a>4.5 元素</h3><ul>
-<li>元素的属性和特征<ul>
+<h3 id="4-5-元素"><a href="#4-5-元素" class="headerlink" title="4.5 元素"></a>4.5 元素</h3><h4 id="4-5-0-元素属性和特征的基本认识"><a href="#4-5-0-元素属性和特征的基本认识" class="headerlink" title="4.5.0 元素属性和特征的基本认识"></a>4.5.0 元素属性和特征的基本认识</h4><ul>
 <li>一个元素除了有开始标签、结束标签、内容，还有很多的属性（attribute）</li>
 <li>浏览器在解析HTML元素时，会将对应的attribute也创建出来放到元素上<ul>
-<li>如id、class就是全局的attribute，有对应的id、class属性</li>
+<li>如元素的id、class就是全局的attribute，对象上有对应的id、class属性</li>
 <li>href属性是针对于a元素的，value和type是针对于input元素的</li>
 </ul>
 </li>
@@ -2107,10 +2131,9 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <h4 id="4-5-1-元素的特征attribute"><a href="#4-5-1-元素的特征attribute" class="headerlink" title="4.5.1 元素的特征attribute"></a>4.5.1 元素的特征attribute</h4><ul>
-<li>分类<ul>
+<li><p>分类</p>
+<ul>
 <li>标准attribute<ul>
 <li>原本存在的浏览器提供的元素attribute，如：id、class、style</li>
 </ul>
@@ -2121,38 +2144,49 @@
 </li>
 </ul>
 </li>
-<li>attribute的操作<ul>
+<li><p>attribute的操作</p>
+<ul>
 <li>elem.hasAttribute(name)  检查特征是否存在</li>
 <li>elem.getAttribute(name)  获取特征值</li>
 <li>elem.setAttribute(name, value)  设置特征值</li>
 <li>elem.removeAttribute(name)  移除特征</li>
-<li>attributes  attr对象的集合，具有name、value属性</li>
+<li>attributes  元素的所有属性的集合</li>
 </ul>
 </li>
-<li>attribute特征<ul>
+<li><p>attribute特征</p>
+<ul>
 <li>名字的大小写不敏感（id和ID获取是一样的）</li>
 <li>获取到的值总是字符串类型（如checked获取到的是空字符串）</li>
 </ul>
 </li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- class就是标准attribute, height/name就是非标准attribute --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1.88&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;kygo&quot;</span>&gt;</span><br>  我是box<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">checked</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//所有attribute都支持的操作</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)</span><br><span class="javascript">  <span class="hljs-keyword">var</span> hasAttr = boxEl.hasAttribute(<span class="hljs-string">&quot;class&quot;</span>)</span><br><span class="javascript">  <span class="hljs-keyword">var</span> attrName = boxEl.getAttribute(<span class="hljs-string">&quot;name&quot;</span>)</span><br><span class="javascript">  <span class="hljs-keyword">var</span> attrs = boxEl.attributes</span><br><span class="javascript">  <span class="hljs-comment">//class box   height 1.88   name kygo</span></span><br><span class="javascript">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> attr <span class="hljs-keyword">of</span> attrs)&#123;</span><br><span class="javascript">    <span class="hljs-built_in">console</span>.log(attr.name, attr.value)</span><br><span class="javascript">  &#125;</span><br><span class="javascript">  boxEl.removeAttribute(<span class="hljs-string">&quot;height&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">//有就修改,没有就增加</span></span><br><span class="javascript">  boxEl.setAttribute(<span class="hljs-string">&quot;height1&quot;</span>, <span class="hljs-number">1.98</span>) </span><br><span class="javascript">  <span class="hljs-comment">//Result: true kygo  &#123;0: class, 1: name, 2: height1...&#125;</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(hasAttr, attrName, attrs) </span><br><span class="javascript">  <span class="hljs-comment">//输出空字符串，getAttribute获取到的都是字符串类型</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;input&quot;</span>).getAttribute(<span class="hljs-string">&quot;checked&quot;</span>))</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="4-5-2-元素的属性property"><a href="#4-5-2-元素的属性property" class="headerlink" title="4.5.2 元素的属性property"></a>4.5.2 元素的属性property</h4><ul>
-<li>对于标准的attribute，会在DOM对象上创建对应的property属性</li>
-<li>attribute和property相互作用<ul>
+<li><p>对于标准的attribute，会在DOM对象上创建对应的property属性</p>
+</li>
+<li><p>attribute和property相互作用</p>
+<ul>
 <li>改变property，通过attribute获取到的值也会改变</li>
 <li>通过attribute修改，property的值也会改变</li>
 </ul>
 </li>
-<li>推荐使用property来获取元素的attribute<ul>
+<li><p>推荐使用property来设置、获取元素的attribute</p>
+<ul>
 <li>因为通过property获取的值是有类型的，而attribute获取的都是字符串</li>
 </ul>
 </li>
-<li>自定义属性data的获取<ul>
+<li><p>自定义属性data的获取</p>
+<ul>
 <li>html中可以通过data-*自定义属性，这些attribute可以通过dataset属性获取到</li>
 </ul>
 </li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;标题&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;kygo&quot;</span> <span class="hljs-attr">data-age</span>=<span class="hljs-string">&quot;18&quot;</span>&gt;</span><br>  我是box<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">checked</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)</span><br><span class="javascript">  <span class="hljs-keyword">var</span> inputEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;input&quot;</span>)</span><br><span class="javascript">  boxEl.className = <span class="hljs-string">&quot;box1&quot;</span></span><br><span class="javascript">  boxEl.setAttribute(<span class="hljs-string">&quot;class&quot;</span>, <span class="hljs-string">&quot;box2&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">//通过property获取属性(只能获取非自定义属性)</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.name)  <span class="hljs-comment">//undefined</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.title)  <span class="hljs-comment">//标题</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.className)  <span class="hljs-comment">//  box2</span></span><br><span class="javascript">  <span class="hljs-comment">//获取的属性值有类型  Result: true &#x27;boolean&#x27; radio&#x27;</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(inputEl.checked, <span class="hljs-keyword">typeof</span> inputEl.checked, inputEl.type) </span><br><span class="javascript">  <span class="hljs-comment">//自定义属性的获取</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.dataset.age)  <span class="hljs-comment">//18</span></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="4-5-3-元素的class和style"><a href="#4-5-3-元素的class和style" class="headerlink" title="4.5.3 元素的class和style"></a>4.5.3 元素的class和style</h4><ul>
-<li>JavaScript动态修改样式<ul>
+<li><p>JavaScript动态修改样式</p>
+<ul>
 <li>方法一：在css中写好样式，动态添加class</li>
 <li>方法二：动态修改style属性</li>
 <li>方法的选择<ul>
@@ -2162,7 +2196,8 @@
 </li>
 </ul>
 </li>
-<li>元素的className和classList<ul>
+<li><p>元素的className和classList</p>
+<ul>
 <li>元素的className<ul>
 <li>元素的class attribute，对应的property叫做className，而不是class（class是关键字）</li>
 <li>可以对className赋值，它会替换整个class中的字符串</li>
@@ -2182,7 +2217,8 @@
 </li>
 </ul>
 </li>
-<li>元素的style属性<ul>
+<li><p>元素的style属性</p>
+<ul>
 <li>单独修改某一个css属性，可以通过style来操作</li>
 <li>多个样式的写法，需要使用cssText属性（不推荐）</li>
 <li>注意<ul>
@@ -2192,7 +2228,8 @@
 </li>
 </ul>
 </li>
-<li>元素style的读取<ul>
+<li><p>元素style的读取-getComputedStyle</p>
+<ul>
 <li>对于内联样式，可以通过style.*的方式读取到</li>
 <li>对于style标签、css文件中的样式是读取不到的<ul>
 <li>可以通过getComputedStyle的全局函数来读取：getComputedStyle(“boxEl”).width</li>
@@ -2200,8 +2237,104 @@
 </li>
 </ul>
 </li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.box</span>&#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-class">.active</span>&#123;</span><br><span class="css">    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;</span><br><span class="css">    <span class="hljs-attribute">background</span>: purple;</span><br><span class="css">    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;</span><br><span class="css">  &#125;</span><br><span class="css">  <span class="hljs-selector-class">.active1</span>&#123;</span><br><span class="css">    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">10px</span>;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>我是box<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">//通过style属性来修改样式</span></span><br><span class="javascript">  boxEl.style.color = <span class="hljs-string">&quot;red&quot;</span></span><br><span class="javascript">  boxEl.style.backgroundColor = <span class="hljs-string">&quot;pink&quot;</span></span><br><span class="javascript">  <span class="hljs-comment">//style的读取</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.style.color)  <span class="hljs-comment">//red</span></span><br><span class="javascript">  <span class="hljs-comment">//如果不是内联样式必须这样读取才行</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(getComputedStyle(boxEl).width)  <span class="hljs-comment">//300px</span></span><br><span class="javascript"></span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//通过动态添加className来修改样式(会覆盖所有之前的class)</span></span><br><span class="javascript">  boxEl.className = <span class="hljs-string">&quot;active&quot;</span></span><br><span class="javascript">  <span class="hljs-comment">//通过classList来修改样式</span></span><br><span class="javascript">  boxEl.classList.remove(<span class="hljs-string">&quot;active&quot;</span>)</span><br><span class="javascript">  boxEl.classList.add(<span class="hljs-string">&quot;active1&quot;</span>)</span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.classList.contains(<span class="hljs-string">&quot;active&quot;</span>))  <span class="hljs-comment">//false</span></span><br><span class="javascript"></span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="4-5-4-元素的常见操作"><a href="#4-5-4-元素的常见操作" class="headerlink" title="4.5.4 元素的常见操作"></a>4.5.4 元素的常见操作</h4><h4 id="4-5-5-元素的大小和滚动"><a href="#4-5-5-元素的大小和滚动" class="headerlink" title="4.5.5 元素的大小和滚动"></a>4.5.5 元素的大小和滚动</h4><h3 id="window的大小和滚动"><a href="#window的大小和滚动" class="headerlink" title="window的大小和滚动"></a>window的大小和滚动</h3><h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1 简介"></a>3.1 简介</h3><p>​    属于宿主对象,包含了window和document  (浏览器提供)</p>
+<h4 id="4-5-4-元素的常见操作"><a href="#4-5-4-元素的常见操作" class="headerlink" title="4.5.4 元素的常见操作"></a>4.5.4 元素的常见操作</h4><ul>
+<li><p>创建元素</p>
+<ul>
+<li>以前写入元素的方式：document.write（拼接不方便）</li>
+<li>创建元素语法<ul>
+<li>document.createElement(tag)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>插入元素</p>
+<ul>
+<li>node.append(…nodes or strings)  node末尾插入节点或字符串</li>
+<li>node.prepend  node开头插入</li>
+<li>node.before      node前面插入</li>
+<li>node.after         node后面插入</li>
+<li>node.replaceWith  将node替换成指定节点或字符串</li>
+</ul>
+</li>
+<li><p>移除元素和克隆元素</p>
+<ul>
+<li>移除<ul>
+<li>node.remove  node移除自己</li>
+</ul>
+</li>
+<li>克隆<ul>
+<li>语法：node.cloneNode([true])  </li>
+<li>解释：传入true表示深度克隆（包含子元素），返回克隆出来的node</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>旧的元素操作方法（了解-基本不用了）</p>
+<ul>
+<li>parentEl.appendChild(node)</li>
+<li>parentEl.insertBefore(node,nextSibling)</li>
+<li>paretEl.replaceChild(node, oldChild)</li>
+<li>parentEl.removeChild(node)</li>
+</ul>
+</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是段落1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>我是box<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是段落2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//以前的做法(不推荐)</span></span><br><span class="javascript">  <span class="hljs-built_in">document</span>.write(<span class="hljs-string">&quot;&lt;h1&gt;我是write写入的标题&lt;h1&gt;&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">//新增元素</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> h1El = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;h1&quot;</span>)</span><br><span class="javascript">  <span class="hljs-keyword">var</span> h2El = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;h2&quot;</span>)</span><br><span class="javascript">  h1El.textContent = <span class="hljs-string">&quot;我是插入的标题h1&quot;</span></span><br><span class="javascript">  h2El.textContent = <span class="hljs-string">&quot;我是插入的标题h2&quot;</span></span><br><span class="javascript">  <span class="hljs-comment">//插入元素</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">// boxEl.append(h2El)</span></span><br><span class="javascript">  <span class="hljs-comment">// boxEl.prepend(h1El)</span></span><br><span class="javascript">  <span class="hljs-comment">// boxEl.before(h1El)</span></span><br><span class="javascript">  <span class="hljs-comment">// boxEl.after(h1El)</span></span><br><span class="javascript">  <span class="hljs-comment">// boxEl.replaceWith(h2El)</span></span><br><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//移除元素</span></span><br><span class="javascript">  <span class="hljs-comment">// boxEl.remove()</span></span><br><span class="javascript">  <span class="hljs-comment">//克隆元素</span></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl1 = boxEl.cloneNode(<span class="hljs-literal">true</span>)</span><br><span class="javascript">  boxEl.append(boxEl1)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-5-5-元素的大小和滚动"><a href="#4-5-5-元素的大小和滚动" class="headerlink" title="4.5.5 元素的大小和滚动"></a>4.5.5 元素的大小和滚动</h4><ul>
+<li><p>client相关（元素内部）</p>
+<ul>
+<li>clientWidth/clientHeight<ul>
+<li>contentWith/Height+padding (不包含滚动条)</li>
+</ul>
+</li>
+<li>clientTop/clientLeft<ul>
+<li>border-top的宽度、border-left的宽度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>offset相关</p>
+<ul>
+<li>offsetWidth/offsetHeight：元素完整的宽度/高度</li>
+<li>offsetLeft/offsetHeight：距离父元素的X/Y</li>
+</ul>
+</li>
+<li><p>scroll相关</p>
+<ul>
+<li>scrollHeight：整个可滚动的区域高度</li>
+<li>scrollTop：滚动部分的高度</li>
+</ul>
+</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span><br><span class="css">  <span class="hljs-selector-class">.box</span>&#123;</span><br><span class="css">    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</span><br><span class="css">    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;</span><br><span class="css">    <span class="hljs-attribute">overflow</span>: auto;</span><br><span class="css">    <span class="hljs-attribute">background-color</span>: pink;</span><br><span class="css">    <span class="hljs-attribute">border</span>: <span class="hljs-number">10px</span> solid red;</span><br><span class="css">  &#125;</span><br><span class="css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>  123<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-keyword">var</span> boxEl = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.box&quot;</span>)</span><br><span class="javascript">  <span class="hljs-comment">//滚动条占据了宽度,所以元素的宽度只有185+10*2</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.clientHeight, boxEl.clientWidth)<span class="hljs-comment">//220 205</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.clientTop, boxEl.clientLeft)<span class="hljs-comment">// 10 10</span></span><br><span class="javascript">  <span class="hljs-comment">//元素整体所占宽高:加上border</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.offsetWidth, boxEl.offsetHeight)<span class="hljs-comment">//240 240</span></span><br><span class="javascript">  <span class="hljs-comment">//元素距离父元素的X/Y,这里是自带的外边距</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.offsetLeft, boxEl.offsetTop)<span class="hljs-comment">//8 8</span></span><br><span class="javascript">  <span class="hljs-comment">//可滚动的高度/滚动了多少高度</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(boxEl.scrollHeight, boxEl.scrollTop)<span class="hljs-comment">//583 0</span></span><br><span class="javascript">  <span class="hljs-comment">//监听滚动事件,打印滚动的距离</span></span><br><span class="javascript">  boxEl.addEventListener(<span class="hljs-string">&quot;scroll&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">    <span class="hljs-built_in">console</span>.log(boxEl.scrollTop)</span><br><span class="javascript">  &#125;)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="4-5-6-window的大小和滚动"><a href="#4-5-6-window的大小和滚动" class="headerlink" title="4.5.6 window的大小和滚动"></a>4.5.6 window的大小和滚动</h4><ul>
+<li><p>window的宽高</p>
+<ul>
+<li>innerWidth/innerHeight：获取window窗口的宽度和高度（包含滚动条）</li>
+<li>outerWidth/outerHeight：获取window窗口的整个宽高（包括调试工具、工具栏）</li>
+<li>documentElement.clientHeight/documentElement.clientWidth</li>
+</ul>
+</li>
+<li><p>window的滚动位置</p>
+<ul>
+<li>scrollX：X轴滚动的位置（别名pageXOffset）</li>
+<li>scrollY：Y轴滚动的位置（别名pageYOffset）</li>
+</ul>
+</li>
+<li><p>滚动方法</p>
+<ul>
+<li>scrollBy(x, y)：将页面滚动至相对当前位置的x,y的位置</li>
+<li>scrollTo(pageX, pageY)：滚动至绝对坐标</li>
+</ul>
+</li>
+<li><p>代码示例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>scrollTo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn1&quot;</span>&gt;</span>scrollBy<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span><br><span class="javascript">  <span class="hljs-comment">//681 1319 整个页面的宽高(不包含工具栏)</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.innerHeight, <span class="hljs-built_in">window</span>.innerWidth)</span><br><span class="javascript">  <span class="hljs-comment">//760 1319 整个浏览器宽高(包含工具栏)</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.outerHeight, <span class="hljs-built_in">window</span>.outerWidth)</span><br><span class="javascript">  <span class="hljs-comment">//681 1304  整个页面宽高(不包含滚动条)</span></span><br><span class="javascript">  <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">document</span>.documentElement.clientHeight, <span class="hljs-built_in">document</span>.documentElement.clientWidth)</span><br><span class="javascript">  <span class="hljs-comment">//监听滚动事件,打印滚动位置</span></span><br><span class="javascript">  <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&quot;scroll&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">window</span>.scrollX, <span class="hljs-built_in">window</span>.screenY)</span><br><span class="javascript">  &#125;)</span><br><span class="javascript">  <span class="hljs-comment">//滚动到绝对位置</span></span><br><span class="javascript">  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.btn&quot;</span>).addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">    <span class="hljs-built_in">window</span>.scrollTo(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)</span><br><span class="javascript">  &#125;)</span><br><span class="javascript">  <span class="hljs-comment">//以当前滚动位置为参考点</span></span><br><span class="javascript">  <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;.btn1&quot;</span>).addEventListener(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">    <span class="hljs-built_in">window</span>.scrollBy(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>)</span><br><span class="javascript">  &#125;)</span><br><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1 简介"></a>3.1 简介</h3><p>​    属于宿主对象,包含了window和document  (浏览器提供)</p>
 <p>​      window: 全局对象，代表浏览器打开的一个窗口</p>
 <p>每个窗口都是一个window对象 </p>
 <p>​      document: window的一个属性，这个属性是一个对象</p>
